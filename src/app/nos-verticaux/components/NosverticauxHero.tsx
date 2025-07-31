@@ -1,3 +1,4 @@
+'use client';
 import { useState, useEffect, useRef } from 'react';
 import { motion, useTransform, useMotionValue, useSpring } from 'framer-motion';
 import { ChevronDown, ArrowRight } from 'lucide-react';
