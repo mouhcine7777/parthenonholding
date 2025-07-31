@@ -76,7 +76,7 @@ export default function NosFiliales() {
         "Services intégrés clé en main",
         "Gestion de projet complète"
       ],
-      image: "/filiales/integral.jpg",
+      image: "/filiales/Integral.jpg",
       color: "#C59B5A",
     },
     {
@@ -89,7 +89,7 @@ export default function NosFiliales() {
         "Équipements de pointe certifiés",
         "Encadrement professionnel"
       ],
-      image: "/filiales/skyjump.jpg",
+      image: "/filiales/Skyjump.jpg",
       color: "#9E774E",
     },
     {
@@ -102,7 +102,7 @@ export default function NosFiliales() {
         "Événements compétitifs",
         "Location d'équipements premium"
       ],
-      image: "/filiales/govelodrome.jpg",
+      image: "/filiales/Govelodrome.jpg",
       color: "#A98142",
     },
     {
@@ -128,7 +128,7 @@ export default function NosFiliales() {
         "Espaces de restauration thématiques",
         "Événements saisonniers spéciaux"
       ],
-      image: "/filiales/palooza.jpg",
+      image: "/filiales/Palooza.jpg",
       color: "#B68C45",
     },
     {
@@ -141,7 +141,7 @@ export default function NosFiliales() {
         "Formules adaptées à tous les événements",
         "Service personnalisé et attentionné"
       ],
-      image: "/filiales/gardenbrunch.jpg",
+      image: "/filiales/Gardenbrunch.jpg",
       color: "#C59B5A",
     },
     {
@@ -167,7 +167,7 @@ export default function NosFiliales() {
         "Fêtes d'anniversaire sur mesure",
         "Encadrement spécialisé enfants"
       ],
-      image: "/filiales/loupijungle.jpg",
+      image: "/filiales/Loupijungle.jpg",
       color: "#B68C45",
     },
     {
@@ -180,7 +180,7 @@ export default function NosFiliales() {
         "Service traiteur pour événements",
         "Ateliers de pâtisserie créative"
       ],
-      image: "/filiales/gardenbakes.jpg",
+      image: "/filiales/Gardenbakes.jpg",
       color: "#C59B5A",
     }
   ];
