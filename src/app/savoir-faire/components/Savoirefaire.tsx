@@ -273,15 +273,14 @@ export default function NotreSavoirFaire() {
         >
           {expertiseData.map((item, index) => (
             <motion.div
-              key={`card-${index}`}
-              className={`rounded-lg overflow-hidden shadow-lg cursor-pointer ${
-                activeIndex === index ? 'ring-2' : ''
-              }`}
-              style={{ 
-                backgroundColor: activeIndex === index ? GOLD : 'white',
-                borderColor: GOLD,
-                ringColor: GOLD
-              }}
+  key={`card-${index}`}
+  className={`rounded-lg overflow-hidden shadow-lg cursor-pointer ${
+    activeIndex === index ? 'ring-2 ring-[#A98142]' : ''
+  }`}
+  style={{ 
+    backgroundColor: activeIndex === index ? GOLD : 'white',
+    borderColor: GOLD
+  }}
               onClick={() => setActiveIndex(index)}
               variants={itemVariants}
               whileHover={{ 
