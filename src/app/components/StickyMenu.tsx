@@ -12,9 +12,17 @@ const DARK = "#1C1C1B";
 export default function ParthenonMenu() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  // Handle component mounting
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   // Check scroll position to update sticky menu appearance
   useEffect(() => {
+    if (!isMounted) return;
+    
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       setIsScrolled(scrollPosition > 50);
@@ -22,10 +30,12 @@ export default function ParthenonMenu() {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isMounted]);
 
   // Close mobile menu on window resize
   useEffect(() => {
+    if (!isMounted) return;
+    
     const handleResize = () => {
       if (window.innerWidth > 1024 && isMobileMenuOpen) {
         setIsMobileMenuOpen(false);
@@ -34,7 +44,7 @@ export default function ParthenonMenu() {
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, [isMobileMenuOpen]);
+  }, [isMobileMenuOpen, isMounted]);
 
   // Menu items
   const menuItems = [
@@ -66,6 +76,21 @@ export default function ParthenonMenu() {
     }
   };
 
+  // Don't render until mounted to avoid hydration issues
+  if (!isMounted) {
+    return (
+      <header className="fixed top-0 left-0 right-0 z-50 w-full py-5" style={{ backgroundColor: 'transparent' }}>
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <img src="/logo.png" alt="Parthenon Holding" className="h-12 md:h-16" />
+            </div>
+          </div>
+        </div>
+      </header>
+    );
+  }
+
   return (
     <>
       {/* Sticky navigation bar */}
@@ -88,16 +113,17 @@ export default function ParthenonMenu() {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
             >
-              <Link href="/" legacyBehavior>
-                <a className="flex items-center">
-                  <img 
-                    src="/logo.png" 
-                    alt="Parthenon Holding" 
-                    className={`transition-all duration-300 ${
-                      isScrolled ? 'h-10 md:h-12' : 'h-12 md:h-16'
-                    }`}
-                  />
-                </a>
+              <Link 
+                href="/"
+                className="flex items-center"
+              >
+                <img 
+                  src="/logo.png" 
+                  alt="Parthenon Holding" 
+                  className={`transition-all duration-300 ${
+                    isScrolled ? 'h-10 md:h-12' : 'h-12 md:h-16'
+                  }`}
+                />
               </Link>
             </motion.div>
             
@@ -109,19 +135,18 @@ export default function ParthenonMenu() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Link href={item.href} legacyBehavior>
-                    <a 
-                      className="px-3 py-2 text-sm xl:text-base font-medium relative group"
-                      style={{ color: LIGHT }}
-                    >
-                      {item.name}
-                      
-                      {/* Animated underline effect */}
-                      <span 
-                        className="absolute left-0 bottom-0 h-0.5 w-0 group-hover:w-full transition-all duration-300"
-                        style={{ backgroundColor: GOLD }}
-                      ></span>
-                    </a>
+                  <Link 
+                    href={item.href}
+                    className="px-3 py-2 text-sm xl:text-base font-medium relative group"
+                    style={{ color: LIGHT }}
+                  >
+                    {item.name}
+                    
+                    {/* Animated underline effect */}
+                    <span 
+                      className="absolute left-0 bottom-0 h-0.5 w-0 group-hover:w-full transition-all duration-300"
+                      style={{ backgroundColor: GOLD }}
+                    ></span>
                   </Link>
                 </motion.div>
               ))}
@@ -132,16 +157,15 @@ export default function ParthenonMenu() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Link href="/contact" legacyBehavior>
-                <a
-                  className="hidden lg:flex items-center px-5 py-2 rounded-full text-sm font-medium"
-                  style={{ 
-                    backgroundColor: GOLD,
-                    color: 'white'
-                  }}
-                >
-                  Nous contacter
-                </a>
+              <Link
+                href="/contact"
+                className="hidden lg:flex items-center px-5 py-2 rounded-full text-sm font-medium"
+                style={{ 
+                  backgroundColor: GOLD,
+                  color: 'white'
+                }}
+              >
+                Nous contacter
               </Link>
             </motion.div>
             
@@ -187,14 +211,12 @@ export default function ParthenonMenu() {
               <div className="p-5">
                 <div className="flex items-center justify-between mb-8">
                   {/* Logo in mobile menu */}
-                  <Link href="/" legacyBehavior>
-                    <a>
-                      <img 
-                        src="/logo.png" 
-                        alt="Parthenon Holding" 
-                        className="h-10"
-                      />
-                    </a>
+                  <Link href="/">
+                    <img 
+                      src="/logo.png" 
+                      alt="Parthenon Holding" 
+                      className="h-10"
+                    />
                   </Link>
                   
                   {/* Close button */}
@@ -214,14 +236,13 @@ export default function ParthenonMenu() {
                       key={item.name}
                       whileHover={{ x: 5 }}
                     >
-                      <Link href={item.href} legacyBehavior>
-                        <a
-                          className="py-3 text-base font-medium block"
-                          onClick={() => setIsMobileMenuOpen(false)}
-                          style={{ color: LIGHT }}
-                        >
-                          {item.name}
-                        </a>
+                      <Link
+                        href={item.href}
+                        className="py-3 text-base font-medium block"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        style={{ color: LIGHT }}
+                      >
+                        {item.name}
                       </Link>
                     </motion.div>
                   ))}
@@ -232,17 +253,16 @@ export default function ParthenonMenu() {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <Link href="/contact" legacyBehavior>
-                    <a
-                      className="mt-8 block w-full text-center px-5 py-3 rounded-full text-base font-medium"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      style={{ 
-                        backgroundColor: GOLD,
-                        color: 'white'
-                      }}
-                    >
-                      Nous contacter
-                    </a>
+                  <Link
+                    href="/contact"
+                    className="mt-8 block w-full text-center px-5 py-3 rounded-full text-base font-medium"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    style={{ 
+                      backgroundColor: GOLD,
+                      color: 'white'
+                    }}
+                  >
+                    Nous contacter
                   </Link>
                 </motion.div>
               </div>

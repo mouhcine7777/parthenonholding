@@ -23,16 +23,16 @@ export const metadata: Metadata = {
   description: "Experience",
 };
 
+export const dynamic = 'force-dynamic'
+
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <html lang="en" className={`${poppins.variable} ${montserrat.variable} font-optima`}>
-      <body className="font-sans antialiased">
-        {children}
-      </body>
+    <html lang="en">
+      <body>{children}</body>
     </html>
-  );
+  )
 }
