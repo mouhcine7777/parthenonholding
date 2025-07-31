@@ -32,6 +32,7 @@ const VERTICALS = [
 export default function ParthenonVerticauxHero() {
   const [mousePosition, setMousePosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
   const [activeVertical, setActiveVertical] = useState<number>(0);
+  const [isBrowser, setIsBrowser] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   
   const x = useMotionValue(0);
@@ -43,8 +44,15 @@ export default function ParthenonVerticauxHero() {
   const springX = useSpring(x, springConfig);
   const springY = useSpring(y, springConfig);
   
+  // Check if we're in the browser
+  useEffect(() => {
+    setIsBrowser(true);
+  }, []);
+  
   // Handle mouse movement for the 3D effect
   useEffect(() => {
+    if (!isBrowser) return;
+    
     const handleMouseMove = (event: MouseEvent) => {
       if (!containerRef.current) return;
       const rect = containerRef.current.getBoundingClientRect();
@@ -61,7 +69,7 @@ export default function ParthenonVerticauxHero() {
     
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+  }, [isBrowser, x, y]);
 
   // Auto-rotate through verticals
   useEffect(() => {
@@ -92,6 +100,10 @@ export default function ParthenonVerticauxHero() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
     exit: { opacity: 0, y: -20, transition: { duration: 0.3 } }
   };
+
+  // Calculate gradient center with fallback values
+  const gradientCenterX = isBrowser ? mousePosition.x + (window.innerWidth / 2) : 800;
+  const gradientCenterY = isBrowser ? mousePosition.y + (window.innerHeight / 2) : 400;
   
   return (
     <div 
@@ -175,7 +187,7 @@ export default function ParthenonVerticauxHero() {
         
         {/* Gradient overlay */}
         <div className="absolute inset-0" style={{ 
-          background: `radial-gradient(circle at ${mousePosition.x + window.innerWidth/2}px ${mousePosition.y + window.innerHeight/2}px, ${DARK}80, ${DARK}C0, ${DARK}F0)`,
+          background: `radial-gradient(circle at ${gradientCenterX}px ${gradientCenterY}px, ${DARK}80, ${DARK}C0, ${DARK}F0)`,
         }}></div>
         
         {/* Subtle grid */}
@@ -250,79 +262,7 @@ export default function ParthenonVerticauxHero() {
               Découvrez nos domaines d'expertise où excellence et innovation se rencontrent 
               pour créer des expériences exceptionnelles.
             </p>
-          </motion.div>
-          
-          {/* Business verticals showcase */}
-          <div className="relative h-48 md:h-40 mb-8">
-            {VERTICALS.map((vertical, index) => (
-              <motion.div
-                key={vertical.id}
-                className="absolute inset-0 flex flex-col items-center justify-center"
-                initial="hidden"
-                animate={index === activeVertical ? "visible" : "hidden"}
-                variants={verticalVariants}
-                style={{ 
-                  opacity: index === activeVertical ? 1 : 0,
-                  pointerEvents: index === activeVertical ? 'auto' : 'none' 
-                }}
-              >
-                <div className="flex items-center justify-center mb-4">
-                  <motion.div
-                    className="flex items-center justify-center w-16 h-16 rounded-full mb-4"
-                    style={{ backgroundColor: `${GOLD}20`, border: `1px solid ${GOLD}` }}
-                    animate={{ 
-                      scale: [1, 1.05, 1],
-                      rotate: [0, 5, 0, -5, 0]
-                    }}
-                    transition={{ duration: 5, repeat: Infinity }}
-                  >
-                    <svg 
-                      xmlns="http://www.w3.org/2000/svg" 
-                      width="28" 
-                      height="28" 
-                      viewBox="0 0 24 24" 
-                      fill="none" 
-                      stroke={GOLD}
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d={vertical.icon} />
-                    </svg>
-                  </motion.div>
-                </div>
-                
-                <h3 className="text-2xl md:text-3xl font-semibold mb-2" style={{ color: LIGHT }}>
-                  {vertical.name}
-                </h3>
-                <p className="text-base md:text-lg max-w-lg mx-auto" style={{ color: `${LIGHT}CC` }}>
-                  {vertical.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-          
-          {/* Vertical selector dots */}
-          <div className="flex justify-center space-x-3 mb-10">
-            {VERTICALS.map((vertical, index) => (
-              <motion.button
-                key={`dot-${vertical.id}`}
-                className="w-3 h-3 rounded-full focus:outline-none"
-                style={{ 
-                  backgroundColor: index === activeVertical ? GOLD : `${GOLD}50`,
-                  border: `1px solid ${index === activeVertical ? GOLD : `${GOLD}80`}`
-                }}
-                whileHover={{ scale: 1.2 }}
-                onClick={() => setActiveVertical(index)}
-                animate={{ 
-                  scale: index === activeVertical ? [1, 1.2, 1] : 1,
-                  transition: { duration: 1.5, repeat: index === activeVertical ? Infinity : 0 }
-                }}
-              />
-            ))}
-          </div>
-          
-          
+          </motion.div>        
         </motion.div>
       </div>
       
