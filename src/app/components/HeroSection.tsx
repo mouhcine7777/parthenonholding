@@ -1,0 +1,352 @@
+import { useState, useEffect, useRef } from 'react';
+import { motion, useTransform, useMotionValue, useSpring } from 'framer-motion';
+import { ArrowUpRight, Globe, Sparkles, Award, Clock } from 'lucide-react';
+
+// Define brand colors as constants
+const GOLD = "#A98142";
+const LIGHT = "#E6E6E6";
+const DARK = "#1C1C1B";
+
+export default function ParthenonHero() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLParagraphElement>(null);
+  
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const rotateX = useTransform(y, [-100, 100], [10, -10]);
+  const rotateY = useTransform(x, [-100, 100], [-10, 10]);
+  
+  const springConfig = { stiffness: 100, damping: 30 };
+  const springX = useSpring(x, springConfig);
+  const springY = useSpring(y, springConfig);
+  
+  // Handle mouse movement for the 3D effect
+  useEffect(() => {
+    const handleMouseMove = (event: MouseEvent) => {
+      if (!containerRef.current) return;
+      const rect = containerRef.current.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      
+      const mouseX = event.clientX - centerX;
+      const mouseY = event.clientY - centerY;
+      
+      setMousePosition({ x: mouseX, y: mouseY });
+      x.set(mouseX / 10);
+      y.set(mouseY / 10);
+    };
+    
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+  
+  // Company name and holding text
+  const companyName = "PARTHENON";
+  const holdingText = "HOLDING";
+  
+  // Years of experience counter
+  const [yearsCount, setYearsCount] = useState(0);
+  const targetYears = 21; // 2025 - 2004 = 21 years
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setYearsCount(prev => {
+        if (prev >= targetYears) {
+          clearInterval(interval);
+          return targetYears;
+        }
+        return prev + 1;
+      });
+    }, 100);
+    
+    return () => clearInterval(interval);
+  }, []);
+  
+  return (
+    <div 
+      ref={containerRef}
+      className="relative h-screen overflow-hidden" 
+      style={{ backgroundColor: DARK }}
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
+    >
+      {/* Background image with creative overlay effects */}
+      <div className="absolute inset-0 z-0">
+        <motion.div 
+          style={{ 
+            x: useTransform(springX, x => -x / 15),
+            y: useTransform(springY, y => -y / 15),
+          }}
+          className="w-full h-full"
+        >
+          <img 
+            src="/bg.jpg" 
+            alt="Parthenon Holding" 
+            className="w-full h-full object-cover opacity-50"
+          />
+        </motion.div>
+        
+        {/* Creative gradient overlay */}
+        <div className="absolute inset-0" style={{ 
+          background: `radial-gradient(circle at ${mousePosition.x + window.innerWidth/2}px ${mousePosition.y + window.innerHeight/2}px, ${DARK}00, ${DARK}CC, ${DARK}EE)`,
+          transition: "background 0.3s ease-out"
+        }}></div>
+        
+        {/* Dynamic grid overlay */}
+        <div className="absolute inset-0 opacity-10" style={{
+          backgroundImage: `linear-gradient(${GOLD}50 1px, transparent 1px), linear-gradient(90deg, ${GOLD}50 1px, transparent 1px)`,
+          backgroundSize: '60px 60px',
+          backgroundPosition: `${mousePosition.x / 50}px ${mousePosition.y / 50}px`
+        }}></div>
+      </div>
+      
+      {/* 3D-effect content container */}
+      <div className="container mx-auto h-full relative z-10 flex items-center">
+        <div className="w-full px-4 md:px-6">
+          {/* Asymmetrical layout with two main sections */}
+          <div className="flex flex-col lg:flex-row">
+            {/* Left side - Creative typography and 3D effect */}
+            <motion.div 
+              className="w-full lg:w-3/5 relative pt-20 lg:pt-0"
+              style={{
+                rotateX: rotateX,
+                rotateY: rotateY,
+                transformPerspective: 1000,
+              }}
+            >
+              {/* Experience indicator */}
+              <motion.div 
+                className="absolute -top-12 md:-top-24 left-0 flex items-center space-x-3"
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 1, duration: 0.8 }}
+              >
+                <Clock className="h-4 md:h-5 w-4 md:w-5" style={{ color: GOLD }} />
+                <div className="text-xl md:text-3xl font-bold flex items-baseline" style={{ color: LIGHT }}>
+                  <motion.span>{yearsCount}</motion.span>
+                  <span className="text-xs md:text-sm ml-1" style={{ color: `${LIGHT}80` }}>ans d'excellence</span>
+                </div>
+              </motion.div>
+              
+              {/* Main typographic logo treatment */}
+              <motion.div className="mb-4 md:mb-8 relative">
+                <div className="relative">
+                  {/* Company name with unified color */}
+                  <h2 className="text-5xl sm:text-7xl md:text-9xl font-bold tracking-tighter flex flex-wrap overflow-hidden">
+                    {Array.from(companyName).map((char, index) => (
+                      <motion.span
+                        key={index}
+                        className="inline-block relative overflow-hidden"
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{
+                          duration: 0.5,
+                          delay: 0.03 * index,
+                          ease: [0.22, 1, 0.36, 1]
+                        }}
+                        style={{ color: GOLD }}
+                      >
+                        {char}
+                        <motion.span
+                          className="absolute bottom-0 left-0 w-full"
+                          initial={{ height: "100%" }}
+                          animate={{ height: "0%" }}
+                          transition={{
+                            duration: 0.6,
+                            delay: 0.08 * index,
+                            ease: [0.22, 1, 0.36, 1]
+                          }}
+                          style={{ backgroundColor: DARK }}
+                        />
+                      </motion.span>
+                    ))}
+                  </h2>
+                  
+                  {/* Holding text with creative treatment */}
+                  <div className="relative ml-12 sm:ml-20 md:ml-32 -mt-2 md:-mt-4">
+                    <h3 className="text-2xl sm:text-3xl md:text-5xl font-light tracking-widest flex overflow-hidden">
+                      {Array.from(holdingText).map((char, index) => (
+                        <motion.span
+                          key={index}
+                          className="inline-block"
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{
+                            duration: 0.4,
+                            delay: 0.8 + 0.05 * index,
+                            ease: [0.22, 1, 0.36, 1]
+                          }}
+                          style={{ color: LIGHT }}
+                        >
+                          {char}
+                        </motion.span>
+                      ))}
+                    </h3>
+                    
+                    {/* Decorative line */}
+                    <motion.div 
+                      className="h-px w-full mt-2"
+                      initial={{ scaleX: 0, originX: 0 }}
+                      animate={{ scaleX: 1 }}
+                      transition={{ delay: 1.4, duration: 0.8 }}
+                      style={{ backgroundColor: GOLD }}
+                    />
+                  </div>
+                </div>
+              </motion.div>
+              
+              {/* Descriptive text with staggered reveal */}
+              <motion.p 
+                ref={textRef}
+                className="text-base md:text-lg max-w-2xl relative overflow-hidden pl-4 md:pl-8 border-l-2"
+                style={{ color: `${LIGHT}CC`, borderColor: `${GOLD}70` }}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.6, duration: 0.7 }}
+              >
+                Un guichet unique d'expertise avec 8 filiales spécialisées en événementiel, audiovisuel et loisirs, 
+                guidées par l'excellence et l'innovation durable.
+              </motion.p>
+              
+              {/* Interactive pillar buttons with dynamic effects */}
+              <motion.div 
+                className="mt-6 md:mt-12 flex flex-wrap gap-2 md:gap-4"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.8, duration: 0.7 }}
+              >
+                {[
+                  { name: "Live", icon: <Sparkles className="h-4 md:h-5 w-4 md:w-5" /> },
+                  { name: "Services", icon: <Award className="h-4 md:h-5 w-4 md:w-5" /> },
+                  { name: "Loisirs", icon: <Globe className="h-4 md:h-5 w-4 md:w-5" /> }
+                ].map((pillar) => (
+                  <motion.button
+                    key={pillar.name}
+                    className="group relative px-4 md:px-8 py-2 md:py-3 overflow-hidden"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    {/* Background layers */}
+                    <motion.div 
+                      className="absolute inset-0 z-0"
+                      initial={{ backgroundColor: `${DARK}80` }}
+                      whileHover={{ backgroundColor: GOLD }}
+                      transition={{ duration: 0.3 }}
+                      style={{ borderRadius: '4px' }}
+                    />
+                    
+                    {/* Border effect */}
+                    <motion.div 
+                      className="absolute inset-0 z-0 rounded-md"
+                      initial={{ 
+                        border: `1px solid ${GOLD}50`,
+                      }}
+                      whileHover={{ 
+                        border: `1px solid ${GOLD}`,
+                      }}
+                    />
+                    
+                    {/* Shine effect */}
+                    <motion.div
+                      className="absolute inset-0 z-0 opacity-0 group-hover:opacity-50"
+                      style={{
+                        background: `linear-gradient(45deg, transparent 25%, ${LIGHT}30 50%, transparent 75%)`,
+                        backgroundSize: '250% 250%',
+                        backgroundPosition: '0% 0%',
+                      }}
+                      whileHover={{
+                        backgroundPosition: ['0% 0%', '100% 100%'],
+                        transition: { duration: 1.5, repeat: Infinity }
+                      }}
+                    />
+                    
+                    {/* Content */}
+                    <div className="flex items-center space-x-2 md:space-x-3 relative z-10">
+                      <div style={{ color: 'currentColor' }}>{pillar.icon}</div>
+                      <span 
+                        className="font-medium text-sm md:text-lg tracking-wide"
+                        style={{ color: LIGHT }}
+                      >
+                        {pillar.name}
+                      </span>
+                    </div>
+                  </motion.button>
+                ))}
+              </motion.div>
+            </motion.div>
+            
+            {/* Right side - creative visual elements */}
+            <div className="w-full lg:w-2/5 relative h-40 md:h-60 lg:h-full mt-8 lg:mt-0">
+              {/* Floating golden circles with parallax effect */}
+              <div className="absolute inset-0">
+                {[...Array(5)].map((_, i) => (
+                  <motion.div
+                    key={i}
+                    className="absolute rounded-full"
+                    style={{
+                      width: `${10 + i * 10}px`,
+                      height: `${10 + i * 10}px`,
+                      backgroundColor: `${GOLD}${30 - i * 5}`,
+                      left: `${10 + i * 15}%`,
+                      top: `${20 + i * 12}%`,
+                      x: useTransform(springX, x => x / (i + 2) * -1),
+                      y: useTransform(springY, y => y / (i + 2) * -1),
+                    }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 2 + i * 0.1, duration: 0.8 }}
+                  />
+                ))}
+              </div>
+              
+              {/* Large diagonal line */}
+              <motion.div
+                className="absolute top-1/4 left-0 right-0 h-px transform rotate-45 origin-left"
+                style={{ backgroundColor: GOLD }}
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ delay: 2.2, duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
+              />
+              
+              {/* Year indicator with creative styling */}
+              <motion.div
+                className="absolute top-0 md:top-12 lg:top-36 right-4 md:right-12 flex flex-col items-end"
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 2, duration: 0.8 }}
+              >
+                <div className="text-xs md:text-sm" style={{ color: `${LIGHT}80` }}>Depuis</div>
+                <div className="text-2xl md:text-4xl font-bold" style={{ color: GOLD }}>2002</div>
+                <motion.div 
+                  className="h-px w-8 md:w-16 mt-1"
+                  initial={{ scaleX: 0, originX: 1 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ delay: 2.2, duration: 0.5 }}
+                  style={{ backgroundColor: GOLD }}
+                />
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      {/* Interactive mouse-following accent */}
+      {isHovering && (
+        <motion.div
+          className="hidden lg:block fixed w-12 h-12 rounded-full pointer-events-none mix-blend-difference"
+          style={{
+            x: mousePosition.x + window.innerWidth/2 - 24,
+            y: mousePosition.y + window.innerHeight/2 - 24,
+            backgroundColor: LIGHT,
+            opacity: 0.15,
+          }}
+          initial={{ scale: 0 }}
+          animate={{ scale: [0, 1.2, 1] }}
+          transition={{ duration: 0.4 }}
+        />
+      )}
+    </div>
+  );
+}
