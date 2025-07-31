@@ -49,20 +49,19 @@ export default function ParthenonFooter() {
     };
   }, []);
 
-  // Footer column animation variants
-  const columnVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: (i) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: 0.1 * i,
-        duration: 0.6,
-        ease: [0.22, 1, 0.36, 1]
-      }
-    })
-  };
-  
+// Footer column animation variants
+const columnVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i: number) => ({  // Explicitly type the 'i' parameter as number
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.1 * i,
+      duration: 0.6,
+      ease: [0.22, 1, 0.36, 1]
+    }
+  })
+};
   // Contact info links with their icons
   const contactInfo = [
     { 
