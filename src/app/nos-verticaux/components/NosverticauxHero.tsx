@@ -32,6 +32,7 @@ const VERTICALS = [
 export default function ParthenonVerticauxHero() {
   const [mousePosition, setMousePosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
   const [activeVertical, setActiveVertical] = useState<number>(0);
+  const [isBrowser, setIsBrowser] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   
   const x = useMotionValue(0);
@@ -42,6 +43,11 @@ export default function ParthenonVerticauxHero() {
   const springConfig = { stiffness: 100, damping: 30 };
   const springX = useSpring(x, springConfig);
   const springY = useSpring(y, springConfig);
+
+  // Check if we're in the browser
+  useEffect(() => {
+    setIsBrowser(true);
+  }, []);
 
   // Animation variants for staggered text reveals
   const titleVariants = {
@@ -63,6 +69,10 @@ export default function ParthenonVerticauxHero() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
     exit: { opacity: 0, y: -20, transition: { duration: 0.3 } }
   };
+
+  // Calculate gradient center with fallback values
+  const gradientCenterX = isBrowser ? mousePosition.x + (window.innerWidth / 2) : 800;
+  const gradientCenterY = isBrowser ? mousePosition.y + (window.innerHeight / 2) : 400;
   
   return (
     <div 
@@ -146,7 +156,7 @@ export default function ParthenonVerticauxHero() {
         
         {/* Gradient overlay */}
         <div className="absolute inset-0" style={{ 
-          background: `radial-gradient(circle at ${mousePosition.x + window.innerWidth/2}px ${mousePosition.y + window.innerHeight/2}px, ${DARK}80, ${DARK}C0, ${DARK}F0)`,
+          background: `radial-gradient(circle at ${gradientCenterX}px ${gradientCenterY}px, ${DARK}80, ${DARK}C0, ${DARK}F0)`,
         }}></div>
         
         {/* Subtle grid */}

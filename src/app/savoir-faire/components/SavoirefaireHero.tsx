@@ -43,41 +43,10 @@ export default function ParthenonVerticauxHero() {
   const springConfig = { stiffness: 100, damping: 30 };
   const springX = useSpring(x, springConfig);
   const springY = useSpring(y, springConfig);
-  
+
   // Check if we're in the browser
   useEffect(() => {
     setIsBrowser(true);
-  }, []);
-  
-  // Handle mouse movement for the 3D effect
-  useEffect(() => {
-    if (!isBrowser) return;
-    
-    const handleMouseMove = (event: MouseEvent) => {
-      if (!containerRef.current) return;
-      const rect = containerRef.current.getBoundingClientRect();
-      const centerX = rect.left + rect.width / 2;
-      const centerY = rect.top + rect.height / 2;
-      
-      const mouseX = event.clientX - centerX;
-      const mouseY = event.clientY - centerY;
-      
-      setMousePosition({ x: mouseX, y: mouseY });
-      x.set(mouseX / 10);
-      y.set(mouseY / 10);
-    };
-    
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, [isBrowser, x, y]);
-
-  // Auto-rotate through verticals
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveVertical((prev) => (prev + 1) % VERTICALS.length);
-    }, 5000);
-    
-    return () => clearInterval(interval);
   }, []);
 
   // Animation variants for staggered text reveals
@@ -262,10 +231,9 @@ export default function ParthenonVerticauxHero() {
               Découvrez nos domaines d'expertise où excellence et innovation se rencontrent 
               pour créer des expériences exceptionnelles.
             </p>
-          </motion.div>        
+          </motion.div>    
         </motion.div>
       </div>
-      
       {/* Scroll indicator */}
       <motion.div 
         className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
