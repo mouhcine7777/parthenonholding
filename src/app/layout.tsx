@@ -19,8 +19,8 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Tangerino Rabat",
-  description: "Authentic Flavors, Fresh Ingredients, Unforgettable Dining Experience",
+  title: "Parthenon holding",
+  description: "Experience",
 };
 
 export default function RootLayout({
