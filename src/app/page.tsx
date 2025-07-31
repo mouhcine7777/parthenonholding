@@ -9,7 +9,8 @@ import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 import AIassistant from "./components/AIassistant";
 
-
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 
 
