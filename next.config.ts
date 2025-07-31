@@ -1,17 +1,15 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+import type { NextConfig } from "next";
 
-  // Force dynamic rendering for all pages
-  experimental: {
-    missingSuspenseWithCSRBailout: false,
+const nextConfig: NextConfig = {
+  eslint: {
+    ignoreDuringBuilds: true, // Disables ESLint during builds
   },
+  output: "export", 
+  images: {
+    unoptimized: true, 
+  },
+  trailingSlash: true,
+  reactStrictMode: true,
 };
 
-module.exports = nextConfig;
+export default nextConfig;
