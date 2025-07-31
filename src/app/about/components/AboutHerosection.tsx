@@ -9,6 +9,8 @@ const DARK = "#1C1C1B";
 
 export default function ParthenonAboutHero() {
   const [mousePosition, setMousePosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+  const [windowSize, setWindowSize] = useState<{ width: number; height: number }>({ width: 0, height: 0 });
+  const [isMounted, setIsMounted] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   
   const x = useMotionValue(0);
@@ -20,8 +22,28 @@ export default function ParthenonAboutHero() {
   const springX = useSpring(x, springConfig);
   const springY = useSpring(y, springConfig);
   
+  // Handle component mounting and window size
+  useEffect(() => {
+    setIsMounted(true);
+    
+    const handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight
+      });
+    };
+    
+    // Set initial size
+    handleResize();
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  
   // Handle mouse movement for the 3D effect
   useEffect(() => {
+    if (!isMounted) return;
+    
     const handleMouseMove = (event: MouseEvent) => {
       if (!containerRef.current) return;
       const rect = containerRef.current.getBoundingClientRect();
@@ -38,7 +60,7 @@ export default function ParthenonAboutHero() {
     
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+  }, [isMounted, x, y]);
 
   // Animation variants for staggered text reveals
   const titleVariants = {
@@ -53,6 +75,41 @@ export default function ParthenonAboutHero() {
       }
     })
   };
+  
+  // Don't render interactive elements until mounted
+  if (!isMounted) {
+    return (
+      <div 
+        className="relative overflow-hidden" 
+        style={{ backgroundColor: DARK, height: "70vh" }}
+      >
+        <div className="container mx-auto relative z-10 h-full flex items-center justify-center px-4 md:px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="flex items-center justify-center mb-6">
+              <div 
+                className="h-px w-12 md:w-24 mr-4"
+                style={{ backgroundColor: GOLD }}
+              />
+              <span className="uppercase tracking-widest text-sm md:text-base" style={{ color: GOLD }}>
+                Parthenon Holding
+              </span>
+              <div 
+                className="h-px w-12 md:w-24 ml-4"
+                style={{ backgroundColor: GOLD }}
+              />
+            </div>
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight" style={{ color: LIGHT }}>
+              À Propos
+            </h1>
+            <p className="text-lg md:text-xl max-w-2xl mx-auto mb-4" style={{ color: `${LIGHT}CC` }}>
+              Depuis 2002, Parthenon Holding façonne l'excellence dans les secteurs de l'événementiel, 
+              de l'audiovisuel et des loisirs avec passion et innovation.
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  }
   
   return (
     <div 
@@ -110,9 +167,9 @@ export default function ParthenonAboutHero() {
           ))}
         </motion.div>
         
-        {/* Gradient overlay */}
+        {/* Gradient overlay - Fixed to use windowSize state */}
         <div className="absolute inset-0" style={{ 
-          background: `radial-gradient(circle at ${mousePosition.x + window.innerWidth/2}px ${mousePosition.y + window.innerHeight/2}px, ${DARK}90, ${DARK}D0, ${DARK}F8)`,
+          background: `radial-gradient(circle at ${mousePosition.x + windowSize.width/2}px ${mousePosition.y + windowSize.height/2}px, ${DARK}90, ${DARK}D0, ${DARK}F8)`,
         }}></div>
         
         {/* Subtle grid */}
@@ -176,7 +233,7 @@ export default function ParthenonAboutHero() {
             ))}
           </h1>
           
-          {/* Descriptive text with creative reveal - FIXED HEIGHT ISSUE */}
+          {/* Descriptive text with creative reveal */}
           <motion.div 
             className="mb-4"
             initial={{ y: 50, opacity: 0 }}

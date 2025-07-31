@@ -1,34 +1,15 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
   eslint: {
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: true, // Disables ESLint during builds
   },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  reactStrictMode: true,
-  swcMinify: true,
-  compiler: {
-    styledComponents: true,
-  },
-  experimental: {
-    missingSuspenseWithCSRBailout: false,
-  },
-  output: "export",
+  output: "export", 
   images: {
-    unoptimized: true,
+    unoptimized: true, 
   },
-  webpack: (config: any, { isServer }: { isServer: boolean }) => {
-    if (!isServer) {
-      config.resolve.fallback = {
-        ...config.resolve.fallback,
-        fs: false,
-        net: false,
-        tls: false,
-      };
-    }
-    return config;
-  },
+  trailingSlash: true,
+  reactStrictMode: true,
 };
 
 export default nextConfig;
