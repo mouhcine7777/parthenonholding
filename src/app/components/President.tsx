@@ -1,6 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
-import { ArrowRight, Globe, Target, Layers } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 // Define brand colors as constants
 const GOLD = "#A98142";
@@ -28,25 +29,6 @@ export default function AboutParthenon() {
       transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] }
     }
   };
-
-  // Core values and expertise areas
-  const coreValues = [
-    {
-      icon: <Globe color={GOLD} size={36} />,
-      title: "Global Vision",
-      description: "Embracing international standards and forward-thinking strategies that transcend traditional boundaries."
-    },
-    {
-      icon: <Target color={GOLD} size={36} />,
-      title: "Precision & Innovation",
-      description: "Delivering cutting-edge solutions through meticulous planning and creative problem-solving approaches."
-    },
-    {
-      icon: <Layers color={GOLD} size={36} />,
-      title: "Integrated Expertise",
-      description: "Leveraging multi-disciplinary capabilities across Live, Services, and Leisure sectors."
-    }
-  ];
 
   return (
     <section className="py-16 md:py-24" style={{ backgroundColor: LIGHT }}>
@@ -143,40 +125,8 @@ export default function AboutParthenon() {
               style={{ color: `${DARK}E6` }}
             >
               <p>
-                Fondé en 2002, Parthenon Holding est un groupe dynamique et innovant qui se positionne à la convergence de l'événementiel, de la production média, de l'aménagement et du divertissement. Notre parcours est marqué par une ambition constante : transformer les défis en opportunités et créer de la valeur à travers des solutions créatives et intégrées.
+                Depuis 2002, Parthenon Holding transforme vos idées en expériences uniques à travers l'événementiel, l'audiovisuel, la scénographie, le marketing et le divertissement.
               </p>
-              
-              <p>
-                Notre philosophie repose sur trois piliers essentiels : <span style={{ color: GOLD }}>audace, expertise collaborative et engagement permanent vers l'excellence</span>. Nous ne nous contentons pas de suivre les tendances, nous les définissons.
-              </p>
-            </motion.div>
-            
-            {/* Core Values Grid */}
-            <motion.div 
-              className="grid md:grid-cols-3 gap-4 pt-4"
-              variants={itemVariants}
-            >
-              {coreValues.map((value, index) => (
-                <div 
-                  key={index} 
-                  className="p-4 rounded-lg border border-opacity-10"
-                  style={{ borderColor: GOLD, backgroundColor: `${GOLD}10` }}
-                >
-                  <div className="mb-3">{value.icon}</div>
-                  <h3 
-                    className="text-lg font-semibold mb-2"
-                    style={{ color: DARK }}
-                  >
-                    {value.title}
-                  </h3>
-                  <p 
-                    className="text-sm"
-                    style={{ color: `${DARK}99` }}
-                  >
-                    {value.description}
-                  </p>
-                </div>
-              ))}
             </motion.div>
             
             {/* CTA Section */}
@@ -184,17 +134,25 @@ export default function AboutParthenon() {
               variants={itemVariants}
               className="pt-6"
             >
-              <a 
-                href="#contact" 
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg"
+              <Link 
+                href="/about" 
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full transition-all duration-300"
                 style={{ 
                   backgroundColor: GOLD, 
                   color: LIGHT,
                   boxShadow: `0 4px 6px ${GOLD}40`
                 }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                  e.currentTarget.style.boxShadow = `0 8px 12px ${GOLD}60`;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = `0 4px 6px ${GOLD}40`;
+                }}
               >
                 Découvrir Plus <ArrowRight size={20} />
-              </a>
+              </Link>
             </motion.div>
           </motion.div>
         </motion.div>

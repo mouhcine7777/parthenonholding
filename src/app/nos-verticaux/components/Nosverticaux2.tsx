@@ -186,14 +186,6 @@ export default function NosVerticauxServices() {
           />
         </div>
         
-        {/* Mission Statement */}
-        <p 
-          className="text-lg md:text-xl text-center max-w-4xl mx-auto mb-12"
-          style={{ color: LIGHT_TEXT }}
-        >
-          Tout au long de l'année, Parthenon Holding, à travers sa filiale Public Events, met son expertise de concepteur et d'aménageur d'espace à disposition de clients nationaux et internationaux lors de la tenue d'événements professionnels, culturels et sportifs.
-        </p>
-        
         {/* Public Events Description */}
         <div
           className="relative mb-16 p-8 rounded-lg"
@@ -201,11 +193,11 @@ export default function NosVerticauxServices() {
         >
           {/* Decorative element */}
           <div className="absolute -top-3 left-10 px-4 py-1 rounded" style={{ backgroundColor: LIGHT_BG }}>
-            <span className="text-sm uppercase tracking-wider font-medium" style={{ color: GOLD }}>Parthenon Services</span>
+            <span className="text-sm uppercase tracking-wider font-medium" style={{ color: GOLD }}>Services / Scénographie & Aménagement</span>
           </div>
           
           <p className="text-base md:text-lg mb-0" style={{ color: LIGHT_TEXT }}>
-            Public Events met à profit son expertise dans la conceptualisation et l'aménagement d'espaces pour offrir des solutions clé en main à ses clients. De la conception initiale à la réalisation finale, notre équipe pluridisciplinaire s'engage à créer des environnements qui captivent, inspirent et laissent une impression durable. Avec une attention méticuleuse aux détails et une compréhension approfondie des besoins de nos clients, nous transformons des concepts en expériences immersives qui répondent aux objectifs stratégiques tout en dépassant les attentes.
+          À travers la réalisation de grands projets — pavillons internationaux, musées, zoos ou espaces réhabilités  —, nous démontrons notre créativité et notre capacité à concrétiser des œuvres d’envergure avec précision.
           </p>
         </div>
         

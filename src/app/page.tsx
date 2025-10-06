@@ -17,7 +17,6 @@ export default function Home() {
       <HeroSection />
       <President />
       <Chiffres />
-      <Verticaux />
       <Filiales />
       <ContactSection />
       <Footer />

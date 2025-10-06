@@ -112,7 +112,7 @@ export default function NosVerticaux() {
               Expertise
             </span>
             <h2 className="text-4xl md:text-5xl font-bold mt-2" style={{ color: DARK }}>
-              Nos Verticaux
+              Verticaux
             </h2>
             <motion.div 
               className="h-1 mt-4 mx-auto"
@@ -132,7 +132,7 @@ export default function NosVerticaux() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Découvrez nos trois pôles d'expertise qui définissent l'ADN de Parthenon Holding et garantissent une approche globale et intégrée pour tous vos projets.
+Parthenon Holding se distingue par la production de programmes TV innovants, la conception d’événements d’envergure et de scénographies mémorables, ainsi que par la création de parcs de loisirs immersifs et inspirants.
           </motion.p>
         </motion.div>
         

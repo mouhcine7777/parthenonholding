@@ -1,17 +1,16 @@
 "use client";
 import StickyMenu from "../components/StickyMenu";
-import AboutHerosection from "./components/AboutHerosection";
-import AboutSection from "./components/AboutSection";
+import ExpertisesHero from "./components/ExpertisesHero";
+import ExpertisesSection from "./components/ExpertisesSection";
 import Footer from "../components/Footer";
-
 
 
 export default function Home() {
   return (
     <main>
       <StickyMenu />
-      <AboutHerosection />
-      <AboutSection />
+      <ExpertisesHero />
+      <ExpertisesSection />
       <Footer />
     </main>
   );

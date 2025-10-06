@@ -67,7 +67,7 @@ const columnVariants = {
   const contactInfo = [
     { 
       icon: <MapPin size={18} />, 
-      text: "Porte 3, 106 Rue Abderrahman Sahraoui, Casablanca 20100",
+      text: "Porte 4, 106 Rue Abderrahman Sahraoui, Casablanca 20100",
       href: "https://maps.google.com/?q=22+Rue+de+Paradis+75010+Paris+France"
     },
     { 
@@ -84,9 +84,7 @@ const columnVariants = {
   
   // Social media links
   const socialLinks = [
-    { icon: <Instagram size={20} />, href: "#", label: "Instagram" },
-    { icon: <Facebook size={20} />, href: "#", label: "Facebook" },
-    { icon: <Linkedin size={20} />, href: "#", label: "LinkedIn" }
+    { icon: <Linkedin size={20} />, href: "https://ma.linkedin.com/company/parthenonholding", label: "LinkedIn" }
   ];
   
   // Updated footer menu columns to match header navigation

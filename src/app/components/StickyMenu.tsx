@@ -49,9 +49,11 @@ export default function ParthenonMenu() {
   // Menu items
   const menuItems = [
     { name: 'Accueil', href: '/' },
-    { name: 'A propos', href: '/about' },
-    { name: 'Nos verticaux', href: '/nos-verticaux' },
-    { name: 'Notre Savoir Faire', href: '/savoir-faire' },
+    { name: 'À propos', href: '/about' },
+    { name: 'Expertises', href: '/expertises' },
+    { name: 'Verticaux', href: '/nos-verticaux' },
+    { name: 'Nos filiales', href: '/nos-filiales' },
+    { name: 'RSE & Durabilité', href: '/rse' },
     { name: 'Contact', href: '/contact' }
   ];
 
@@ -158,14 +160,14 @@ export default function ParthenonMenu() {
               whileTap={{ scale: 0.95 }}
             >
               <Link
-                href="/contact"
+                href="tel:+212522459150"
                 className="hidden lg:flex items-center px-5 py-2 rounded-full text-sm font-medium"
                 style={{ 
                   backgroundColor: GOLD,
                   color: 'white'
                 }}
               >
-                Nous contacter
+                Appelez-nous
               </Link>
             </motion.div>
             
@@ -254,7 +256,7 @@ export default function ParthenonMenu() {
                   whileTap={{ scale: 0.98 }}
                 >
                   <Link
-                    href="/contact"
+                    href="tel:+212522459150"
                     className="mt-8 block w-full text-center px-5 py-3 rounded-full text-base font-medium"
                     onClick={() => setIsMobileMenuOpen(false)}
                     style={{ 
@@ -262,7 +264,7 @@ export default function ParthenonMenu() {
                       color: 'white'
                     }}
                   >
-                    Nous contacter
+                    Appelez-nous
                   </Link>
                 </motion.div>
               </div>

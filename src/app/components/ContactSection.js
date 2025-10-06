@@ -9,11 +9,10 @@ import {
   Send, 
   ArrowRight, 
   MessageSquare, 
-  Share2,
-  Instagram,
-  Linkedin,
-  Twitter,
-  Globe
+  User,
+  Building,
+  FileText,
+  CheckCircle
 } from 'lucide-react';
 
 // Define brand colors as constants
@@ -24,13 +23,60 @@ const DARK = "#1C1C1B";
 export default function ContactSection() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
+  
+  // Form state
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    phone: '',
+    subject: '',
+    message: ''
+  });
+  
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  // Handle form input changes
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate form submission
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    
+    setIsSubmitting(false);
+    setIsSubmitted(true);
+    
+    // Reset form after 3 seconds
+    setTimeout(() => {
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        phone: '',
+        subject: '',
+        message: ''
+      });
+      setIsSubmitted(false);
+    }, 3000);
+  };
 
   // Contact information items
   const contactInfo = [
     {
       icon: <Phone size={24} />,
       title: "Téléphone",
-      content: "+212 522 123 456",
+      content: "+2125224-59150",
       action: "Appelez-nous"
     },
     {
@@ -42,7 +88,7 @@ export default function ContactSection() {
     {
       icon: <MapPin size={24} />,
       title: "Adresse",
-      content: "Porte 3, 106 Rue Abderrahman Sahraoui, Casablanca",
+      content: "Porte 4, 106 Rue Abderrahman Sahraoui, Casablanca",
       action: "Directions"
     },
     {
@@ -51,14 +97,6 @@ export default function ContactSection() {
       content: "Lun-Ven: 9h-18h",
       action: "Plus d'info"
     }
-  ];
-
-  // Social media links
-  const socialLinks = [
-    { icon: <Instagram size={20} />, label: "Instagram" },
-    { icon: <Twitter size={20} />, label: "Twitter" },
-    { icon: <Linkedin size={20} />, label: "LinkedIn" },
-    { icon: <Globe size={20} />, label: "Site web" },
   ];
 
   return (
@@ -250,7 +288,7 @@ export default function ContactSection() {
             </div>
           </motion.div>
           
-          {/* Creative contact info panel */}
+          {/* Contact Form */}
           <motion.div 
             className="lg:col-span-5"
             initial={{ opacity: 0, x: 40 }}
@@ -274,77 +312,215 @@ export default function ContactSection() {
                 }}
               />
               
-              {/* Content */}
+              {/* Form Content */}
               <div className="p-8 md:p-10 relative z-10">
                 <div className="flex items-center gap-3 mb-6">
                   <div 
                     className="w-10 h-10 rounded-full flex items-center justify-center"
                     style={{ backgroundColor: GOLD }}
                   >
-                    <Share2 size={20} color={DARK} />
+                    <FileText size={20} color={DARK} />
                   </div>
                   <h3 className="text-2xl font-bold" style={{ color: LIGHT }}>
-                    Restons connectés
+                    Formulaire de contact
                   </h3>
                 </div>
                 
-                <p className="mb-8 text-lg" style={{ color: `${LIGHT}CC` }}>
-                  Notre équipe d'experts se tient à votre disposition pour vous accompagner dans vos projets et répondre à toutes vos questions.
-                </p>
+                {/* Success Message */}
+                {isSubmitted && (
+                  <motion.div 
+                    className="mb-6 p-4 rounded-lg flex items-center gap-3"
+                    style={{ 
+                      backgroundColor: `${GOLD}20`,
+                      border: `1px solid ${GOLD}60`
+                    }}
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                  >
+                    <CheckCircle size={20} style={{ color: GOLD }} />
+                    <span style={{ color: LIGHT }}>Message envoyé avec succès!</span>
+                  </motion.div>
+                )}
                 
-                {/* Direct contact button */}
-                <a 
-                  href="mailto:contact@parthenon.ma" 
-                  className="inline-flex items-center gap-3 py-4 px-6 rounded-lg mb-8 transition-all duration-300 hover:transform hover:translate-y-[-4px]"
-                  style={{ 
-                    background: `linear-gradient(135deg, ${GOLD}, ${GOLD}90)`,
-                    boxShadow: `0 8px 16px -4px ${GOLD}40`
-                  }}
-                >
-                  <Send size={20} color={DARK} />
-                  <span className="font-medium" style={{ color: DARK }}>
-                    Contactez-nous directement
-                  </span>
-                </a>
-                
-                {/* Social media links */}
-                <div className="mt-8">
-                  <p className="text-sm uppercase tracking-wider mb-4 font-medium" style={{ color: GOLD }}>
-                    Suivez-nous
-                  </p>
-                  <div className="flex flex-wrap gap-4">
-                    {socialLinks.map((social, index) => (
-                      <a 
-                        key={`social-${index}`}
-                        href="#" 
-                        className="flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 hover:transform hover:scale-110"
+                {/* Contact Form */}
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {/* Name Field */}
+                    <div>
+                      <label className="block text-sm font-medium mb-2" style={{ color: GOLD }}>
+                        Nom complet
+                      </label>
+                      <input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full px-4 py-3 rounded-lg transition-all duration-300 focus:outline-none"
                         style={{ 
-                          backgroundColor: `${LIGHT}15`,
-                          border: `1px solid ${GOLD}40`,
+                          backgroundColor: `${LIGHT}10`,
+                          border: `1px solid ${GOLD}30`,
                           color: LIGHT
                         }}
-                      >
-                        {social.icon}
-                      </a>
-                    ))}
+                        placeholder="Jean Dupont"
+                      />
+                    </div>
+                    
+                    {/* Email Field */}
+                    <div>
+                      <label className="block text-sm font-medium mb-2" style={{ color: GOLD }}>
+                        Email
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full px-4 py-3 rounded-lg transition-all duration-300 focus:outline-none"
+                        style={{ 
+                          backgroundColor: `${LIGHT}10`,
+                          border: `1px solid ${GOLD}30`,
+                          color: LIGHT
+                        }}
+                        placeholder="jean@exemple.com"
+                      />
+                    </div>
                   </div>
-                </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {/* Company Field */}
+                    <div>
+                      <label className="block text-sm font-medium mb-2" style={{ color: GOLD }}>
+                        Entreprise
+                      </label>
+                      <input
+                        type="text"
+                        name="company"
+                        value={formData.company}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-3 rounded-lg transition-all duration-300 focus:outline-none"
+                        style={{ 
+                          backgroundColor: `${LIGHT}10`,
+                          border: `1px solid ${GOLD}30`,
+                          color: LIGHT
+                        }}
+                        placeholder="Nom de l'entreprise"
+                      />
+                    </div>
+                    
+                    {/* Phone Field */}
+                    <div>
+                      <label className="block text-sm font-medium mb-2" style={{ color: GOLD }}>
+                        Téléphone
+                      </label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-3 rounded-lg transition-all duration-300 focus:outline-none"
+                        style={{ 
+                          backgroundColor: `${LIGHT}10`,
+                          border: `1px solid ${GOLD}30`,
+                          color: LIGHT
+                        }}
+                        placeholder="+212 6XX XXX XXX"
+                      />
+                    </div>
+                  </div>
+                  
+                  {/* Subject Field */}
+                  <div>
+                    <label className="block text-sm font-medium mb-2" style={{ color: GOLD }}>
+                      Sujet
+                    </label>
+                    <input
+                      type="text"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-4 py-3 rounded-lg transition-all duration-300 focus:outline-none"
+                      style={{ 
+                        backgroundColor: `${LIGHT}10`,
+                        border: `1px solid ${GOLD}30`,
+                        color: LIGHT
+                      }}
+                      placeholder="Objet de votre demande"
+                    />
+                  </div>
+                  
+                  {/* Message Field */}
+                  <div>
+                    <label className="block text-sm font-medium mb-2" style={{ color: GOLD }}>
+                      Message
+                    </label>
+                    <textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      required
+                      rows={4}
+                      className="w-full px-4 py-3 rounded-lg transition-all duration-300 focus:outline-none resize-none"
+                      style={{ 
+                        backgroundColor: `${LIGHT}10`,
+                        border: `1px solid ${GOLD}30`,
+                        color: LIGHT
+                      }}
+                      placeholder="Décrivez votre projet ou votre demande..."
+                    />
+                  </div>
+                  
+                  {/* Submit Button */}
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full py-4 px-6 rounded-lg font-medium transition-all duration-300 hover:transform hover:translate-y-[-2px] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+                    style={{ 
+                      background: isSubmitting ? `${GOLD}60` : `linear-gradient(135deg, ${GOLD}, ${GOLD}90)`,
+                      boxShadow: `0 8px 16px -4px ${GOLD}40`,
+                      color: DARK
+                    }}
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <div className="w-5 h-5 border-2 border-t-transparent rounded-full animate-spin" 
+                          style={{ borderColor: DARK }} 
+                        />
+                        <span>Envoi en cours...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Send size={20} />
+                        <span>Envoyer le message</span>
+                      </>
+                    )}
+                  </button>
+                </form>
                 
-                {/* Direct contact info */}
-                <div 
-                  className="mt-8 p-4 rounded-lg"
-                  style={{ 
-                    backgroundColor: `${LIGHT}10`,
-                    border: `1px solid ${GOLD}30`
-                  }}
-                >
-                  <div className="flex items-center gap-3 mb-2">
-                    <Phone size={18} style={{ color: GOLD }} />
-                    <span style={{ color: LIGHT }}>+212 522 123 456</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Mail size={18} style={{ color: GOLD }} />
-                    <span style={{ color: LIGHT }}>contact@parthenon.ma</span>
+                {/* Quick contact info at bottom */}
+                <div className="mt-6 pt-6" style={{ borderTop: `1px solid ${GOLD}20` }}>
+                  <p className="text-sm mb-3" style={{ color: `${LIGHT}80` }}>
+                    Besoin d'une réponse rapide?
+                  </p>
+                  <div className="flex flex-col gap-2">
+                    <a 
+                      href="tel:+212522459150" 
+                      className="flex items-center gap-2 text-sm hover:opacity-80 transition-opacity"
+                      style={{ color: GOLD }}
+                    >
+                      <Phone size={16} />
+                      <span>+2125224-59150</span>
+                    </a>
+                    <a 
+                      href="mailto:contact@parthenon.ma" 
+                      className="flex items-center gap-2 text-sm hover:opacity-80 transition-opacity"
+                      style={{ color: GOLD }}
+                    >
+                      <Mail size={16} />
+                      <span>contact@parthenon.ma</span>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -359,65 +535,6 @@ export default function ContactSection() {
             </div>
           </motion.div>
         </div>
-        
-        {/* Bottom CTA section */}
-        <motion.div 
-          className="text-center relative py-10 px-8 rounded-xl mt-12 overflow-hidden"
-          style={{ 
-            background: `linear-gradient(135deg, ${DARK}95, ${DARK})`,
-            border: `1px solid ${GOLD}30`,
-            boxShadow: `0 20px 40px -15px ${DARK}30`
-          }}
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8, delay: 0.9 }}
-        >
-          {/* Background decoration */}
-          <div 
-            className="absolute top-0 left-0 w-full h-1"
-            style={{ background: `linear-gradient(90deg, transparent, ${GOLD}, transparent)` }}
-          />
-          <div 
-            className="absolute inset-0 opacity-15"
-            style={{
-              backgroundImage: `radial-gradient(${GOLD} 1px, transparent 1px)`,
-              backgroundSize: '30px 30px'
-            }}
-          />
-          
-          {/* Content */}
-          <h3 className="text-2xl md:text-3xl font-bold mb-4 relative z-10" style={{ color: LIGHT }}>
-            Prêt à transformer votre vision en réalité?
-          </h3>
-          <p className="max-w-2xl mx-auto mb-8 text-lg relative z-10" style={{ color: `${LIGHT}CC` }}>
-            Contactez-nous dès aujourd'hui pour un accompagnement sur mesure et découvrez comment Parthenon Holding peut vous aider à atteindre vos objectifs.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 relative z-10">
-            <a 
-              href="tel:+212522123456" 
-              className="py-3 px-6 rounded-lg flex items-center gap-2 transition-all duration-300 hover:transform hover:translate-y-[-4px]"
-              style={{ 
-                backgroundColor: GOLD,
-                color: DARK
-              }}
-            >
-              <Phone size={18} />
-              <span className="font-medium">Appelez-nous</span>
-            </a>
-            <a 
-              href="mailto:contact@parthenon.ma" 
-              className="py-3 px-6 rounded-lg flex items-center gap-2 transition-all duration-300 hover:transform hover:translate-y-[-4px]"
-              style={{ 
-                backgroundColor: `${LIGHT}10`,
-                border: `1px solid ${GOLD}40`,
-                color: LIGHT
-              }}
-            >
-              <Mail size={18} />
-              <span className="font-medium">Envoyez un email</span>
-            </a>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

@@ -1,54 +1,53 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
 import { motion, useTransform, useMotionValue, useSpring } from 'framer-motion';
-import { ChevronDown, ArrowRight } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
 // Define brand colors as constants (matching the main hero)
 const GOLD = "#A98142";
 const LIGHT = "#E6E6E6";
 const DARK = "#1C1C1B";
 
-// Define business verticals
-const VERTICALS = [
-  {
-    id: 1,
-    name: "Événementiel",
-    description: "Organisation d'événements d'exception, conférences et salons professionnels",
-    icon: "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" // Path data for event icon
-  },
-  {
-    id: 2,
-    name: "Audiovisuel",
-    description: "Production audiovisuelle, studios et équipements professionnels",
-    icon: "M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" // Path data for media icon
-  },
-  {
-    id: 3,
-    name: "Loisirs",
-    description: "Espaces de divertissement, activités culturelles et récréatives",
-    icon: "M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" // Path data for leisure icon
-  }
-];
-
-export default function ParthenonVerticauxHero() {
+export default function ParthenonAboutHero() {
   const [mousePosition, setMousePosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
-  const [activeVertical, setActiveVertical] = useState<number>(0);
   const [isBrowser, setIsBrowser] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-  const rotateX = useTransform(y, [-100, 100], [3, -3]);
-  const rotateY = useTransform(x, [-100, 100], [-3, 3]);
+  const rotateX = useTransform(y, [-100, 100], [5, -5]);
+  const rotateY = useTransform(x, [-100, 100], [-5, 5]);
   
   const springConfig = { stiffness: 100, damping: 30 };
   const springX = useSpring(x, springConfig);
   const springY = useSpring(y, springConfig);
-
+  
   // Check if we're in the browser
   useEffect(() => {
     setIsBrowser(true);
   }, []);
+  
+  // Handle mouse movement for the 3D effect
+  useEffect(() => {
+    if (!isBrowser) return;
+    
+    const handleMouseMove = (event: MouseEvent) => {
+      if (!containerRef.current) return;
+      const rect = containerRef.current.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      
+      const mouseX = event.clientX - centerX;
+      const mouseY = event.clientY - centerY;
+      
+      setMousePosition({ x: mouseX, y: mouseY });
+      x.set(mouseX / 10);
+      y.set(mouseY / 10);
+    };
+    
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, [isBrowser, x, y]);
 
   // Animation variants for staggered text reveals
   const titleVariants = {
@@ -64,13 +63,6 @@ export default function ParthenonVerticauxHero() {
     })
   };
 
-  // Variants for vertical items
-  const verticalVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-    exit: { opacity: 0, y: -20, transition: { duration: 0.3 } }
-  };
-
   // Calculate gradient center with fallback values
   const gradientCenterX = isBrowser ? mousePosition.x + (window.innerWidth / 2) : 800;
   const gradientCenterY = isBrowser ? mousePosition.y + (window.innerHeight / 2) : 400;
@@ -79,7 +71,7 @@ export default function ParthenonVerticauxHero() {
     <div 
       ref={containerRef}
       className="relative overflow-hidden" 
-      style={{ backgroundColor: DARK, height: "75vh" }}
+      style={{ backgroundColor: DARK, height: "70vh" }}
     >
       {/* Background with creative elements */}
       <div className="absolute inset-0 z-0">
@@ -90,62 +82,38 @@ export default function ParthenonVerticauxHero() {
           }}
           className="w-full h-full"
         >
-          {/* Greek-themed background elements */}
-          <div className="absolute inset-0 overflow-hidden opacity-20">
-            {/* Greek columns */}
-            {[...Array(7)].map((_, i: number) => (
+          {/* Floating greek columns silhouettes */}
+          <div className="absolute inset-0 overflow-hidden opacity-30">
+            {[...Array(5)].map((_, i: number) => (
               <motion.div
                 key={i}
                 className="absolute bottom-0 rounded-t-lg"
                 style={{
-                  backgroundColor: `${GOLD}15`,
-                  width: `${70 + Math.random() * 50}px`,
-                  height: `${350 + Math.random() * 350}px`,
-                  left: `${(i * 15) + Math.random() * 5}%`,
-                  y: useTransform(springY, y => y / (6 - i) * -1),
+                  backgroundColor: `${GOLD}10`,
+                  width: `${80 + Math.random() * 40}px`,
+                  height: `${400 + Math.random() * 300}px`,
+                  left: `${(i * 20) + Math.random() * 5}%`,
+                  y: useTransform(springY, y => y / (5 - i) * -1),
                 }}
               >
                 {/* Column capital */}
                 <div 
-                  className="absolute top-0 left-0 right-0 h-12 rounded-t-lg"
-                  style={{ backgroundColor: `${GOLD}25` }}
+                  className="absolute top-0 left-0 right-0 h-10 rounded-t-lg"
+                  style={{ backgroundColor: `${GOLD}20` }}
                 />
               </motion.div>
             ))}
           </div>
           
-          {/* Decorative elements representing business verticals */}
-          {VERTICALS.map((vertical, i: number) => (
+          {/* Decorative circles */}
+          {[...Array(8)].map((_, i: number) => (
             <motion.div
-              key={`shape-${vertical.id}`}
-              className="absolute rounded-lg"
-              style={{
-                width: `${100 + (i * 50)}px`,
-                height: `${100 + (i * 50)}px`,
-                border: `1px solid ${GOLD}${30 - (i * 10)}`,
-                opacity: activeVertical === i ? 0.3 : 0.1,
-                left: `${25 + (i * 20)}%`,
-                top: `${20 + (i * 15)}%`,
-                x: useTransform(springX, x => x / (i + 3) * -1),
-                y: useTransform(springY, y => y / (i + 3) * -1),
-                rotate: i * 15,
-              }}
-              animate={{
-                scale: activeVertical === i ? [1, 1.05, 1] : 1,
-                transition: { duration: 2, repeat: Infinity }
-              }}
-            />
-          ))}
-          
-          {/* Abstract decorative circles */}
-          {[...Array(10)].map((_, i: number) => (
-            <motion.div
-              key={`circle-${i}`}
+              key={i}
               className="absolute rounded-full"
               style={{
-                width: `${10 + Math.random() * 60}px`,
-                height: `${10 + Math.random() * 60}px`,
-                backgroundColor: `${GOLD}${5 + Math.floor(Math.random() * 10)}`,
+                width: `${20 + Math.random() * 80}px`,
+                height: `${20 + Math.random() * 80}px`,
+                backgroundColor: `${GOLD}${10 + Math.floor(Math.random() * 10)}`,
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
                 x: useTransform(springX, x => x / (i + 5) * -1),
@@ -157,13 +125,13 @@ export default function ParthenonVerticauxHero() {
         
         {/* Gradient overlay */}
         <div className="absolute inset-0" style={{ 
-          background: `radial-gradient(circle at ${gradientCenterX}px ${gradientCenterY}px, ${DARK}80, ${DARK}C0, ${DARK}F0)`,
+          background: `radial-gradient(circle at ${gradientCenterX}px ${gradientCenterY}px, ${DARK}90, ${DARK}D0, ${DARK}F8)`,
         }}></div>
         
         {/* Subtle grid */}
-        <div className="absolute inset-0 opacity-5" style={{
+        <div className="absolute inset-0 opacity-10" style={{
           backgroundImage: `linear-gradient(${GOLD}50 1px, transparent 1px), linear-gradient(90deg, ${GOLD}50 1px, transparent 1px)`,
-          backgroundSize: '100px 100px',
+          backgroundSize: '80px 80px',
           backgroundPosition: `${mousePosition.x / 50}px ${mousePosition.y / 50}px`
         }}></div>
       </div>
@@ -171,7 +139,7 @@ export default function ParthenonVerticauxHero() {
       {/* Content container */}
       <div className="container mx-auto relative z-10 h-full flex items-center justify-center px-4 md:px-6">
         <motion.div 
-          className="max-w-5xl mx-auto text-center"
+          className="max-w-4xl mx-auto text-center"
           style={{
             rotateX,
             rotateY,
@@ -205,8 +173,8 @@ export default function ParthenonVerticauxHero() {
           </motion.div>
         
           {/* Main title with character-by-character animation */}
-          <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight overflow-hidden">
-            {Array.from("Nos Verticaux").map((char, index: number) => (
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight overflow-hidden">
+            {Array.from("Contact").map((char, index: number) => (
               <motion.span
                 key={index}
                 className="inline-block"
@@ -214,7 +182,6 @@ export default function ParthenonVerticauxHero() {
                 variants={titleVariants}
                 initial="hidden"
                 animate="visible"
-                style={{ color: index < 3 ? GOLD : LIGHT }}
               >
                 {char === ' ' ? '\u00A0' : char}
               </motion.span>
@@ -223,18 +190,18 @@ export default function ParthenonVerticauxHero() {
           
           {/* Descriptive text with creative reveal */}
           <motion.div 
-            className="mb-12"
+            className="mb-4"
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.7 }}
           >
             <p className="text-lg md:text-xl max-w-2xl mx-auto" style={{ color: `${LIGHT}CC` }}>
-              Découvrez nos domaines d'expertise où excellence et innovation se rencontrent 
-              pour créer des expériences exceptionnelles.
+            Notre équipe est à votre disposition pour répondre à toutes vos questions et vous accompagner dans la réalisation de vos projets.
             </p>
-          </motion.div>    
+          </motion.div>
         </motion.div>
       </div>
+      
       {/* Scroll indicator */}
       <motion.div 
         className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex flex-col items-center"

@@ -87,15 +87,21 @@ export default function NosVerticauxEspaces() {
           />
         </div>
         
-        {/* Description */}
-        <p 
-          className="text-lg md:text-xl text-center max-w-4xl mx-auto mb-12"
-          style={{ color: LIGHT_TEXT }}
+
+                {/* Public Events Description */}
+                <div
+          className="relative mb-16 p-8 rounded-lg"
+          style={{ backgroundColor: `${GOLD}10`, border: `1px solid ${GOLD}20` }}
         >
-          À travers son Pôle Loisirs, le groupe Parthenon Holding conçoit, exploite et gère des parcs d'attractions, 
-          des espaces de jeux destinés à toute la famille, de même qu'il a pour ambition de conceptualiser des centres de loisirs uniques, 
-          offrant des expériences évolutives adaptées aux publics de tous âges, mais aussi aux motivations et aux envies de chacun.
-        </p>
+          {/* Decorative element */}
+          <div className="absolute -top-3 left-10 px-4 py-1 rounded" style={{ backgroundColor: LIGHT_BG }}>
+            <span className="text-sm uppercase tracking-wider font-medium" style={{ color: GOLD }}>Loisirs / Parcs & centres ludiques</span>
+          </div>
+          
+          <p className="text-base md:text-lg mb-0" style={{ color: LIGHT_TEXT }}>
+          L’entertainment étant au cœur de notre savoir-faire, nous avons imaginé un parc à thème unique au Royaume, Palooza Park Marrakech, (24 000 m²), plongeant les visiteurs dans l’univers fascinant des dinosaures.
+          </p>
+        </div>
         
         {/* Entertainment Spaces Section */}
         <div className="mb-12">

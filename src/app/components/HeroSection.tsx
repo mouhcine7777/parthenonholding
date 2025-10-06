@@ -223,64 +223,8 @@ export default function ParthenonHero() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.6, duration: 0.7 }}
                 >
-                  Un guichet unique d'expertise avec 8 filiales spécialisées en événementiel, audiovisuel et loisirs, 
-                  guidées par l'excellence et l'innovation durable.
+                  Depuis 2002, nous créons des expériences uniques.
                 </motion.p>
-                
-                {/* Pillar Buttons */}
-                <motion.div 
-                  className="mt-6 md:mt-12 flex flex-wrap gap-2 md:gap-4"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1.8, duration: 0.7 }}
-                >
-                  {[
-                    { name: "Live", icon: <Sparkles className="h-4 md:h-5 w-4 md:w-5" /> },
-                    { name: "Services", icon: <Award className="h-4 md:h-5 w-4 md:w-5" /> },
-                    { name: "Loisirs", icon: <Globe className="h-4 md:h-5 w-4 md:w-5" /> }
-                  ].map((pillar) => (
-                    <motion.button
-                      key={pillar.name}
-                      className="group relative px-4 md:px-8 py-2 md:py-3 overflow-hidden"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      <motion.div 
-                        className="absolute inset-0 z-0"
-                        initial={{ backgroundColor: `${DARK}80` }}
-                        whileHover={{ backgroundColor: GOLD }}
-                        transition={{ duration: 0.3 }}
-                        style={{ borderRadius: '4px' }}
-                      />
-                      
-                      <motion.div 
-                        className="absolute inset-0 z-0 rounded-md"
-                        initial={{ border: `1px solid ${GOLD}50` }}
-                        whileHover={{ border: `1px solid ${GOLD}` }}
-                      />
-                      
-                      <motion.div
-                        className="absolute inset-0 z-0 opacity-0 group-hover:opacity-50"
-                        style={{
-                          background: `linear-gradient(45deg, transparent 25%, ${LIGHT}30 50%, transparent 75%)`,
-                          backgroundSize: '250% 250%',
-                          backgroundPosition: '0% 0%',
-                        }}
-                        whileHover={{
-                          backgroundPosition: ['0% 0%', '100% 100%'],
-                          transition: { duration: 1.5, repeat: Infinity }
-                        }}
-                      />
-                      
-                      <div className="flex items-center space-x-2 md:space-x-3 relative z-10">
-                        <div style={{ color: 'currentColor' }}>{pillar.icon}</div>
-                        <span className="font-medium text-sm md:text-lg tracking-wide" style={{ color: LIGHT }}>
-                          {pillar.name}
-                        </span>
-                      </div>
-                    </motion.button>
-                  ))}
-                </motion.div>
               </motion.div>
               
               {/* Right Side */}

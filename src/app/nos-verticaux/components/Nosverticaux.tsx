@@ -146,16 +146,6 @@ export default function NosVerticauxMarques() {
           />
         </div>
         
-        {/* Mission Statement */}
-        <p 
-          className="text-lg md:text-xl text-center max-w-4xl mx-auto mb-12"
-          style={{ color: LIGHT_TEXT }}
-        >
-          Afin de célébrer chaque jour la passion qui nous anime : l'amour du travail bien fait, 
-          le plaisir de partager et d'insuffler de la joie à toute la famille, Parthenon Holding 
-          met à profit l'expertise de ses différents pôles. Qu'il soit Loisirs, Services ou encore 
-          Live, chacun contribue à créer des expériences uniques au quotidien.
-        </p>
         
         {/* Public Événement Production Description */}
         <div
@@ -164,16 +154,12 @@ export default function NosVerticauxMarques() {
         >
           {/* Decorative element */}
           <div className="absolute -top-3 left-10 px-4 py-1 rounded" style={{ backgroundColor: LIGHT_BG }}>
-            <span className="text-sm uppercase tracking-wider font-medium" style={{ color: GOLD }}>Parthenon Live</span>
+            <span className="text-sm uppercase tracking-wider font-medium" style={{ color: GOLD }}>Live / Programmes audiovisuels</span>
           </div>
           
           <p className="text-base md:text-lg mb-0" style={{ color: LIGHT_TEXT }}>
-            À travers sa filiale Public Événement Production, Parthenon Live est le premier producteur national 
-            d'émissions, de shows et de téléréalité en prime time. Au fil des ans, elle a fait preuve de ténacité 
-            et de rigueur pour assoir son leadership sur le marché du diversement. Aujourd'hui, elle continue de 
-            se distinguer comme un véritable créateur d'audience en misant sur l'inventivité, l'innovation et 
-            l'audace tout en valorisant les particularités nationales à travers le développement de programmes 
-            inédits et de plateformes créatives.
+          Pionnier de la production télé, Parthenon Live a signé des succès tels que Lalla Laâroussa, Trik Tadahi, Jam Show ou encore Ahssan Pâtissier, en développant des formats à la fois populaires et innovants.
+
           </p>
         </div>
         

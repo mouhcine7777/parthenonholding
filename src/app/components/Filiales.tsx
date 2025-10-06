@@ -158,19 +158,6 @@ export default function NosFiliales() {
       color: "#A98142",
     },
     {
-      id: "loupi-jungle",
-      name: "Loupi Jungle",
-      description: "Aire de jeux immersive pour enfants, alliant divertissement, aventure et apprentissage dans un environnement sécurisé.",
-      features: [
-        "Parcours d'aventure thématisés",
-        "Ateliers pédagogiques ludiques",
-        "Fêtes d'anniversaire sur mesure",
-        "Encadrement spécialisé enfants"
-      ],
-      image: "/filiales/Loupijungle.jpg",
-      color: "#B68C45",
-    },
-    {
       id: "garden-bakes",
       name: "Garden Bakes",
       description: "Pâtisserie artisanale proposant des créations gourmandes pour les particuliers et les professionnels dans un esprit éco-responsable.",
@@ -181,6 +168,19 @@ export default function NosFiliales() {
         "Ateliers de pâtisserie créative"
       ],
       image: "/filiales/Gardenbakes.jpg",
+      color: "#C59B5A",
+    },
+    {
+      id: "oxygen-village",
+      name: "Oxygen Village",
+      description: "Avec l'innovant projet OXYGEN VILLAGE, notre pôle Hospitality a imaginé un hébergement modulaire alliant confort, design et ingéniosité. Cette réalisation traduit l'ambition de Parthenon Holding de créer des expériences d'accueil modernes et fonctionnelles, et de redéfinir les standards de l'hébergement.",
+      features: [
+        "Hébergement modulaire",
+        "Expériences d'accueil modernes",
+        "Design innovant",
+
+      ],
+      image: "/filiales/oxygen.jpg",
       color: "#C59B5A",
     }
   ];
@@ -203,7 +203,7 @@ export default function NosFiliales() {
   };
 
   return (
-    <section className="py-20 md:py-32 relative overflow-hidden" style={{ backgroundColor: "#1C1C1B" }}>
+    <section className="py-20 md:py-32 relative overflow-hidden bg-gray-50 ">
       {/* Background elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-0 w-full h-full" 
@@ -228,8 +228,8 @@ export default function NosFiliales() {
             <span className="text-sm uppercase tracking-widest font-medium" style={{ color: GOLD }}>
               Notre Réseau
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold mt-2 text-white">
-              Nos Filiales
+            <h2 className="text-4xl md:text-5xl font-bold mt-2 text-white"style={{ color: DARK }}>
+            Verticaux
             </h2>
             <motion.div 
               className="h-1 mt-4 mx-auto"
@@ -243,14 +243,14 @@ export default function NosFiliales() {
           
           <motion.p 
             className="max-w-2xl mx-auto mt-6 text-lg"
-            style={{ color: LIGHT }}
+            style={{ color: `${DARK}CC` }}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Découvrez notre écosystème de marques spécialisées qui forment ensemble le groupe Parthenon Holding, chacune apportant son expertise unique.
-          </motion.p>
+Parthenon Holding se distingue par la production de programmes TV innovants, la conception d’événements d’envergure et de scénographies mémorables, ainsi que par la création de parcs de loisirs immersifs et inspirants.
+</motion.p>
         </motion.div>
         
         {/* Swiper slider - Fixed spacing that remains consistent at all zoom levels */}
@@ -334,7 +334,7 @@ export default function NosFiliales() {
               width: 10px;
               height: 10px;
               margin: 0 6px;
-              background: ${LIGHT}80;
+              background: ${DARK}80;
             }
             
             .filiales-pagination .swiper-pagination-bullet-active {
