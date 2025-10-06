@@ -43,7 +43,7 @@ const ENTERTAINMENT_SPACES: EntertainmentSpace[] = [
   {
     id: 3,
     name: "LOUPI JUNGLE",
-    image: "/filiales/loupijungle.jpg",
+    image: "/filiales/Loupijungle.jpg",
     description: "Aire de jeux thématique pour enfants avec parcours d'aventure",
     longDescription: "Loupi Jungle est un paradis pour les plus jeunes avec son aire de jeux intérieure thématisée autour de la jungle. Les enfants peuvent explorer des labyrinthes, glisser sur des toboggans géants, grimper sur des structures d'escalade sécurisées et se lancer dans des piscines à balles colorées. Le complexe dispose également d'un café pour les parents et propose des formules pour fêter des anniversaires inoubliables.",
     location: "Rabat, Maroc",
