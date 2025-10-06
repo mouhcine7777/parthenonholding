@@ -149,10 +149,10 @@ export default function ParthenonHero() {
                   </div>
                 </motion.div>
                 
-                {/* Main Title */}
+{/* Main Title */}
                 <motion.div className="mb-4 md:mb-8 relative">
                   <div className="relative">
-                    <h2 className="text-5xl sm:text-7xl md:text-9xl font-bold tracking-tighter flex flex-wrap overflow-hidden">
+                    <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tighter flex flex-nowrap overflow-hidden whitespace-nowrap">
                       {Array.from(companyName).map((char, index) => (
                         <motion.span
                           key={index}
