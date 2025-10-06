@@ -196,7 +196,7 @@ export default function RSEDurabiliteSection() {
                 transition={{ duration: 0.4 }}
               >
                 <img
-                  src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=800&q=80"
+                  src="/rse.jpg"
                   alt="RSE & Durabilité"
                   className="w-full h-full object-cover"
                 />
