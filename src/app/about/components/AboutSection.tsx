@@ -1,241 +1,270 @@
 'use client';
-import { useState, useEffect, useRef } from 'react';
-import { motion, useInView, useScroll, useTransform } from 'framer-motion';
-import { Target, Users, Zap, Leaf, Circle } from 'lucide-react';
+import { useState, useRef } from 'react';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { Target, Users, Zap, Leaf, MoveRight } from 'lucide-react';
 
 const GOLD = "#A98142";
-const DARK = "#333333";
-const LIGHT_GOLD = "#D4C4A8";
-const BG_LIGHT = "#FAFAFA";
+const LIGHT = "#E6E6E6";
+const DARK = "#1C1C1B";
 
-export default function ParthenonAboutSection() {
-  const containerRef = useRef(null);
-  const missionRef = useRef(null);
-  const valuesRef = useRef(null);
-  const { scrollYProgress } = useScroll({ target: containerRef });
-  
-  const missionInView = useInView(missionRef, { once: true, margin: "-100px" });
-  const valuesInView = useInView(valuesRef, { once: true, margin: "-100px" });
+interface Value {
+  id: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  image: string;
+  icon: any;
+}
 
-  // Parallax effects for background elements
-  const y1 = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-  const y2 = useTransform(scrollYProgress, [0, 1], ["0%", "-20%"]);
-  const rotate = useTransform(scrollYProgress, [0, 1], [0, 45]);
+export default function ValuesSection() {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const values: Value[] = [
+    {
+      id: "audace",
+      title: "Audace",
+      subtitle: "& Ambition",
+      description: "Oser l'inhabituel pour offrir des expériences mémorables qui marquent les esprits et transforment les événements en souvenirs inoubliables.",
+      image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1200&q=80",
+      icon: Target
+    },
+    {
+      id: "equipe",
+      title: "Esprit d'équipe",
+      subtitle: "& Performance",
+      description: "La force du collectif pour des projets créatifs et maîtrisés, où chaque talent contribue à l'excellence du résultat final.",
+      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80",
+      icon: Users
+    },
+    {
+      id: "innovation",
+      title: "Innovation",
+      subtitle: "Continue",
+      description: "Anticiper les tendances pour proposer des solutions modernes et impactantes, toujours à la pointe de la technologie et de la créativité.",
+      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80",
+      icon: Zap
+    },
+    {
+      id: "durabilite",
+      title: "Responsabilité",
+      subtitle: "& Durabilité",
+      description: "Bâtir des projets pérennes et respectueux grâce à notre vision P.A.C, en harmonie avec l'environnement et les générations futures.",
+      image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1200&q=80",
+      icon: Leaf
+    }
+  ];
 
   return (
-    <div 
-      ref={containerRef}
-      className="relative overflow-hidden"
-      style={{ backgroundColor: BG_LIGHT, minHeight: "100vh" }}
-    >
-      {/* Artistic Background Elements */}
-      <div className="absolute inset-0">
-        {/* Large geometric shapes */}
-        <motion.div 
-          className="absolute -top-40 -right-40 w-80 h-80 rounded-full opacity-5"
-          style={{ 
-            backgroundColor: GOLD,
-            y: y1,
-            rotate: rotate
-          }}
-        />
-        <motion.div 
-          className="absolute top-1/3 -left-32 w-64 h-64 rounded-full opacity-3"
-          style={{ 
-            backgroundColor: GOLD,
-            y: y2
-          }}
-        />
-        
-        {/* Flowing lines */}
-        <svg className="absolute inset-0 w-full h-full" style={{ zIndex: 0 }}>
-          <defs>
-            <linearGradient id="flowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style={{ stopColor: GOLD, stopOpacity: 0.1 }} />
-              <stop offset="100%" style={{ stopColor: GOLD, stopOpacity: 0.03 }} />
-            </linearGradient>
-          </defs>
-          <path 
-            d="M-100,100 Q400,200 800,150 Q1200,100 1600,300"
-            stroke="url(#flowGradient)"
-            strokeWidth="2"
-            fill="none"
-          />
-          <path 
-            d="M-100,300 Q600,400 1200,350 Q1600,300 2000,500"
-            stroke="url(#flowGradient)"
-            strokeWidth="1"
-            fill="none"
-          />
-        </svg>
-
-      </div>
-
-      <div className="container mx-auto px-6 py-24 relative z-10">
-        
-        {/* Mission & DNA Section */}
-        <motion.div 
-          ref={missionRef}
-          className="max-w-7xl mx-auto mb-32"
-        >
-          {/* Section Header */}
-          <div className="grid lg:grid-cols-2 gap-16 items-start mb-20">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={missionInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <motion.div 
-                className="flex items-center mb-8"
-                initial={{ opacity: 0, y: 20 }}
-                animate={missionInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: 0.1 }}
-              >
-                <motion.div 
-                  className="w-16 h-px mr-6"
-                  style={{ backgroundColor: GOLD }}
-                  initial={{ scaleX: 0 }}
-                  animate={missionInView ? { scaleX: 1 } : {}}
-                  transition={{ delay: 0.5, duration: 0.8 }}
-                />
-                <span 
-                  className="uppercase tracking-[0.2em] text-sm font-medium"
-                  style={{ color: GOLD }}
-                >
-                  À propos
-                </span>
-              </motion.div>
-              
-              <h2 className="text-5xl lg:text-6xl font-bold mb-8 leading-tight" style={{ color: DARK }}>
-                Parthenon Holding
-              </h2>
-            </motion.div>
-
-            <motion.div
-              className="lg:pt-16"
-              initial={{ opacity: 0, x: 50 }}
-              animate={missionInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              <div className="text-lg leading-relaxed space-y-6" style={{ color: DARK }}>
-                <p>
-                Depuis plus de vingt ans, nos valeurs guident notre façon de créer, de collaborer et d’imaginer l’avenir.
-                </p>
-              </div>
-            </motion.div>
-          </div>
-        </motion.div>
-
-        {/* Values Section - Flowing Layout */}
-        <motion.div 
-          ref={valuesRef}
-          className="max-w-7xl mx-auto"
+    <section className="relative overflow-hidden" style={{ backgroundColor: LIGHT }}>
+      {/* Header */}
+      <div className="container mx-auto px-6 lg:px-12 pt-16 sm:pt-20 lg:pt-32 mb-12 sm:mb-16 lg:mb-20">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="max-w-3xl"
         >
           <motion.div 
-            className="mb-20"
-            initial={{ opacity: 0, y: 30 }}
-            animate={valuesInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8 }}
+            className="flex items-center mb-4 sm:mb-6"
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
           >
-            <div className="text-center max-w-4xl mx-auto">
-              <h3 className="text-4xl lg:text-5xl font-bold mb-6" style={{ color: DARK }}>
-                Nos Valeurs
-                <span className="block text-3xl lg:text-4xl font-light italic mt-2" style={{ color: GOLD }}>
-                  Fondamentales
-                </span>
-              </h3>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Quatre piliers qui définissent notre identité et guident chacune de nos actions
-              </p>
-            </div>
+            <div className="w-12 sm:w-16 lg:w-20 h-px mr-4 sm:mr-6" style={{ backgroundColor: GOLD }} />
+            <span className="uppercase tracking-[0.2em] sm:tracking-[0.3em] text-xs sm:text-sm font-semibold" style={{ color: GOLD }}>
+              Nos Valeurs
+            </span>
           </motion.div>
-
-          {/* Values Grid - Asymmetric Layout */}
-          <div className="grid lg:grid-cols-2 gap-x-20 gap-y-16">
-            {[
-              {
-                icon: <Target className="w-12 h-12" />,
-                title: "AUDACE & AMBITION",
-                description: "Oser l'inhabituel pour offrir des expériences mémorables qui marquent les esprits et transforment les événements en souvenirs inoubliables.",
-                position: "left",
-                delay: 0.2
-              },
-              {
-                icon: <Users className="w-12 h-12" />,
-                title: "ESPRIT D'ÉQUIPE & PERFORMANCE",
-                description: "La force du collectif pour des projets créatifs et maîtrisés, où chaque talent contribue à l'excellence du résultat final.",
-                position: "right",
-                delay: 0.4
-              },
-              {
-                icon: <Zap className="w-12 h-12" />,
-                title: "INNOVATION CONTINUE",
-                description: "Anticiper les tendances pour proposer des solutions modernes et impactantes, toujours à la pointe de la technologie et de la créativité.",
-                position: "left",
-                delay: 0.6
-              },
-              {
-                icon: <Leaf className="w-12 h-12" />,
-                title: "RESPONSABILITÉ & DURABILITÉ",
-                description: "Bâtir des projets pérennes et respectueux grâce à notre vision P.A.C, en harmonie avec l'environnement et les générations futures.",
-                position: "right",
-                delay: 0.8
-              }
-            ].map((value, index) => (
-              <motion.div
-                key={index}
-                className={`relative ${value.position === 'right' ? 'lg:mt-16' : ''}`}
-                initial={{ opacity: 0, x: value.position === 'left' ? -50 : 50 }}
-                animate={valuesInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ delay: value.delay, duration: 0.8 }}
-              >
-                <div className="flex items-start space-x-6 group">
-                  {/* Icon */}
-                  <motion.div 
-                    className="flex-shrink-0 p-4 rounded-full transition-all duration-300 group-hover:scale-110"
-                    style={{ backgroundColor: `${GOLD}15` }}
-                    whileHover={{ 
-                      backgroundColor: `${GOLD}25`,
-                      rotate: 10
-                    }}
-                  >
-                    <div style={{ color: GOLD }}>
-                      {value.icon}
-                    </div>
-                  </motion.div>
-
-                  {/* Content */}
-                  <div className="flex-1">
-                    <h4 
-                      className="text-xl font-bold mb-4 uppercase tracking-wide group-hover:text-gold transition-colors"
-                      style={{ color: DARK }}
-                    >
-                      {value.title}
-                    </h4>
-                    <p className="text-gray-600 leading-relaxed mb-4">
-                      {value.description}
-                    </p>
-                    
-                    {/* Decorative line */}
-                    <motion.div 
-                      className="h-px w-0 group-hover:w-16 transition-all duration-500"
-                      style={{ backgroundColor: GOLD }}
-                    />
-                  </div>
-                </div>
-
-                {/* Background number */}
-                <div 
-                  className="absolute -top-4 right-8 text-8xl font-bold opacity-5 pointer-events-none"
-                  style={{ color: GOLD }}
-                >
-                  {String(index + 1).padStart(2, '0')}
-                </div>
-              </motion.div>
-            ))}
-          </div>
+          
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight" style={{ color: DARK }}>
+            L'excellence par nos valeurs
+          </h2>
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed">
+            Quatre principes fondamentaux qui façonnent notre vision et guident chacune de nos actions
+          </p>
         </motion.div>
       </div>
-    </div>
+
+      {/* Cards Grid - Full Width with Creative Center Separator */}
+      <div className="relative w-full">
+        {/* Creative Center Separator */}
+        <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-10">
+          {/* Vertical Line */}
+          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2" style={{ backgroundColor: `${GOLD}60` }}>
+            {/* Top Diamond */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+              <div className="w-3 h-3 rotate-45" style={{ backgroundColor: GOLD }} />
+            </div>
+            {/* Center Ornament */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+              <div className="relative">
+                <div className="w-8 h-8 rotate-45 border-2" style={{ borderColor: GOLD, backgroundColor: LIGHT }} />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full" style={{ backgroundColor: GOLD }} />
+              </div>
+            </div>
+            {/* Bottom Diamond */}
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
+              <div className="w-3 h-3 rotate-45" style={{ backgroundColor: GOLD }} />
+            </div>
+          </div>
+          
+          {/* Horizontal Line */}
+          <div className="absolute left-0 right-0 top-1/2 h-px -translate-y-1/2" style={{ backgroundColor: `${GOLD}60` }}>
+            {/* Left Diamond */}
+            <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2">
+              <div className="w-3 h-3 rotate-45" style={{ backgroundColor: GOLD }} />
+            </div>
+            {/* Right Diamond */}
+            <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2">
+              <div className="w-3 h-3 rotate-45" style={{ backgroundColor: GOLD }} />
+            </div>
+          </div>
+        </div>
+
+        <div className="grid md:grid-cols-2">
+          {values.map((value, index) => {
+            const Icon = value.icon;
+            const isActive = activeIndex === index;
+
+            return (
+              <motion.div
+                key={value.id}
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.7, delay: index * 0.15 }}
+                onMouseEnter={() => setActiveIndex(index)}
+                onMouseLeave={() => setActiveIndex(null)}
+                className="group relative cursor-pointer"
+              >
+                {/* Card Container */}
+                <div className="relative h-[450px] sm:h-[550px] lg:h-[650px] overflow-hidden">
+                  {/* Background Image */}
+                  <div className="absolute inset-0">
+                    <motion.img
+                      src={value.image}
+                      alt={value.title}
+                      className="w-full h-full object-cover"
+                      animate={{
+                        scale: isActive ? 1.15 : 1,
+                      }}
+                      transition={{ duration: 0.8, ease: "easeOut" }}
+                    />
+                    {/* Gradient Overlay */}
+                    <motion.div
+                      className="absolute inset-0"
+                      animate={{
+                        background: isActive
+                          ? `linear-gradient(180deg, ${DARK}00 0%, ${DARK}DD 100%)`
+                          : `linear-gradient(180deg, ${DARK}00 0%, ${DARK}E6 100%)`
+                      }}
+                      transition={{ duration: 0.5 }}
+                    />
+                  </div>
+
+                  {/* Content */}
+                  <div className="relative h-full flex flex-col justify-between p-6 sm:p-8 lg:p-12">
+                    {/* Top Section - Icon & Number */}
+                    <div className="flex items-start justify-between">
+                      {/* Icon */}
+                      <motion.div
+                        className="relative"
+                        animate={{
+                          scale: isActive ? 1.1 : 1,
+                          rotate: isActive ? 10 : 0,
+                        }}
+                        transition={{ duration: 0.5 }}
+                      >
+                        <motion.div
+                          className="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-xl lg:rounded-2xl flex items-center justify-center backdrop-blur-md"
+                          style={{ 
+                            backgroundColor: isActive ? GOLD : `${GOLD}30`,
+                            border: `2px solid ${GOLD}`
+                          }}
+                        >
+                          <Icon 
+                            className="w-6 h-6 sm:w-7 sm:h-7 lg:w-9 lg:h-9"
+                            style={{ color: isActive ? DARK : 'white' }}
+                          />
+                        </motion.div>
+                      </motion.div>
+
+                      {/* Number */}
+                      <motion.div
+                        className="text-5xl sm:text-6xl lg:text-8xl font-bold opacity-20"
+                        style={{ color: GOLD }}
+                        animate={{
+                          opacity: isActive ? 0.4 : 0.2,
+                          scale: isActive ? 1.1 : 1,
+                        }}
+                      >
+                        {String(index + 1).padStart(2, '0')}
+                      </motion.div>
+                    </div>
+
+                    {/* Bottom Section - Title & Description */}
+                    <div>
+                      {/* Title */}
+                      <div className="mb-4 sm:mb-6">
+                        <motion.h3
+                          className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-2 leading-tight"
+                          animate={{
+                            y: isActive ? -5 : 0,
+                          }}
+                          transition={{ duration: 0.4 }}
+                        >
+                          {value.title}
+                        </motion.h3>
+                        <motion.div
+                          className="text-xl sm:text-2xl lg:text-3xl font-light"
+                          style={{ color: GOLD }}
+                          animate={{
+                            y: isActive ? -5 : 0,
+                          }}
+                          transition={{ duration: 0.4, delay: 0.05 }}
+                        >
+                          {value.subtitle}
+                        </motion.div>
+                      </div>
+
+                      {/* Decorative Line */}
+                      <motion.div
+                        className="h-1 rounded-full mb-4 sm:mb-6"
+                        style={{ backgroundColor: GOLD }}
+                        initial={{ width: '60px' }}
+                        animate={{
+                          width: isActive ? '120px' : '60px',
+                        }}
+                        transition={{ duration: 0.5 }}
+                      />
+
+                      {/* Description */}
+                      <motion.p
+                        className="text-base sm:text-lg leading-relaxed mb-6 sm:mb-8"
+                        style={{ color: LIGHT }}
+                        animate={{
+                          opacity: isActive ? 1 : 0.8,
+                          y: isActive ? 0 : 10,
+                        }}
+                        transition={{ duration: 0.4 }}
+                      >
+                        {value.description}
+                      </motion.p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Background Decorative Elements */}
+      <div className="absolute top-20 right-0 w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full opacity-5 pointer-events-none" style={{ backgroundColor: GOLD, filter: 'blur(100px)' }} />
+      <div className="absolute bottom-0 left-0 w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full opacity-5 pointer-events-none" style={{ backgroundColor: GOLD, filter: 'blur(100px)' }} />
+    </section>
   );
 }

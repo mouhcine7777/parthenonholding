@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Lightbulb, Compass, Cog } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Lightbulb, Compass, Cog, ArrowRight } from 'lucide-react';
 
 const GOLD = "#A98142";
 const LIGHT = "#E6E6E6";
@@ -16,6 +16,8 @@ interface Expertise {
 }
 
 export default function ExpertisesSection() {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
   const expertises: Expertise[] = [
     {
       id: "conseil-strategie",
@@ -40,181 +42,170 @@ export default function ExpertisesSection() {
     }
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15
-      }
-    }
-  };
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 40 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut"
-      }
-    }
+  const getFlexValue = (index: number) => {
+    if (hoveredIndex === null) return 1;
+    if (hoveredIndex === index) return 2.5;
+    return 0.5;
   };
 
   return (
-    <section className="py-20 md:py-32 relative overflow-hidden" style={{ backgroundColor: LIGHT }}>
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div 
-          className="absolute top-0 left-0 w-full h-full" 
-          style={{
-            backgroundImage: `radial-gradient(circle at 30% 40%, ${GOLD} 1px, transparent 1px), 
-                              radial-gradient(circle at 70% 60%, ${GOLD} 1px, transparent 1px)`,
-            backgroundSize: '80px 80px'
-          }}
-        />
-      </div>
+    <section className="relative overflow-hidden" style={{ backgroundColor: DARK }}>
+      <div className="flex flex-col lg:flex-row h-auto lg:h-screen min-h-[600px]">
+        {expertises.map((expertise, index) => {
+          const Icon = expertise.icon;
+          const isHovered = hoveredIndex === index;
+          const isOtherHovered = hoveredIndex !== null && hoveredIndex !== index;
+          const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024;
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          return (
+            <motion.div
+              key={expertise.id}
+              className="relative cursor-pointer overflow-hidden min-h-[500px] lg:min-h-0"
+              style={{
+                flex: getFlexValue(index),
+              }}
+              animate={{
+                flex: getFlexValue(index),
+              }}
+              transition={{
+                duration: 0.6,
+                ease: [0.4, 0, 0.2, 1],
+              }}
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+            >
+              {/* Background Image */}
+              <div className="absolute inset-0">
+                <motion.img
+                  src={expertise.image}
+                  alt={expertise.title}
+                  className="w-full h-full object-cover"
+                  animate={{
+                    scale: isHovered ? 1.1 : 1,
+                  }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                />
+                {/* Overlay */}
+                <motion.div
+                  className="absolute inset-0"
+                  animate={{
+                    background: isHovered
+                      ? `linear-gradient(135deg, ${DARK}95 0%, ${DARK}75 100%)`
+                      : isOtherHovered
+                      ? `${DARK}E6`
+                      : `${DARK}B3`,
+                  }}
+                  transition={{ duration: 0.4 }}
+                />
+              </div>
 
-        {/* Expertises List */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-          className="space-y-16 md:space-y-24"
-        >
-          {expertises.map((expertise, index) => {
-            const Icon = expertise.icon;
-            const isEven = index % 2 === 0;
-
-            return (
-              <motion.div
-                key={expertise.id}
-                variants={cardVariants}
-                className="group"
-              >
-                <div className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 lg:gap-16 items-center`}>
-                  {/* Image Side */}
-                  <div className="w-full lg:w-1/2 relative">
-                    <motion.div 
-                      className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]"
-                      whileHover={{ scale: 1.02 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      {/* Decorative frame */}
-                      <div 
-                        className="absolute inset-0 z-10 pointer-events-none"
-                        style={{
-                          border: `3px solid ${GOLD}40`,
-                          borderRadius: '1rem'
-                        }}
-                      />
-                      
-                      <img
-                        src={expertise.image}
-                        alt={expertise.title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                      />
-                      
-                      {/* Gradient overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-transparent to-black/20" />
-                      
-                      {/* Icon badge */}
-                      <motion.div
-                        className="absolute top-6 right-6 w-16 h-16 rounded-full flex items-center justify-center backdrop-blur-md shadow-xl"
-                        style={{ backgroundColor: `${GOLD}F2` }}
-                        whileHover={{ rotate: 360 }}
-                        transition={{ duration: 0.6 }}
-                      >
-                        <Icon size={28} className="text-white" />
-                      </motion.div>
-
-                      {/* Number badge */}
-                      <div
-                        className="absolute bottom-6 left-6 w-12 h-12 rounded-lg flex items-center justify-center font-bold text-2xl backdrop-blur-sm"
-                        style={{ 
-                          backgroundColor: `${DARK}E6`,
-                          color: GOLD
-                        }}
-                      >
-                        {index + 1}
-                      </div>
-                    </motion.div>
-                  </div>
-
-                  {/* Content Side */}
-                  <div className="w-full lg:w-1/2 space-y-6">
-                    {/* Title */}
+              {/* Content */}
+              <div className="relative h-full flex flex-col justify-between p-8 lg:p-12">
+                {/* Top Section */}
+                <div>
+                  <motion.div
+                    animate={{
+                      scale: isHovered ? 1 : 0.9,
+                      opacity: isOtherHovered ? 0.3 : 1,
+                    }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    {/* Icon */}
                     <motion.div
-                      initial={{ opacity: 0, x: isEven ? -30 : 30 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: 0.1 }}
+                      className="inline-flex items-center justify-center w-16 h-16 lg:w-20 lg:h-20 rounded-2xl mb-6 lg:mb-8"
+                      style={{ backgroundColor: `${GOLD}20`, border: `2px solid ${GOLD}` }}
+                      animate={{
+                        backgroundColor: isHovered ? GOLD : `${GOLD}20`,
+                        rotate: isHovered ? 360 : 0,
+                      }}
+                      transition={{ duration: 0.6 }}
                     >
-                      <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold" style={{ color: DARK }}>
-                        {expertise.title}
-                      </h3>
-                      <motion.div 
-                        className="w-20 h-1.5 mt-5 rounded-full"
-                        style={{ backgroundColor: GOLD }}
-                        initial={{ width: 0 }}
-                        whileInView={{ width: 80 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
+                      <Icon 
+                        size={isHovered ? 36 : 32} 
+                        style={{ color: isHovered ? DARK : GOLD }}
                       />
                     </motion.div>
 
-                    {/* Description */}
-                    <motion.p 
-                      className="text-lg md:text-xl leading-relaxed"
-                      style={{ color: `${DARK}E6` }}
-                      initial={{ opacity: 0, x: isEven ? -30 : 30 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: 0.2 }}
-                    >
-                      {expertise.description}
-                    </motion.p>
-
-                    {/* Decorative quote mark */}
+                    {/* Number Badge */}
                     <motion.div
-                      className="pt-4"
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: 0.3 }}
+                      className="inline-block px-4 py-2 rounded-full text-sm font-bold tracking-wider mb-4"
+                      style={{ 
+                        backgroundColor: `${GOLD}20`,
+                        color: GOLD,
+                        border: `1px solid ${GOLD}40`
+                      }}
                     >
-                      <div 
-                        className="inline-block text-6xl font-serif leading-none opacity-20"
-                        style={{ color: GOLD }}
-                      >
-                        "
-                      </div>
+                      0{index + 1}
                     </motion.div>
-                  </div>
+                  </motion.div>
                 </div>
 
-                {/* Separator line (except for last item) */}
-                {index < expertises.length - 1 && (
-                  <motion.div
-                    className="mt-16 md:mt-24 h-px mx-auto"
-                    style={{ 
-                      background: `linear-gradient(to right, transparent, ${GOLD}40, transparent)`,
-                      maxWidth: '70%'
+                {/* Middle Section - Title */}
+                <div className="flex-1 flex items-center">
+                  <motion.h3
+                    className="font-bold text-white"
+                    style={{
+                      writingMode: (isHovered || isMobile) ? 'horizontal-tb' : 'vertical-rl',
+                      transform: (isHovered || isMobile) ? 'none' : 'rotate(180deg)',
                     }}
-                    initial={{ scaleX: 0 }}
-                    whileInView={{ scaleX: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.3 }}
-                  />
-                )}
-              </motion.div>
-            );
-          })}
-        </motion.div>
+                    animate={{
+                      fontSize: isHovered ? 'clamp(2rem, 5vw, 4rem)' : 'clamp(1.5rem, 3vw, 2.5rem)',
+                      opacity: isOtherHovered ? 0.3 : 1,
+                      letterSpacing: isHovered ? '-0.02em' : '0em',
+                    }}
+                    transition={{ 
+                      duration: 0.4,
+                      writingMode: { duration: 0 },
+                    }}
+                  >
+                    {expertise.title}
+                  </motion.h3>
+                </div>
+
+                {/* Bottom Section - Description & CTA */}
+                <AnimatePresence>
+                  {isHovered && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 30 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 20 }}
+                      transition={{ duration: 0.4, delay: 0.1 }}
+                      className="space-y-6"
+                    >
+                      {/* Decorative Line */}
+                      <motion.div
+                        className="h-1 rounded-full"
+                        style={{ backgroundColor: GOLD }}
+                        initial={{ width: 0 }}
+                        animate={{ width: '80px' }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                      />
+
+                      {/* Description */}
+                      <p className="text-lg lg:text-xl leading-relaxed" style={{ color: LIGHT }}>
+                        {expertise.description}
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              {/* Vertical Divider */}
+              {index < expertises.length - 1 && (
+                <div 
+                  className="lg:hidden h-px w-full"
+                  style={{ backgroundColor: `${GOLD}30` }}
+                />
+              )}
+              {index < expertises.length - 1 && (
+                <div 
+                  className="hidden lg:block absolute right-0 top-0 w-px h-full"
+                  style={{ backgroundColor: `${GOLD}30` }}
+                />
+              )}
+            </motion.div>
+          );
+        })}
       </div>
     </section>
   );

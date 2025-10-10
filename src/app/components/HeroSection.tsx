@@ -223,7 +223,7 @@ export default function ParthenonHero() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.6, duration: 0.7 }}
                 >
-                  Depuis 2002, nous créons des expériences uniques.
+                  Deux décennies d'innovation continue
                 </motion.p>
               </motion.div>
               

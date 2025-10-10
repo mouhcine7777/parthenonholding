@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
-import { ChevronRight, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Sparkles, Award, Building2, Utensils } from 'lucide-react';
 
 // Define brand colors
 const GOLD = "#A98142";
@@ -9,511 +9,454 @@ const LIGHT_BG = "#FAFAFA";
 const DARK = "#1C1C1B";
 const LIGHT_TEXT = "#444444";
 
-// Define the Realization type interface
-interface Realization {
+// Define unified Work interface
+interface Work {
   id: number;
   name: string;
   image: string;
   description: string;
-  longDescription: string;
-  category: string;
+  category?: string;
 }
 
-// Realization data
-const PAVILLONS_REALIZATIONS: Realization[] = [
+// Live / Programmes audiovisuels
+const LIVE_PROGRAMS: Work[] = [
+  {
+    id: 1,
+    name: "FASHION MAGHRIBI",
+    image: "/emissions/fashionmaghribi.webp",
+    description: "Une compétition de mode mettant en valeur le talent des créateurs locaux",
+    category: "Saison 2"
+  },
+  {
+    id: 2,
+    name: "JMAATNA ZINA",
+    image: "/emissions/jmaatnazina.webp",
+    description: "Émission communautaire célébrant les traditions et cultures",
+    category: "Saison 3"
+  },
+  {
+    id: 3,
+    name: "LALLA LAÂROSSA",
+    image: "/emissions/lalalaaroussa.webp",
+    description: "Une compétition entre futures mariées pour gagner leur cérémonie de rêve",
+    category: "Saison 19"
+  },
+  {
+    id: 4,
+    name: "AL QADAM ADDAHABBI",
+    image: "/emissions/alqadamaddahabbi.webp",
+    description: "Concours de talents footballistiques pour jeunes prodiges",
+    category: "Saison 3"
+  },
+  {
+    id: 5,
+    name: "DREAM ARTIST",
+    image: "/emissions/dreamartist.webp",
+    description: "Émission de découverte de nouveaux talents artistiques",
+    category: "Saison 3"
+  },
+  {
+    id: 6,
+    name: "TRI9 ATTAHADI",
+    image: "/emissions/tri9attahadi.jpeg",
+    description: "Aventure et défis à travers des parcours spectaculaires",
+    category: "Saison 1"
+  },
+  {
+    id: 7,
+    name: "JAMSHOW",
+    image: "/emissions/jamshow.webp",
+    description: "Divertissement musical et humour pour toute la famille",
+    category: "Saison 2"
+  },
+  {
+    id: 8,
+    name: "AKHIR TAMAN",
+    image: "/emissions/akhirtaman.webp",
+    description: "Apporte l'excitation des enchères à la télévision marocaine",
+    category: "Saison 3"
+  },
+  {
+    id: 9,
+    name: "AHSSAN PÂTISSIER",
+    image: "/emissions/lmp.webp",
+    description: "Compétition culinaire adaptée des formats internationaux de pâtisserie",
+    category: "Saison 2"
+  }
+];
+
+// Services / Scénographie & Aménagement
+const SERVICES_WORKS: Work[] = [
   {
     id: 1,
     name: "ONMT",
     image: "/realizations/onmt.webp",
-    description: "Pavillon officiel de l'Office National Marocain du Tourisme",
-    longDescription: "Conception et réalisation du pavillon officiel de l'ONMT pour les expositions internationales de tourisme. Un espace immersif qui met en valeur les richesses culturelles et naturelles du Maroc à travers des technologies interactives et des installations spectaculaires.",
-    category: "PAVILLONS NATIONAUX & WORLD EXPO"
+    description: "Pavillon officiel de l'Office National Marocain du Tourisme"
   },
   {
     id: 2,
     name: "OCP",
     image: "/realizations/ocp.png",
-    description: "Pavillon du groupe OCP pour les expositions internationales",
-    longDescription: "Scénographie innovante pour le pavillon OCP présentant les innovations du groupe dans le domaine des phosphates et de l'agriculture durable. L'espace combine éléments pédagogiques et expériences sensorielles pour une visite mémorable.",
-    category: "PAVILLONS NATIONAUX & WORLD EXPO"
+    description: "Pavillon du groupe OCP pour les expositions internationales"
   },
   {
     id: 3,
     name: "MAROC EXPORT",
     image: "/realizations/marocexport.jpg",
-    description: "Espace dédié à la promotion des exportations marocaines",
-    longDescription: "Aménagement d'un espace modulable mettant en avant les produits phares de l'export marocain. Design épuré mettant en valeur les produits avec des zones thématiques et des espaces de networking.",
-    category: "PAVILLONS NATIONAUX & WORLD EXPO"
+    description: "Espace dédié à la promotion des exportations marocaines"
   },
   {
     id: 4,
     name: "PAVILLONS ÉTATIQUES",
     image: "/realizations/pavillons-etatiques.png",
-    description: "Conception de pavillons nationaux pour divers pays",
-    longDescription: "Réalisation de pavillons nationaux pour plusieurs pays lors d'expositions internationales. Chaque espace est conçu pour refléter l'identité culturelle et les atouts économiques du pays représenté.",
-    category: "PAVILLONS NATIONAUX & WORLD EXPO"
+    description: "Conception de pavillons nationaux pour divers pays"
   },
   {
     id: 5,
     name: "ADA",
     image: "/realizations/adif2023.png",
-    description: "Abu Dhabi International Food Exhibition",
-    longDescription: "Réalisation de pavillons nationaux pour plusieurs pays lors d'expositions internationales. Chaque espace est conçu pour refléter l'identité culturelle et les atouts économiques du pays représenté.",
-    category: "PAVILLONS NATIONAUX & WORLD EXPO"
+    description: "Abu Dhabi International Food Exhibition"
   },
   {
     id: 6,
     name: "INWI",
     image: "/realizations/inwi.png",
-    description: "Conception de pavillons d'inwi Gitex",
-    longDescription: "Réalisation de pavillons nationaux pour plusieurs pays lors d'expositions internationales. Chaque espace est conçu pour refléter l'identité culturelle et les atouts économiques du pays représenté.",
-    category: "PAVILLONS NATIONAUX & WORLD EXPO"
+    description: "Conception de pavillons d'inwi Gitex"
   },
   {
-    id: 6,
+    id: 7,
     name: "CASA EVENTS",
     image: "/realizations/smartcity.png",
-    description: "Conception de pavillons d'inwi Gitex",
-    longDescription: "Réalisation de pavillons nationaux pour plusieurs pays lors d'expositions internationales. Chaque espace est conçu pour refléter l'identité culturelle et les atouts économiques du pays représenté.",
-    category: "PAVILLONS NATIONAUX & WORLD EXPO"
+    description: "Smart City Experience"
   },
   {
-    id: 6,
+    id: 8,
     name: "UM6P",
     image: "/realizations/UM6P.png",
-    description: "Conception de pavillons d'inwi Gitex",
-    longDescription: "Réalisation de pavillons nationaux pour plusieurs pays lors d'expositions internationales. Chaque espace est conçu pour refléter l'identité culturelle et les atouts économiques du pays représenté.",
-    category: "PAVILLONS NATIONAUX & WORLD EXPO"
+    description: "Université Mohammed VI Polytechnique"
+  },
+  {
+    id: 9,
+    name: "WORLD BOXING SERIES",
+    image: "/realizations/wbs.png",
+    description: "Scénographie pour tournoi international de boxe"
+  },
+  {
+    id: 10,
+    name: "MEETING INTERNATIONAL M6 D'ATHLÉTISME",
+    image: "/realizations/meeting-athle.webp",
+    description: "Aménagement du stade et parcours pour meeting d'athlétisme"
+  },
+  {
+    id: 11,
+    name: "COUPE DU MONDE DES CLUBS",
+    image: "/realizations/cdm-clubs.webp",
+    description: "Aménagement des espaces pour compétition footballistique"
+  },
+  {
+    id: 12,
+    name: "SMART CITY",
+    image: "/realizations/smart-city.webp",
+    description: "Exposition sur les villes intelligentes"
+  },
+  {
+    id: 13,
+    name: "LE JARDIN ZOOLOGIQUE DE RABAT",
+    image: "/realizations/zoo-rabat.webp",
+    description: "Thématisation des espaces du zoo national"
+  },
+  {
+    id: 14,
+    name: "PARC ZOOLOGIQUE D'AIN SEBAA",
+    image: "/realizations/zoo-ain-sebaa.webp",
+    description: "Aménagement thématique des espaces animaliers"
+  },
+  {
+    id: 15,
+    name: "LE MUSÉE DES SPORTS",
+    image: "/realizations/musee-sports.webp",
+    description: "Scénographie muséale sur l'histoire du sport"
   }
 ];
 
-const SCENOGRAPHIES_REALIZATIONS: Realization[] = [
+// Loisirs / Parcs & centres ludiques
+const LOISIRS_WORKS: Work[] = [
   {
     id: 1,
-    name: "WORLD BOXING SERIES",
-    image: "/realizations/wbs.png",
-    description: "Scénographie pour tournoi international de boxe",
-    longDescription: "Conception de l'espace de compétition et des installations pour le World Boxing Series. Éclairages dramatiques, écrans géants et parcours d'entrée spectaculaire pour créer une expérience immersive pour les spectateurs sur place et à la télévision.",
-    category: "SCÉNOGRAPHIES & EXPÉRIENCES"
+    name: "PALOOZA PARK MARRAKECH",
+    image: "/palooza.webp",
+    description: "Parc d'attractions familial avec manèges et activités variées"
   },
   {
     id: 2,
-    name: "MEETING INTERNATIONAL M6 D'ATHLÉTISME",
-    image: "/realizations/meeting-athle.webp",
-    description: "Aménagement du stade et parcours pour meeting d'athlétisme",
-    longDescription: "Scénographie complète pour le meeting international d'athlétisme M6. Conception des espaces de compétition, zones techniques et parcours des athlètes pour optimiser l'expérience des participants et des spectateurs.",
-    category: "SCÉNOGRAPHIES & EXPÉRIENCES"
+    name: "SKY JUMP TRAMPOLINE PARK",
+    image: "/skyjump.jpg",
+    description: "Espace de loisirs avec trampolines pour tous les âges"
   },
   {
     id: 3,
-    name: "COUPE DU MONDE DES CLUBS",
-    image: "/realizations/cdm-clubs.webp",
-    description: "Aménagement des espaces pour compétition footballistique",
-    longDescription: "Scénographie des espaces d'accueil, cérémonies et zones techniques pour la Coupe du Monde des Clubs FIFA. Conception d'installations temporaires répondant aux standards internationaux tout en reflétant l'identité locale.",
-    category: "SCÉNOGRAPHIES & EXPÉRIENCES"
+    name: "LOUPI JUNGLE",
+    image: "/filiales/Loupijungle.jpg",
+    description: "Aire de jeux thématique pour enfants avec parcours d'aventure"
+  }
+];
+
+// Restauration / Hospitality
+const RESTAURATION_WORKS: Work[] = [
+  {
+    id: 1,
+    name: "Garden Bake's",
+    image: "/gardenbakes.jpg",
+    description: "Boulangerie & café"
+  },
+  {
+    id: 2,
+    name: "Garden Room",
+    image: "/gardenroom.jpg",
+    description: "Espace café-lounge"
+  },
+  {
+    id: 3,
+    name: "Garden Brunch",
+    image: "/gardenbrunch.jpg",
+    description: "Espace café-lounge"
   },
   {
     id: 4,
-    name: "SMART CITY",
-    image: "/realizations/smart-city.webp",
-    description: "Exposition sur les villes intelligentes",
-    longDescription: "Conception et réalisation d'une exposition itinérante sur les smart cities. Espace modulaire présentant les innovations technologiques pour les villes du futur à travers des installations interactives et des maquettes à échelle.",
-    category: "SCÉNOGRAPHIES & EXPÉRIENCES"
+    name: "Go Velodrome",
+    image: "/velodrome.jpg",
+    description: "Espace lifestyle à Casablanca"
+  },
+  {
+    id: 5,
+    name: "Oxygen Village",
+    image: "/oxygene.jpg",
+    description: "Hébergement modulaire"
   }
 ];
 
-const THEMATISATION_REALIZATIONS: Realization[] = [
+const TAB_DATA = [
   {
-    id: 1,
-    name: "LE JARDIN ZOOLOGIQUE DE RABAT",
-    image: "/realizations/zoo-rabat.webp",
-    description: "Thématisation des espaces du zoo national",
-    longDescription: "Conception et réalisation des espaces thématiques du Jardin Zoologique de Rabat. Création d'environnements immersifs reproduisant les habitats naturels des animaux avec une attention particulière aux détails et à l'expérience des visiteurs.",
-    category: "THÉMATISATION D'ESPACES"
+    id: 'live',
+    label: 'Programmes audiovisuels',
+    icon: Sparkles,
+    works: LIVE_PROGRAMS,
+    description: "Pionnier de la production télé, Parthenon Live a signé des succès tels que Lalla Laâroussa, Trik Tadahi, Jam Show ou encore Ahssan Pâtissier."
   },
   {
-    id: 2,
-    name: "PARC ZOOLOGIQUE D'AIN SEBAA",
-    image: "/realizations/zoo-ain-sebaa.webp",
-    description: "Aménagement thématique des espaces animaliers",
-    longDescription: "Thématisation complète des différents biotopes du parc zoologique d'Ain Sebaa. Réalisation d'installations paysagères et architecturales recréant les écosystèmes d'origine des espèces présentées.",
-    category: "THÉMATISATION D'ESPACES"
+    id: 'services',
+    label: 'Scénographie & Aménagement',
+    icon: Building2,
+    works: SERVICES_WORKS,
+    description: "À travers la réalisation de grands projets — pavillons internationaux, musées, zoos ou espaces réhabilités."
   },
   {
-    id: 3,
-    name: "LE MUSÉE DES SPORTS",
-    image: "/realizations/musee-sports.webp",
-    description: "Scénographie muséale sur l'histoire du sport",
-    longDescription: "Conception de l'exposition permanente du Musée des Sports. Parcours chronologique et thématique utilisant des technologies interactives, des installations multimédias et des objets historiques pour raconter l'évolution du sport national et international.",
-    category: "THÉMATISATION D'ESPACES"
+    id: 'loisirs',
+    label: 'Parcs & centres ludiques',
+    icon: Award,
+    works: LOISIRS_WORKS,
+    description: "L'entertainment étant au cœur de notre savoir-faire, nous avons imaginé un parc à thème unique au Royaume."
+  },
+  {
+    id: 'restauration',
+    label: 'Hospitality',
+    icon: Utensils,
+    works: RESTAURATION_WORKS,
+    description: "Notre expertise s'étend à la création d'expériences culinaires uniques et concepts gastronomiques."
   }
 ];
 
-export default function NosVerticauxServices() {
-  const [activeTab, setActiveTab] = useState('pavillons');
-  const [selectedRealization, setSelectedRealization] = useState<Realization | null>(null);
+export default function NosVerticaux() {
+  const [activeTab, setActiveTab] = useState('live');
   
-  // Open popup modal
-  const openModal = (realization: Realization) => {
-    setSelectedRealization(realization);
-    document.body.style.overflow = 'hidden';
-  };
-  
-  // Close popup modal
-  const closeModal = () => {
-    setSelectedRealization(null);
-    document.body.style.overflow = 'auto';
-  };
+  const currentTab = TAB_DATA.find(tab => tab.id === activeTab);
   
   return (
-    <section className="py-16 w-full" style={{ backgroundColor: LIGHT_BG }}>
-      <div className="container mx-auto px-4 md:px-6 max-w-full">
-        {/* Section Heading with decorative elements */}
-        <div className="flex items-center justify-center mb-6">
-          <div 
-            className="h-px w-16 md:w-24 mr-4"
-            style={{ backgroundColor: GOLD }}
-          />
-          <h2 
-            className="text-3xl md:text-4xl font-medium uppercase tracking-wide text-center"
-            style={{ color: DARK }}
-          >
-            Nos Verticaux – <span style={{ color: GOLD }}>Services</span>
-          </h2>
-          <div 
-            className="h-px w-16 md:w-24 ml-4"
-            style={{ backgroundColor: GOLD }}
-          />
-        </div>
-        
-        {/* Public Events Description */}
-        <div
-          className="relative mb-16 p-8 rounded-lg"
-          style={{ backgroundColor: `${GOLD}10`, border: `1px solid ${GOLD}20` }}
-        >
-          {/* Decorative element */}
-          <div className="absolute -top-3 left-10 px-4 py-1 rounded" style={{ backgroundColor: LIGHT_BG }}>
-            <span className="text-sm uppercase tracking-wider font-medium" style={{ color: GOLD }}>Services / Scénographie & Aménagement</span>
-          </div>
-          
-          <p className="text-base md:text-lg mb-0" style={{ color: LIGHT_TEXT }}>
-          À travers la réalisation de grands projets — pavillons internationaux, musées, zoos ou espaces réhabilités  —, nous démontrons notre créativité et notre capacité à concrétiser des œuvres d’envergure avec précision.
-          </p>
-        </div>
-        
-        {/* Responsive Tab Navigation */}
-        <div className="flex justify-center mb-8">
-          <div 
-            className="inline-flex flex-col sm:flex-row bg-white rounded-lg p-1 shadow-sm w-full sm:w-auto"
-            style={{ border: `1px solid ${GOLD}20` }}
-          >
-            <button
-              className={`px-3 py-2 text-xs sm:text-sm md:text-base font-medium rounded-md transition-all duration-300 ${activeTab === 'pavillons' ? 'text-white' : 'text-gray-700'} mb-1 sm:mb-0 sm:mr-1`}
-              style={{ backgroundColor: activeTab === 'pavillons' ? GOLD : 'transparent' }}
-              onClick={() => setActiveTab('pavillons')}
-            >
-              <span className="whitespace-nowrap">PAVILLONS</span>
-              <span className="hidden sm:inline"> NATIONAUX & WORLD EXPO</span>
-            </button>
-            <button
-              className={`px-3 py-2 text-xs sm:text-sm md:text-base font-medium rounded-md transition-all duration-300 ${activeTab === 'scenographies' ? 'text-white' : 'text-gray-700'} mb-1 sm:mb-0 sm:mr-1`}
-              style={{ backgroundColor: activeTab === 'scenographies' ? GOLD : 'transparent' }}
-              onClick={() => setActiveTab('scenographies')}
-            >
-              <span className="whitespace-nowrap">SCÉNOGRAPHIES</span>
-              <span className="hidden sm:inline"> & EXPÉRIENCES</span>
-            </button>
-            <button
-              className={`px-3 py-2 text-xs sm:text-sm md:text-base font-medium rounded-md transition-all duration-300 ${activeTab === 'thematisation' ? 'text-white' : 'text-gray-700'}`}
-              style={{ backgroundColor: activeTab === 'thematisation' ? GOLD : 'transparent' }}
-              onClick={() => setActiveTab('thematisation')}
-            >
-              <span className="whitespace-nowrap">THÉMATISATION</span>
-              <span className="hidden sm:inline"> D'ESPACES</span>
-            </button>
+    <section className="w-full min-h-screen" style={{ backgroundColor: DARK }}>
+
+
+     {/* Tab Navigation - Responsive Grid */}
+     <div className="backdrop-blur-xl bg-black/60 border-b" style={{ borderColor: `${GOLD}30` }}>
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 py-6">
+            {TAB_DATA.map((tab) => {
+              const Icon = tab.icon;
+              return (
+                <motion.button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`relative px-4 py-4 rounded-xl transition-all duration-500 flex flex-col md:flex-row items-center justify-center gap-2 md:gap-3 ${
+                    activeTab === tab.id ? 'text-white' : 'text-gray-400 hover:text-gray-200'
+                  }`}
+                  style={{
+                    backgroundColor: activeTab === tab.id ? GOLD : 'transparent',
+                    border: `2px solid ${activeTab === tab.id ? GOLD : 'transparent'}`
+                  }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Icon size={20} className="flex-shrink-0" />
+                  <span className="font-medium text-center text-sm md:text-base leading-tight">{tab.label}</span>
+                  
+                  {activeTab === tab.id && (
+                    <motion.div
+                      layoutId="activeTab"
+                      className="absolute inset-0 rounded-xl"
+                      style={{ backgroundColor: `${GOLD}20` }}
+                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    />
+                  )}
+                </motion.button>
+              );
+            })}
           </div>
         </div>
-        
-        {/* Realization Sections */}
-        <div className="mb-12">
-          {/* Pavillons Nationaux & World Expo */}
-          {activeTab === 'pavillons' && (
-            <>
-              <h3 
-                className="text-2xl md:text-3xl font-medium mb-8 text-center"
-                style={{ color: DARK }}
-              >
-                NOS RÉALISATIONS - PAVILLONS NATIONAUX & WORLD EXPO
-              </h3>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 w-full px-2 md:px-4">
-                {PAVILLONS_REALIZATIONS.map((realization) => (
-                  <motion.div
-                    key={realization.id}
-                    className="relative overflow-hidden rounded-xl shadow-lg cursor-pointer group h-80 sm:h-96 w-full"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.1 }}
-                    transition={{ duration: 0.8 }}
-                    onClick={() => openModal(realization)}
-                    whileHover={{ y: -5 }}
-                  >
-                    {/* Card image */}
-                    <div className="absolute inset-0 w-full h-full">
-                      <div 
-                        className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/20 z-10"
-                      />
-                      <motion.div
-                        className="w-full h-full"
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ duration: 0.4 }}
-                      >
-                        <img 
-                          src={realization.image || "/api/placeholder/800/1200"}
-                          alt={realization.name}
-                          className="w-full h-full object-cover"
-                        />
-                      </motion.div>
-                    </div>
-                    
-                    {/* Card content */}
-                    <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 lg:p-8 z-20 transform transition-transform duration-300 group-hover:translate-y-0">
-                      <div className="space-y-2 md:space-y-3">
-                        <motion.div
-                          className="w-16 h-1 mb-2 md:mb-4"
-                          style={{ backgroundColor: GOLD }}
-                          whileInView={{ width: 64 }}
-                          viewport={{ once: true }}
-                          transition={{ delay: 0.3, duration: 0.6 }}
-                        />
-                        <h3 className="text-xl md:text-2xl font-bold text-white">{realization.name}</h3>
-                        <p className="text-base md:text-lg text-gray-200 opacity-90">{realization.description}</p>
-                        
-                        <motion.div 
-                          className="flex items-center pt-2 md:pt-4 text-white opacity-80 font-medium group-hover:opacity-100 text-base md:text-lg"
-                          initial={{ opacity: 0.7 }}
-                          whileHover={{ opacity: 1 }}
-                        >
-                          <span>Découvrir</span>
-                          <ChevronRight size={20} className="ml-2 transform transition-transform group-hover:translate-x-1" />
-                        </motion.div>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </>
-          )}
-          
-          {/* Scénographies & Expériences */}
-          {activeTab === 'scenographies' && (
-            <>
-              <h3 
-                className="text-2xl md:text-3xl font-medium mb-8 text-center"
-                style={{ color: DARK }}
-              >
-                NOS RÉALISATIONS - SCÉNOGRAPHIES & EXPÉRIENCES
-              </h3>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 w-full px-2 md:px-4">
-                {SCENOGRAPHIES_REALIZATIONS.map((realization) => (
-                  <motion.div
-                    key={realization.id}
-                    className="relative overflow-hidden rounded-xl shadow-lg cursor-pointer group h-80 sm:h-96 w-full"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.1 }}
-                    transition={{ duration: 0.8 }}
-                    onClick={() => openModal(realization)}
-                    whileHover={{ y: -5 }}
-                  >
-                    {/* Card image */}
-                    <div className="absolute inset-0 w-full h-full">
-                      <div 
-                        className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/20 z-10"
-                      />
-                      <motion.div
-                        className="w-full h-full"
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ duration: 0.4 }}
-                      >
-                        <img 
-                          src={realization.image || "/api/placeholder/800/1200"}
-                          alt={realization.name}
-                          className="w-full h-full object-cover"
-                        />
-                      </motion.div>
-                    </div>
-                    
-                    {/* Card content */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 z-20 transform transition-transform duration-300 group-hover:translate-y-0">
-                      <div className="space-y-3">
-                        <motion.div
-                          className="w-16 h-1 mb-4"
-                          style={{ backgroundColor: GOLD }}
-                          whileInView={{ width: 64 }}
-                          viewport={{ once: true }}
-                          transition={{ delay: 0.3, duration: 0.6 }}
-                        />
-                        <h3 className="text-2xl font-bold text-white">{realization.name}</h3>
-                        <p className="text-lg text-gray-200 opacity-90">{realization.description}</p>
-                        
-                        <motion.div 
-                          className="flex items-center pt-4 text-white opacity-80 font-medium group-hover:opacity-100 text-lg"
-                          initial={{ opacity: 0.7 }}
-                          whileHover={{ opacity: 1 }}
-                        >
-                          <span>Découvrir</span>
-                          <ChevronRight size={20} className="ml-2 transform transition-transform group-hover:translate-x-1" />
-                        </motion.div>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </>
-          )}
-          
-          {/* Thématisation d'Espaces */}
-          {activeTab === 'thematisation' && (
-            <>
-              <h3 
-                className="text-2xl md:text-3xl font-medium mb-8 text-center"
-                style={{ color: DARK }}
-              >
-                NOS RÉALISATIONS - THÉMATISATION D'ESPACES
-              </h3>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 w-full px-2 md:px-4">
-                {THEMATISATION_REALIZATIONS.map((realization) => (
-                  <motion.div
-                    key={realization.id}
-                    className="relative overflow-hidden rounded-xl shadow-lg cursor-pointer group h-80 sm:h-96 w-full"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.1 }}
-                    transition={{ duration: 0.8 }}
-                    onClick={() => openModal(realization)}
-                    whileHover={{ y: -5 }}
-                  >
-                    {/* Card image */}
-                    <div className="absolute inset-0 w-full h-full">
-                      <div 
-                        className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/20 z-10"
-                      />
-                      <motion.div
-                        className="w-full h-full"
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ duration: 0.4 }}
-                      >
-                        <img 
-                          src={realization.image || "/api/placeholder/800/1200"}
-                          alt={realization.name}
-                          className="w-full h-full object-cover"
-                        />
-                      </motion.div>
-                    </div>
-                    
-                    {/* Card content */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 z-20 transform transition-transform duration-300 group-hover:translate-y-0">
-                      <div className="space-y-3">
-                        <motion.div
-                          className="w-16 h-1 mb-4"
-                          style={{ backgroundColor: GOLD }}
-                          whileInView={{ width: 64 }}
-                          viewport={{ once: true }}
-                          transition={{ delay: 0.3, duration: 0.6 }}
-                        />
-                        <h3 className="text-2xl font-bold text-white">{realization.name}</h3>
-                        <p className="text-lg text-gray-200 opacity-90">{realization.description}</p>
-                        
-                        <motion.div 
-                          className="flex items-center pt-4 text-white opacity-80 font-medium group-hover:opacity-100 text-lg"
-                          initial={{ opacity: 0.7 }}
-                          whileHover={{ opacity: 1 }}
-                        >
-                          <span>Découvrir</span>
-                          <ChevronRight size={20} className="ml-2 transform transition-transform group-hover:translate-x-1" />
-                        </motion.div>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </>
-          )}
-        </div>
-        
-        {/* Bottom decorative element */}
-        <div 
-          className="h-px w-48 md:w-72 mx-auto"
-          style={{ backgroundColor: `${GOLD}50` }}
-        />
       </div>
-      
-{/* Modal for realization details */}
-<AnimatePresence>
-  {selectedRealization && (
-    <motion.div 
-      className="fixed inset-0 z-50 flex items-center justify-center p-4"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.3 }}
-    >
-      <motion.div 
-        className="absolute inset-0 bg-black/70 backdrop-blur-sm"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        onClick={closeModal}
-      />
-      
-      <motion.div 
-        className="bg-white rounded-xl overflow-hidden w-full max-w-4xl z-10 relative shadow-2xl"
-        initial={{ scale: 0.9, opacity: 0, y: 20 }}
-        animate={{ scale: 1, opacity: 1, y: 0 }}
-        exit={{ scale: 0.9, opacity: 0, y: 20 }}
-        transition={{ type: "spring", damping: 25, stiffness: 300 }}
-      >
-        {/* Modal header with image - Increased height */}
-        <div className="relative h-64 sm:h-80 md:h-96 lg:h-[28rem] overflow-hidden">
-          <img 
-            src={selectedRealization.image || "/api/placeholder/1200/600"}
-            alt={selectedRealization.name}
-            className="w-full h-full object-cover object-top"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
-            <div className="p-4 md:p-6 lg:p-8 w-full">
-              <div 
-                className="w-12 h-1 mb-3"
-                style={{ backgroundColor: GOLD }}
-              />
-              <h3 className="text-2xl md:text-3xl font-bold text-white">{selectedRealization.name}</h3>
-              <p className="text-lg text-gray-200 mt-2">{selectedRealization.category}</p>
-            </div>
-          </div>
-          
-          {/* Close button */}
-          <button 
-            className="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/40 backdrop-blur-sm text-white flex items-center justify-center hover:bg-black/60 transition-colors"
-            onClick={closeModal}
+      {/* Description Section */}
+      <AnimatePresence mode="wait">
+        {currentTab && (
+          <motion.div
+            key={currentTab.id}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5 }}
+            className="py-12 md:py-20"
           >
-            <X size={20} />
-          </button>
-        </div>
-              
-              {/* Modal content */}
-              <div className="p-4 md:p-6 lg:p-8">
-                <p className="text-base md:text-lg text-gray-800 mb-6">{selectedRealization.longDescription}</p>
+            <div className="container mx-auto px-4 md:px-6 max-w-5xl">
+              <div className="text-center">
+                <motion.div
+                  initial={{ scale: 0, rotate: -180 }}
+                  animate={{ scale: 1, rotate: 0 }}
+                  transition={{ type: "spring", stiffness: 200 }}
+                  className="inline-block mb-6"
+                >
+                  {currentTab.icon && <currentTab.icon size={48} style={{ color: GOLD }} />}
+                </motion.div>
                 
-                <div className="flex justify-center">
-                </div>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-white mb-6">
+                  {currentTab.label}
+                </h2>
+                
+                <p className="text-lg md:text-xl text-gray-400 leading-relaxed">
+                  {currentTab.description}
+                </p>
               </div>
-            </motion.div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Works Masonry Grid */}
+      <AnimatePresence mode="wait">
+        {currentTab && (
+          <motion.div
+            key={`works-${currentTab.id}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+            className="pb-20"
+          >
+            <div className="container mx-auto px-4 md:px-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                {currentTab.works.map((work, index) => (
+                  <motion.div
+                    key={work.id}
+                    initial={{ opacity: 0, y: 60 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ 
+                      duration: 0.8, 
+                      delay: index * 0.1,
+                      ease: [0.25, 0.1, 0.25, 1]
+                    }}
+                    className="group relative"
+                  >
+                    <div className="relative overflow-hidden rounded-2xl aspect-[3/4] bg-gray-900">
+                      {/* Image */}
+                      <motion.img
+                        src={work.image || "/api/placeholder/600/800"}
+                        alt={work.name}
+                        className="w-full h-full object-cover"
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                      />
+                      
+                      {/* Gradient Overlays */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90" />
+
+                      
+                      {/* Category Badge */}
+                      {work.category && (
+                        <motion.div
+                          initial={{ x: -100, opacity: 0 }}
+                          whileInView={{ x: 0, opacity: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: 0.3 }}
+                          className="absolute top-6 left-6 px-4 py-2 rounded-full backdrop-blur-md"
+                          style={{ 
+                            backgroundColor: `${GOLD}E6`,
+                            boxShadow: `0 8px 32px ${GOLD}40`
+                          }}
+                        >
+                          <span className="text-white text-sm font-bold">
+                            {work.category}
+                          </span>
+                        </motion.div>
+                      )}
+                      
+                      {/* Content */}
+                      <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 z-10">
+                        {/* Decorative line */}
+                        <motion.div
+                          className="w-12 h-1 mb-4 rounded-full"
+                          style={{ backgroundColor: GOLD }}
+                          initial={{ width: 0 }}
+                          whileInView={{ width: 48 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: 0.5, duration: 0.6 }}
+                        />
+                        
+                        <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 leading-tight" 
+                            style={{ textShadow: '0 4px 12px rgba(0,0,0,0.8)' }}>
+                          {work.name}
+                        </h3>
+                        
+                        <p className="text-sm md:text-base text-gray-300 leading-relaxed mb-4"
+                           style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}>
+                          {work.description}
+                        </p>
+                      </div>
+                      
+                      {/* Bottom shadow enhancement */}
+                      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black to-transparent pointer-events-none" />
+                    </div>
+                    
+                    {/* Outer glow on hover */}
+                    <div 
+                      className="absolute -inset-1 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl"
+                      style={{ backgroundColor: `${GOLD}40` }}
+                    />
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Footer Decoration */}
+      <div className="pb-20">
+        <motion.div
+          className="w-32 h-1 mx-auto rounded-full"
+          style={{ backgroundColor: GOLD }}
+          initial={{ width: 0 }}
+          whileInView={{ width: 128 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+        />
+      </div>
     </section>
   );
 }
