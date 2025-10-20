@@ -106,10 +106,10 @@ export default function ModernQuelquesChiffres() {
     },
     { 
       icon: <Building strokeWidth={1.5} />,
-      value: 10,
-      label: "FILIALES",
-      suffix: '',
-      description: "Expertise complémentaire et spécialisée"
+      value: 200,
+      label: "CLIENTS",
+      suffix: '+',
+      description: "Nous font confiance, tant au Maroc et qu’à l’international"
     },
     { 
       icon: <Users strokeWidth={1.5} />,

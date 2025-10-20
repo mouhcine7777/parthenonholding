@@ -29,7 +29,7 @@ export default function ExpertisesSection() {
     {
       id: "conception-planification",
       title: "Conception & planification",
-      description: "Nos équipes d’experts imaginent et orchestrent des concepts créatifs alliant esthétisme et efficacité. Chaque idée devient un plan concret, pensé dans les moindres détails — pour garantir la cohérence, la fluidité et la réussite de l’exécution.",
+      description: "Nos équipes d’experts imaginent et orchestrent des concepts créatifs alliant esthétisme et efficacité. Chaque idée devient un plan concret, pensé dans les moindres détails pour garantir la cohérence, la fluidité et la réussite de l’exécution.",
       image: "/conception-planification.jpg",
       icon: Compass
     },

@@ -54,58 +54,6 @@ export default function NosFiliales() {
   // Filiales data
   const filiales: Filiale[] = [
     {
-      id: "public-production",
-      name: "Public Production",
-      description: "Spécialiste des productions événementielles de grande envergure, Public Production conçoit et réalise des expériences inoubliables pour les marques et les institutions.",
-      features: [
-        "Événements corporate et grand public",
-        "Production technique complète",
-        "Scénographie innovante",
-        "Gestion logistique intégrée"
-      ],
-      image: "/filiales/PEP.jpg",
-      color: "#B68C45",
-    },
-    {
-      id: "integral-solution",
-      name: "Integral Solution",
-      description: "Integral Solution propose des solutions globales pour optimiser chaque aspect de vos événements et espaces, de la conception à la réalisation.",
-      features: [
-        "Conseil en optimisation d'espace",
-        "Solutions technologiques innovantes",
-        "Services intégrés clé en main",
-        "Gestion de projet complète"
-      ],
-      image: "/filiales/Integral.jpg",
-      color: "#C59B5A",
-    },
-    {
-      id: "skyjump",
-      name: "Skyjump",
-      description: "Spécialiste des activités de loisirs à sensations fortes, Skyjump propose des expériences aériennes uniques pour tous les publics.",
-      features: [
-        "Attractions aériennes sécurisées",
-        "Expériences adrénaline pour tous",
-        "Équipements de pointe certifiés",
-        "Encadrement professionnel"
-      ],
-      image: "/filiales/Skyjump.jpg",
-      color: "#9E774E",
-    },
-    {
-      id: "go-velodrome",
-      name: "Go Velodrome",
-      description: "Premier centre cycliste indoor innovant, Go Velodrome offre des installations de qualité pour les passionnés de vélo de tous niveaux.",
-      features: [
-        "Pistes cyclables indoor",
-        "Cours collectifs et individuels",
-        "Événements compétitifs",
-        "Location d'équipements premium"
-      ],
-      image: "/filiales/Govelodrome.jpg",
-      color: "#A98142",
-    },
-    {
       id: "public-events",
       name: "Public Events",
       description: "Expert en conception et organisation d'événements publics d'envergure, festivals et célébrations culturelles.",
@@ -117,6 +65,19 @@ export default function NosFiliales() {
       ],
       image: "/filiales/publicevents.jpg",
       color: "#9E774E",
+    },
+    {
+      id: "public-production",
+      name: "Public Production",
+      description: "Spécialiste des productions événementielles de grande envergure, Public Production conçoit et réalise des expériences inoubliables pour les marques et les institutions.",
+      features: [
+        "Événements corporate et grand public",
+        "Production technique complète",
+        "Scénographie innovante",
+        "Gestion logistique intégrée"
+      ],
+      image: "/filiales/PEP.jpg",
+      color: "#B68C45",
     },
     {
       id: "palooza-park",
@@ -132,6 +93,32 @@ export default function NosFiliales() {
       color: "#B68C45",
     },
     {
+      id: "skyjump",
+      name: "Skyjump",
+      description: "Spécialiste des activités de loisirs à sensations fortes, Skyjump propose des expériences aériennes uniques pour tous les publics.",
+      features: [
+        "Attractions aériennes sécurisées",
+        "Expériences adrénaline pour tous",
+        "Équipements de pointe certifiés",
+        "Encadrement professionnel"
+      ],
+      image: "/filiales/Skyjump.jpg",
+      color: "#9E774E",
+    },
+    {
+      id: "garden-bakes",
+      name: "Garden Bakes",
+      description: "Pâtisserie artisanale proposant des créations gourmandes pour les particuliers et les professionnels dans un esprit éco-responsable.",
+      features: [
+        "Pâtisseries artisanales de qualité",
+        "Ingrédients biologiques et locaux",
+        "Service traiteur pour événements",
+        "Ateliers de pâtisserie créative"
+      ],
+      image: "/filiales/Gardenbakes.jpg",
+      color: "#C59B5A",
+    },
+    {
       id: "garden-brunch",
       name: "Garden Brunch",
       description: "Concept de restauration haut de gamme spécialisé dans les brunchs gourmets dans un cadre naturel et élégant.",
@@ -142,6 +129,32 @@ export default function NosFiliales() {
         "Service personnalisé et attentionné"
       ],
       image: "/filiales/Gardenbrunch.jpg",
+      color: "#C59B5A",
+    },
+    {
+      id: "oxygen-village",
+      name: "Oxygen Village",
+      description: "Avec l'innovant projet OXYGEN VILLAGE, notre pôle Hospitality a imaginé un hébergement modulaire alliant confort, design et ingéniosité. Cette réalisation traduit l'ambition de Parthenon Holding de créer des expériences d'accueil modernes et fonctionnelles, et de redéfinir les standards de l'hébergement.",
+      features: [
+        "Hébergement modulaire",
+        "Expériences d'accueil modernes",
+        "Design innovant",
+
+      ],
+      image: "/filiales/oxygen.jpg",
+      color: "#C59B5A",
+    },
+    {
+      id: "integral-solution",
+      name: "Integral Solution",
+      description: "Integral Solution propose des solutions globales pour optimiser chaque aspect de vos événements et espaces, de la conception à la réalisation.",
+      features: [
+        "Conseil en optimisation d'espace",
+        "Solutions technologiques innovantes",
+        "Services intégrés clé en main",
+        "Gestion de projet complète"
+      ],
+      image: "/filiales/Integral.jpg",
       color: "#C59B5A",
     },
     {
@@ -158,30 +171,17 @@ export default function NosFiliales() {
       color: "#A98142",
     },
     {
-      id: "garden-bakes",
-      name: "Garden Bakes",
-      description: "Pâtisserie artisanale proposant des créations gourmandes pour les particuliers et les professionnels dans un esprit éco-responsable.",
+      id: "go-velodrome",
+      name: "Go Velodrome",
+      description: "Premier centre cycliste indoor innovant, Go Velodrome offre des installations de qualité pour les passionnés de vélo de tous niveaux.",
       features: [
-        "Pâtisseries artisanales de qualité",
-        "Ingrédients biologiques et locaux",
-        "Service traiteur pour événements",
-        "Ateliers de pâtisserie créative"
+        "Pistes cyclables indoor",
+        "Cours collectifs et individuels",
+        "Événements compétitifs",
+        "Location d'équipements premium"
       ],
-      image: "/filiales/Gardenbakes.jpg",
-      color: "#C59B5A",
-    },
-    {
-      id: "oxygen-village",
-      name: "Oxygen Village",
-      description: "Avec l'innovant projet OXYGEN VILLAGE, notre pôle Hospitality a imaginé un hébergement modulaire alliant confort, design et ingéniosité. Cette réalisation traduit l'ambition de Parthenon Holding de créer des expériences d'accueil modernes et fonctionnelles, et de redéfinir les standards de l'hébergement.",
-      features: [
-        "Hébergement modulaire",
-        "Expériences d'accueil modernes",
-        "Design innovant",
-
-      ],
-      image: "/filiales/oxygen.jpg",
-      color: "#C59B5A",
+      image: "/filiales/Govelodrome.jpg",
+      color: "#A98142",
     }
   ];
 
@@ -249,8 +249,7 @@ export default function NosFiliales() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-Parthenon Holding se distingue par la production de programmes TV innovants, la conception d’événements d’envergure et de scénographies mémorables, ainsi que par la création de parcs de loisirs immersifs et inspirants.
-</motion.p>
+Parthenon Holding se distingue par la production de programmes TV innovants, la conception d’événements et de scénographies d’envergure, ainsi que par une expertise en leisure & hospitality.</motion.p>
         </motion.div>
         
         {/* Swiper slider - Fixed spacing that remains consistent at all zoom levels */}

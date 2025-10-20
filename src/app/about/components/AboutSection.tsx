@@ -33,7 +33,7 @@ export default function ValuesSection() {
       id: "equipe",
       title: "Esprit d'équipe",
       subtitle: "& Performance",
-      description: "La force du collectif au service de projets créatifs et maîtrisés, où chaque talent contribue à l’excellence du résultat final.",
+      description: "La force du collectif au service de projets créatifs et maîtrisés, où chaque talent contribue à l’excellence du résultat.",
       image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80",
       icon: Users
     },
@@ -49,7 +49,7 @@ export default function ValuesSection() {
       id: "durabilite",
       title: "Responsabilité",
       subtitle: "& Durabilité",
-      description: "Bâtir des projets pérennes et respectueux, en harmonie avec l’environnement et les générations futures.",
+      description: "Bâtir des projets péreins et respectueux, en harmonie avec l’environnement et les générations futures.",
       image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1200&q=80",
       icon: Leaf
     }

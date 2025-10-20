@@ -278,17 +278,6 @@ export default function ContactSection() {
               
               {/* Form Content */}
               <div className="p-8 md:p-10 relative z-10">
-                <div className="flex items-center gap-3 mb-6">
-                  <div 
-                    className="w-10 h-10 rounded-full flex items-center justify-center"
-                    style={{ backgroundColor: GOLD }}
-                  >
-                    <FileText size={20} color={DARK} />
-                  </div>
-                  <h3 className="text-2xl font-bold" style={{ color: LIGHT }}>
-                  Entrons en contact
-                  </h3>
-                </div>
                 
                 {/* Success Message */}
                 {isSubmitted && (

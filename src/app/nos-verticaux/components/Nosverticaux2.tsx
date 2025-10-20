@@ -25,63 +25,54 @@ const LIVE_PROGRAMS: Work[] = [
     name: "LALLA LAÂROSSA",
     image: "/emissions/lalalaaroussa.webp",
     description: "Compétition emblématique où des couples s’affrontent pour remporter une cérémonie de mariage de rêve.",
-    category: "Saison 19"
   },
   {
     id: 2,
     name: "AHSSAN PÂTISSIER",
     image: "/emissions/lmp.webp",
-    description: "Compétition culinaire inspirée des grands formats internationaux, consacrant les meilleur",
-    category: "Saison 2"
+    description: "Compétition culinaire inspirée des grands formats internationaux, consacrant les meilleurs pâtissiers du pays.",
   },
   {
     id: 3,
     name: "JMAATNA ZINA",
     image: "/emissions/jmaatnazina.webp",
     description: "Divertissement musical célébrant les traditions, la culture et la convivialité à travers tout le Royaume.",
-    category: "Saison 3"
   },
   {
     id: 4,
     name: "JAMSHOW",
     image: "/emissions/jamshow.webp",
-    description: "Divertissement allant à la recherche des nouveaux talents de Rap au Maroc.",
-    category: "Saison 2"
+    description: "Divertissement allant à la recherche des nouveaux talents de Rap.",
   },
   {
     id: 5,
     name: "TRI9 ATTAHADI",
     image: "/emissions/tri9attahadi.jpeg",
     description: "Aventure télévisée mêlant défis physiques et épreuves de dépassement dans des paysages spectaculaires.",
-    category: "Saison 1"
   },
   {
     id: 6,
     name: "DREAM ARTIST",
     image: "/emissions/dreamartist.webp",
     description: "Émission de découverte et de valorisation des nouveaux talents artistiques et créatifs.",
-    category: "Saison 3"
   },
   {
     id: 7,
     name: "AL QADAM ADDAHABBI",
     image: "/emissions/alqadamaddahabbi.webp",
     description: "Concours de jeunes talents footballistiques, révélant les futures stars du ballon rond national.",
-    category: "Saison 3"
   },
   {
     id: 8,
     name: "AKHIR TAMAN",
     image: "/emissions/akhirtaman.webp",
     description: "Émission d’enchères captivante où objets rares et passion des collectionneurs se rencontrent.",
-    category: "Saison 3"
   },
   {
     id: 9,
     name: "FASHION MAGHRIBI",
     image: "/emissions/fashionmaghribi.webp",
     description: "Compétition mettant en lumière le talent et la créativité des stylistes et designers de mode",
-    category: "Saison 2"
   }
 
 ];
@@ -92,7 +83,7 @@ const SERVICES_WORKS: Work[] = [
     id: 1,
     name: "ONMT",
     image: "/realizations/onmt.webp",
-    description: "Pavillon officiel du tourisme, vitrine du Maroc à travers une scénographie immersive et contemporaine."
+    description: "Pavillons officiel de l'onmt, vitrine du Maroc à travers une scénographie immersive et contemporaine."
   },
   {
     id: 2,
@@ -122,7 +113,7 @@ const SERVICES_WORKS: Work[] = [
     id: 6,
     name: "INWI",
     image: "/realizations/inwi.png",
-    description: "Stand corporate au design épuré et technologique, valorisant l’innovation et la connectivité du leader télécom."
+    description: "Stand corporate au design épuré et technologique, valorisant l’innovation et la connectivité."
   },
   {
     id: 7,
@@ -134,49 +125,13 @@ const SERVICES_WORKS: Work[] = [
     id: 8,
     name: "UM6P",
     image: "/realizations/UM6P.png",
-    description: "Université Mohammed VI Polytechnique Scénographie institutionnelle intégrant inn"
+    description: "Scénographie institutionnelle intégrant innovation, éducation et recherche dans un espace inspirant et durable."
   },
   {
     id: 9,
     name: "WORLD BOXING SERIES",
     image: "/realizations/wbs.png",
-    description: "Scénographie pour tournoi international de boxe"
-  },
-  {
-    id: 10,
-    name: "MEETING INTERNATIONAL M6 D'ATHLÉTISME",
-    image: "/realizations/meeting-athle.webp",
-    description: "Aménagement du stade et parcours pour meeting d'athlétisme"
-  },
-  {
-    id: 11,
-    name: "COUPE DU MONDE DES CLUBS",
-    image: "/realizations/cdm-clubs.webp",
-    description: "Aménagement des espaces pour compétition footballistique"
-  },
-  {
-    id: 12,
-    name: "SMART CITY",
-    image: "/realizations/smart-city.webp",
-    description: "Exposition sur les villes intelligentes"
-  },
-  {
-    id: 13,
-    name: "LE JARDIN ZOOLOGIQUE DE RABAT",
-    image: "/realizations/zoo-rabat.webp",
-    description: "Thématisation des espaces du zoo national"
-  },
-  {
-    id: 14,
-    name: "PARC ZOOLOGIQUE D'AIN SEBAA",
-    image: "/realizations/zoo-ain-sebaa.webp",
-    description: "Aménagement thématique des espaces animaliers"
-  },
-  {
-    id: 15,
-    name: "LE MUSÉE DES SPORTS",
-    image: "/realizations/musee-sports.webp",
-    description: "Scénographie muséale sur l'histoire du sport"
+    description: "Scénographie immersive combinant sport, lumière et mise en scène spectaculaire pour un tournoi international."
   }
 ];
 
@@ -184,7 +139,7 @@ const SERVICES_WORKS: Work[] = [
 const LOISIRS_WORKS: Work[] = [
   {
     id: 1,
-    name: "PALOOZA",
+    name: "PALOOZA MARRAKECH",
     image: "/palooza.webp",
     description: "Parc d’attractions thématique dédié aux dinosaures, combinant divertissement familial, pédagogie et expériences immersives uniques."
   },
@@ -208,13 +163,13 @@ const RESTAURATION_WORKS: Work[] = [
     id: 2,
     name: "Garden Room",
     image: "/gardenroom.jpg",
-    description: "Crêperie végétalisée alliant sérénité, design et hospitalité raffinée, pensée pour les moments de détente ou de travail."
+    description: "Concept gourmand autour de brioches salées et sucrées, servies tout au long de la journée dans une ambiance douce et contemporaine."
   },
   {
     id: 3,
     name: "Garden Brunch",
     image: "/gardenbrunch.jpg",
-    description: "Concept de brunch gourmand en plein air, réunissant cuisine healthy, convivialité et expérience gastronomique décontractée."
+    description: "Concept de brunch savoureux proposant diverses formules."
   },
   {
     id: 4,
@@ -226,7 +181,13 @@ const RESTAURATION_WORKS: Work[] = [
     id: 5,
     name: "Oxygen Village",
     image: "/oxygene.jpg",
-    description: "Hébergement modulaire et éco-responsable à Middelt. Associant design, confort et nature pour une expérience d’accueil nouvelle génération."
+    description: "Hébergement éco-responsable conçu à partir de conteneurs modulaires, associant design, confort et nature pour une expérience d’accueil nouvelle génération."
+  },
+  {
+    id: 5,
+    name: "BTP",
+    image: "/filiales/pbs.jpg",
+    description: "Notre entreprise de construction PBS est une entreprise de construction innovante, spécialisée dans les projets durables et de qualité, alliant expertise technique et respect des délais."
   }
 ];
 
@@ -247,7 +208,7 @@ const TAB_DATA = [
   },
   {
     id: 'loisirs',
-    label: 'Parcs & centres ludiques',
+    label: 'Parcs de Divertissement (FEC)',
     icon: Award,
     works: LOISIRS_WORKS,
     description: "L’entertainment au cœur du savoir-faire de Parthenon Holding."
@@ -257,7 +218,7 @@ const TAB_DATA = [
     label: 'Hospitality',
     icon: Utensils,
     works: RESTAURATION_WORKS,
-    description: "L’art de recevoir selon Parthenon Holding."
+    description: "L’excellence au coeur de la qualité de nos restaurants et de nos hébergements."
   }
 ];
 

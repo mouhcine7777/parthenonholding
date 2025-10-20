@@ -83,7 +83,7 @@ export default function NosFilialesGrid() {
         {
           id: "pbs",
           name: "PBS",
-          description: "Spécialisée dans le bâtiment et l’aménagement, PBS associe expertise technique et design intégré pour réaliser des projets complets, du gros œuvre aux finitions.",
+          description: "Spécialisée dans la construction et l’aménagement, PBS associe expertise technique et design intégré pour réaliser des projets complets, du gros œuvre aux finitions.",
           expertise: "Construction, aménagement, intégration technique, design intérieur.",
           image: "/filiales/pbs.jpg",
           icon: Building2
@@ -100,7 +100,7 @@ export default function NosFilialesGrid() {
     },
     {
       id: "hospitality",
-      name: "Pôle Restauration",
+      name: "Pôle Loisirs & Hospitality",
       title: "",
       color: "#A98142",
       filiales: [
