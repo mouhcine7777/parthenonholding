@@ -228,7 +228,7 @@ const TAB_DATA = [
     label: 'Live / Programmes audiovisuels',
     shortLabel: 'Live',
     works: LIVE_PROGRAMS,
-    description: "Pionnier de la production télé, Parthenon Live a signé des succès tels que Lalla Laâroussa, Trik Tadahi, Jam Show ou encore Ahssan Pâtissier, en développant des formats à la fois populaires et innovants."
+    description: "Depuis plus de vingt ans, Parthenon Holding façonne les grands rendez-vous audiovisuels marocains. Nos équipes de production conçoivent, réalisent et accompagnent des formats emblématiques — de la fiction au divertissement, en passant par les shows live et les compétitions créatives."
   },
   {
     id: 'services',

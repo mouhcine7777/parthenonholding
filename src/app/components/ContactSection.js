@@ -177,7 +177,7 @@ export default function ContactSection() {
               </span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mt-2" style={{ color: DARK }}>
-              Discutons de votre projet
+            Collaborons ensemble
             </h2>
             <motion.div 
               className="h-1 mt-4"
@@ -195,8 +195,7 @@ export default function ContactSection() {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Notre équipe est à votre disposition pour répondre à toutes vos questions et vous accompagner dans la réalisation de vos projets.
-          </motion.p>
+Nos équipes vous accompagnent dans la conception et la réussite de vos projets, avec écoute, expertise et exigence.          </motion.p>
         </motion.div>
         
         {/* Animated contact info bar */}
@@ -322,7 +321,7 @@ export default function ContactSection() {
                     <FileText size={20} color={DARK} />
                   </div>
                   <h3 className="text-2xl font-bold" style={{ color: LIGHT }}>
-                    Formulaire de contact
+                  Entrons en contact
                   </h3>
                 </div>
                 
@@ -362,7 +361,7 @@ export default function ContactSection() {
                           border: `1px solid ${GOLD}30`,
                           color: LIGHT
                         }}
-                        placeholder="Jean Dupont"
+                        placeholder="Nom & prénom"
                       />
                     </div>
                     
@@ -383,7 +382,7 @@ export default function ContactSection() {
                           border: `1px solid ${GOLD}30`,
                           color: LIGHT
                         }}
-                        placeholder="jean@exemple.com"
+                        placeholder="mail@exemple.com"
                       />
                     </div>
                   </div>
@@ -430,27 +429,6 @@ export default function ContactSection() {
                     </div>
                   </div>
                   
-                  {/* Subject Field */}
-                  <div>
-                    <label className="block text-sm font-medium mb-2" style={{ color: GOLD }}>
-                      Sujet
-                    </label>
-                    <input
-                      type="text"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-3 rounded-lg transition-all duration-300 focus:outline-none"
-                      style={{ 
-                        backgroundColor: `${LIGHT}10`,
-                        border: `1px solid ${GOLD}30`,
-                        color: LIGHT
-                      }}
-                      placeholder="Objet de votre demande"
-                    />
-                  </div>
-                  
                   {/* Message Field */}
                   <div>
                     <label className="block text-sm font-medium mb-2" style={{ color: GOLD }}>
@@ -468,7 +446,7 @@ export default function ContactSection() {
                         border: `1px solid ${GOLD}30`,
                         color: LIGHT
                       }}
-                      placeholder="Décrivez votre projet ou votre demande..."
+                      placeholder="Décrivez votre demande ou votre besoin..."
                     />
                   </div>
                   
@@ -493,7 +471,7 @@ export default function ContactSection() {
                     ) : (
                       <>
                         <Send size={20} />
-                        <span>Envoyer le message</span>
+                        <span>Envoyer la demande</span>
                       </>
                     )}
                   </button>

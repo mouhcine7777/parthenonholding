@@ -7,7 +7,7 @@ const GOLD = "#A98142";
 const LIGHT = "#E6E6E6";
 const DARK = "#1C1C1B";
 
-export default function ParthenonAboutHero() {
+export default function ParthenonContactHero() {
   return (
     <div 
       className="relative overflow-hidden" 
@@ -33,24 +33,35 @@ export default function ParthenonAboutHero() {
         
           {/* Main title */}
           <motion.h1 
-            className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
+            className="text-3xl md:text-4xl font-bold mb-6 leading-tight"
             style={{ color: LIGHT }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.7 }}
           >
-            Contact
+            Laissez-nous transformer vos idées en expériences
           </motion.h1>
           
           {/* Descriptive text */}
           <motion.p 
-            className="text-lg md:text-xl max-w-2xl mx-auto"
-            style={{ color: LIGHT, opacity: 0.8 }}
+            className="text-sm md:text-base max-w-2xl mx-auto leading-relaxed"
+            style={{ color: LIGHT, opacity: 0.85 }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.7 }}
           >
-Notre équipe est à votre disposition pour répondre à toutes vos questions et vous accompagner dans la réalisation de vos projets.</motion.p>
+            Notre équipe est à votre disposition pour répondre à toutes vos questions et vous accompagner dans la réalisation de vos projets. Que ce soit pour un projet d'événement, une production audiovisuelle ou une collaboration créative, nos équipes sont à votre écoute.
+          </motion.p>
+          
+          <motion.p 
+            className="text-xs md:text-sm max-w-2xl mx-auto mt-3"
+            style={{ color: GOLD, opacity: 0.9 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7, duration: 0.7 }}
+          >
+            Écrivez-nous, nous reviendrons vers vous rapidement pour en discuter ensemble.
+          </motion.p>
         </div>
       </div>
       

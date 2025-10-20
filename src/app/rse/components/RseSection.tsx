@@ -15,17 +15,17 @@ export default function RSEDurabiliteSection() {
     {
       icon: Recycle,
       title: "Recyclage",
-      description: "Une démarche circulaire au cœur de nos opérations"
+      description: "Réutilisation des matériaux scénographiques et valorisation des décors après chaque événement."
     },
     {
       icon: Sun,
       title: "Énergies renouvelables",
-      description: "Des ateliers alimentés par des sources durables"
+      description: "Ateliers et productions alimentés par des solutions à faible empreinte carbone."
     },
     {
       icon: Leaf,
       title: "Conception durable",
-      description: "L'éco-responsabilité intégrée dans tous nos process"
+      description: "Priorité donnée aux matériaux responsables, aux circuits courts et à la longévité des installations."
     }
   ];
 
@@ -114,7 +114,8 @@ export default function RSEDurabiliteSection() {
                 ESG
               </motion.div>
               <p className="text-lg md:text-xl leading-relaxed flex-1" style={{ color: `${DARK}DD` }}>
-                La responsabilité sociale et écologique guide l'ensemble de notre chaîne de création.
+              Chez Parthenon Holding, la créativité s'exprime aussi dans la manière de produire.
+              Notre démarche RSE s'appuie sur une conviction simple : chaque projet, chaque espace, chaque production peut conjuguer esthétique, innovation et responsabilité.
               </p>
             </div>
 
@@ -127,7 +128,7 @@ export default function RSEDurabiliteSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              Au quotidien, cet engagement se traduit par le recyclage, la mise en place d'ateliers orientés vers les énergies renouvelables, et l'intégration d'une conception durable dans tous nos process.
+              Au quotidien, cet engagement prend forme à travers :
             </motion.p>
 
             {/* Commitments list */}
@@ -178,6 +179,18 @@ export default function RSEDurabiliteSection() {
                 );
               })}
             </div>
+
+            {/* Closing statement */}
+            <motion.p
+              className="text-base md:text-lg leading-relaxed pt-4"
+              style={{ color: DARK }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+            >
+              <span className="font-bold">Parthenon Holding s'engage à créer des expériences qui inspirent, tout en respectant les ressources et les générations futures.</span>
+            </motion.p>
           </motion.div>
 
           {/* Right Side - Visual */}

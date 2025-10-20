@@ -50,7 +50,7 @@ export default function ParthenonAboutHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.7 }}
           >
-Une approche complète et intégrée pour transformer vos ambitions en réalité</motion.p>
+De la vision à la réalisation, Parthenon Holding intègre conseil, conception et production pour offrir une maîtrise totale du processus créatif et opérationnel.</motion.p>
         </div>
       </div>
       

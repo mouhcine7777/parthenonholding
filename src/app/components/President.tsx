@@ -125,8 +125,7 @@ export default function AboutParthenon() {
               style={{ color: `${DARK}E6` }}
             >
               <p>
-                Depuis 2002, Parthenon Holding transforme vos idées en expériences uniques à travers l'événementiel, l'audiovisuel, la scénographie, le marketing et le divertissement.
-              </p>
+              Depuis plus de 20 ans, Parthenon Holding façonne les émotions à travers des expériences live, des productions télé et des lieux iconiques.              </p>
             </motion.div>
             
             {/* CTA Section */}

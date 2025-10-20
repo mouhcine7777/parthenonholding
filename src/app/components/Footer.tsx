@@ -156,39 +156,6 @@ const columnVariants = {
               className="h-12 md:h-16"
             />
           </motion.div>
-          
-          {/* Newsletter subscription */}
-          <motion.div 
-            className="mt-6 md:mt-0 w-full md:w-auto"
-            initial={{ opacity: 0, x: 20 }}
-            animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <div className="bg-opacity-10 rounded-lg p-4 md:p-6" style={{ backgroundColor: `${LIGHT}10` }}>
-              <h4 className="text-base md:text-lg font-medium mb-3" style={{ color: LIGHT }}>
-                Newsletter
-              </h4>
-              <p className="text-sm mb-4 max-w-xs" style={{ color: `${LIGHT}80` }}>
-                Inscrivez-vous pour recevoir nos actualités et événements
-              </p>
-              <div className="flex">
-                <input
-                  type="email"
-                  placeholder="Votre email"
-                  className="flex-grow px-4 py-2 rounded-l-md text-sm focus:outline-none"
-                  style={{ backgroundColor: `${LIGHT}15`, color: LIGHT }}
-                />
-                <motion.button
-                  className="px-4 py-2 rounded-r-md flex items-center justify-center"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  style={{ backgroundColor: GOLD }}
-                >
-                  <ArrowUpRight size={18} style={{ color: DARK }} />
-                </motion.button>
-              </div>
-            </div>
-          </motion.div>
         </div>
         
         {/* Main footer content */}

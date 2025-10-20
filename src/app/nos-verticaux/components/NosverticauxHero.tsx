@@ -229,8 +229,7 @@ export default function ParthenonVerticauxHero() {
             transition={{ delay: 0.8, duration: 0.7 }}
           >
             <p className="text-lg md:text-xl max-w-2xl mx-auto" style={{ color: `${LIGHT}CC` }}>
-              Découvrez nos domaines d'expertise où excellence et innovation se rencontrent 
-              pour créer des expériences exceptionnelles.
+            Découvrez les univers dans lesquels Parthenon Holding déploie son savoir-faire — de la création audiovisuelle à l’aménagement d’espaces, en passant par le divertissement et les expériences culinaires.
             </p>
           </motion.div>    
         </motion.div>

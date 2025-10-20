@@ -22,67 +22,68 @@ interface Work {
 const LIVE_PROGRAMS: Work[] = [
   {
     id: 1,
-    name: "FASHION MAGHRIBI",
-    image: "/emissions/fashionmaghribi.webp",
-    description: "Une compétition de mode mettant en valeur le talent des créateurs locaux",
-    category: "Saison 2"
-  },
-  {
-    id: 2,
-    name: "JMAATNA ZINA",
-    image: "/emissions/jmaatnazina.webp",
-    description: "Émission communautaire célébrant les traditions et cultures",
-    category: "Saison 3"
-  },
-  {
-    id: 3,
     name: "LALLA LAÂROSSA",
     image: "/emissions/lalalaaroussa.webp",
-    description: "Une compétition entre futures mariées pour gagner leur cérémonie de rêve",
+    description: "Compétition emblématique où des couples s’affrontent pour remporter une cérémonie de mariage de rêve.",
     category: "Saison 19"
   },
   {
-    id: 4,
-    name: "AL QADAM ADDAHABBI",
-    image: "/emissions/alqadamaddahabbi.webp",
-    description: "Concours de talents footballistiques pour jeunes prodiges",
+    id: 2,
+    name: "AHSSAN PÂTISSIER",
+    image: "/emissions/lmp.webp",
+    description: "Compétition culinaire inspirée des grands formats internationaux, consacrant les meilleur",
+    category: "Saison 2"
+  },
+  {
+    id: 3,
+    name: "JMAATNA ZINA",
+    image: "/emissions/jmaatnazina.webp",
+    description: "Divertissement musical célébrant les traditions, la culture et la convivialité à travers tout le Royaume.",
     category: "Saison 3"
+  },
+  {
+    id: 4,
+    name: "JAMSHOW",
+    image: "/emissions/jamshow.webp",
+    description: "Divertissement allant à la recherche des nouveaux talents de Rap au Maroc.",
+    category: "Saison 2"
   },
   {
     id: 5,
-    name: "DREAM ARTIST",
-    image: "/emissions/dreamartist.webp",
-    description: "Émission de découverte de nouveaux talents artistiques",
-    category: "Saison 3"
-  },
-  {
-    id: 6,
     name: "TRI9 ATTAHADI",
     image: "/emissions/tri9attahadi.jpeg",
-    description: "Aventure et défis à travers des parcours spectaculaires",
+    description: "Aventure télévisée mêlant défis physiques et épreuves de dépassement dans des paysages spectaculaires.",
     category: "Saison 1"
   },
   {
+    id: 6,
+    name: "DREAM ARTIST",
+    image: "/emissions/dreamartist.webp",
+    description: "Émission de découverte et de valorisation des nouveaux talents artistiques et créatifs.",
+    category: "Saison 3"
+  },
+  {
     id: 7,
-    name: "JAMSHOW",
-    image: "/emissions/jamshow.webp",
-    description: "Divertissement musical et humour pour toute la famille",
-    category: "Saison 2"
+    name: "AL QADAM ADDAHABBI",
+    image: "/emissions/alqadamaddahabbi.webp",
+    description: "Concours de jeunes talents footballistiques, révélant les futures stars du ballon rond national.",
+    category: "Saison 3"
   },
   {
     id: 8,
     name: "AKHIR TAMAN",
     image: "/emissions/akhirtaman.webp",
-    description: "Apporte l'excitation des enchères à la télévision marocaine",
+    description: "Émission d’enchères captivante où objets rares et passion des collectionneurs se rencontrent.",
     category: "Saison 3"
   },
   {
     id: 9,
-    name: "AHSSAN PÂTISSIER",
-    image: "/emissions/lmp.webp",
-    description: "Compétition culinaire adaptée des formats internationaux de pâtisserie",
+    name: "FASHION MAGHRIBI",
+    image: "/emissions/fashionmaghribi.webp",
+    description: "Compétition mettant en lumière le talent et la créativité des stylistes et designers de mode",
     category: "Saison 2"
   }
+
 ];
 
 // Services / Scénographie & Aménagement
@@ -91,49 +92,49 @@ const SERVICES_WORKS: Work[] = [
     id: 1,
     name: "ONMT",
     image: "/realizations/onmt.webp",
-    description: "Pavillon officiel de l'Office National Marocain du Tourisme"
+    description: "Pavillon officiel du tourisme, vitrine du Maroc à travers une scénographie immersive et contemporaine."
   },
   {
     id: 2,
     name: "OCP",
     image: "/realizations/ocp.png",
-    description: "Pavillon du groupe OCP pour les expositions internationales"
+    description: "Pavillon institutionnel alliant innovation, durabilité et design, conçu pour les expositions internationales du groupe OCP."
   },
   {
     id: 3,
     name: "MAROC EXPORT",
     image: "/realizations/marocexport.jpg",
-    description: "Espace dédié à la promotion des exportations marocaines"
+    description: "Espace modulable dédié à la promotion des entreprises exportatrices et à la mise en valeur du savoir-faire national."
   },
   {
     id: 4,
     name: "PAVILLONS ÉTATIQUES",
     image: "/realizations/pavillons-etatiques.png",
-    description: "Conception de pavillons nationaux pour divers pays"
+    description: "Conception et aménagement de pavillons institutionnels pour les grandes expositions et salons mondiaux."
   },
   {
     id: 5,
-    name: "ADA",
+    name: "ADA - Abu Dhabi International Food Exhibition",
     image: "/realizations/adif2023.png",
-    description: "Abu Dhabi International Food Exhibition"
+    description: "Pavillon marocain présentant l’excellence agroalimentaire nationale dans une scénographie moderne et lumineuse."
   },
   {
     id: 6,
     name: "INWI",
     image: "/realizations/inwi.png",
-    description: "Conception de pavillons d'inwi Gitex"
+    description: "Stand corporate au design épuré et technologique, valorisant l’innovation et la connectivité du leader télécom."
   },
   {
     id: 7,
     name: "CASA EVENTS",
     image: "/realizations/smartcity.png",
-    description: "Smart City Experience"
+    description: "Conception d’un espace interactif et expérientiel pour promouvoir les événements culturels et sportifs de la ville."
   },
   {
     id: 8,
     name: "UM6P",
     image: "/realizations/UM6P.png",
-    description: "Université Mohammed VI Polytechnique"
+    description: "Université Mohammed VI Polytechnique Scénographie institutionnelle intégrant inn"
   },
   {
     id: 9,
@@ -183,21 +184,15 @@ const SERVICES_WORKS: Work[] = [
 const LOISIRS_WORKS: Work[] = [
   {
     id: 1,
-    name: "PALOOZA PARK MARRAKECH",
+    name: "PALOOZA",
     image: "/palooza.webp",
-    description: "Parc d'attractions familial avec manèges et activités variées"
+    description: "Parc d’attractions thématique dédié aux dinosaures, combinant divertissement familial, pédagogie et expériences immersives uniques."
   },
   {
     id: 2,
-    name: "SKY JUMP TRAMPOLINE PARK",
+    name: "SKY JUMP CASABLANCA",
     image: "/skyjump.jpg",
-    description: "Espace de loisirs avec trampolines pour tous les âges"
-  },
-  {
-    id: 3,
-    name: "LOUPI JUNGLE",
-    image: "/filiales/Loupijungle.jpg",
-    description: "Aire de jeux thématique pour enfants avec parcours d'aventure"
+    description: "Espace de loisirs indoor entièrement dédié au trampoline, offrant une expérience fun et sportive pour tous les âges."
   }
 ];
 
@@ -207,31 +202,31 @@ const RESTAURATION_WORKS: Work[] = [
     id: 1,
     name: "Garden Bake's",
     image: "/gardenbakes.jpg",
-    description: "Boulangerie & café"
+    description: "Boulangerie artisanale où la tradition du pain et de la viennoiserie rencontre l’élégance d’un espace chaleureux et contemporain."
   },
   {
     id: 2,
     name: "Garden Room",
     image: "/gardenroom.jpg",
-    description: "Espace café-lounge"
+    description: "Crêperie végétalisée alliant sérénité, design et hospitalité raffinée, pensée pour les moments de détente ou de travail."
   },
   {
     id: 3,
     name: "Garden Brunch",
     image: "/gardenbrunch.jpg",
-    description: "Espace café-lounge"
+    description: "Concept de brunch gourmand en plein air, réunissant cuisine healthy, convivialité et expérience gastronomique décontractée."
   },
   {
     id: 4,
-    name: "Go Velodrome",
+    name: "Go Vélodrome",
     image: "/velodrome.jpg",
-    description: "Espace lifestyle à Casablanca"
+    description: "Espace lifestyle au cœur du Vélodrome de Casablanca, accueillant activités, événements et concepts culinaires innovants."
   },
   {
     id: 5,
     name: "Oxygen Village",
     image: "/oxygene.jpg",
-    description: "Hébergement modulaire"
+    description: "Hébergement modulaire et éco-responsable à Middelt. Associant design, confort et nature pour une expérience d’accueil nouvelle génération."
   }
 ];
 
@@ -241,28 +236,28 @@ const TAB_DATA = [
     label: 'Programmes audiovisuels',
     icon: Sparkles,
     works: LIVE_PROGRAMS,
-    description: "Pionnier de la production télé, Parthenon Live a signé des succès tels que Lalla Laâroussa, Trik Tadahi, Jam Show ou encore Ahssan Pâtissier."
+    description: "Depuis plus de vingt ans, Parthenon Holding façonne les grands rendez-vous audiovisuels marocains. Nos équipes de production conçoivent, réalisent et accompagnent des formats emblématiques — de la fiction au divertissement, en passant par les shows live et les compétitions créatives."
   },
   {
     id: 'services',
     label: 'Scénographie & Aménagement',
     icon: Building2,
     works: SERVICES_WORKS,
-    description: "À travers la réalisation de grands projets — pavillons internationaux, musées, zoos ou espaces réhabilités."
+    description: "De la conception à la réalisation, nous signons des espaces scénographiques où architecture, storytelling et technologie s’unissent harmonieusement."
   },
   {
     id: 'loisirs',
     label: 'Parcs & centres ludiques',
     icon: Award,
     works: LOISIRS_WORKS,
-    description: "L'entertainment étant au cœur de notre savoir-faire, nous avons imaginé un parc à thème unique au Royaume."
+    description: "L’entertainment au cœur du savoir-faire de Parthenon Holding."
   },
   {
     id: 'restauration',
     label: 'Hospitality',
     icon: Utensils,
     works: RESTAURATION_WORKS,
-    description: "Notre expertise s'étend à la création d'expériences culinaires uniques et concepts gastronomiques."
+    description: "L’art de recevoir selon Parthenon Holding."
   }
 ];
 

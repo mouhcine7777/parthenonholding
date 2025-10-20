@@ -25,7 +25,7 @@ export default function ValuesSection() {
       id: "audace",
       title: "Audace",
       subtitle: "& Ambition",
-      description: "Oser l'inhabituel pour offrir des expériences mémorables qui marquent les esprits et transforment les événements en souvenirs inoubliables.",
+      description: "Oser l’inattendu pour offrir des expériences mémorables qui marquent les esprits et transforment les événements en souvenirs durables.",
       image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1200&q=80",
       icon: Target
     },
@@ -33,15 +33,15 @@ export default function ValuesSection() {
       id: "equipe",
       title: "Esprit d'équipe",
       subtitle: "& Performance",
-      description: "La force du collectif pour des projets créatifs et maîtrisés, où chaque talent contribue à l'excellence du résultat final.",
+      description: "La force du collectif au service de projets créatifs et maîtrisés, où chaque talent contribue à l’excellence du résultat final.",
       image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80",
       icon: Users
     },
     {
       id: "innovation",
       title: "Innovation",
-      subtitle: "Continue",
-      description: "Anticiper les tendances pour proposer des solutions modernes et impactantes, toujours à la pointe de la technologie et de la créativité.",
+      subtitle: "& Créativité",
+      description: "Anticiper les tendances pour proposer des solutions modernes et impactantes, à la pointe de la technologie et du design.",
       image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80",
       icon: Zap
     },
@@ -49,7 +49,7 @@ export default function ValuesSection() {
       id: "durabilite",
       title: "Responsabilité",
       subtitle: "& Durabilité",
-      description: "Bâtir des projets pérennes et respectueux grâce à notre vision P.A.C, en harmonie avec l'environnement et les générations futures.",
+      description: "Bâtir des projets pérennes et respectueux, en harmonie avec l’environnement et les générations futures.",
       image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1200&q=80",
       icon: Leaf
     }
@@ -83,7 +83,7 @@ export default function ValuesSection() {
             L'excellence par nos valeurs
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed">
-            Quatre principes fondamentaux qui façonnent notre vision et guident chacune de nos actions
+          Quatre principes fondamentaux qui guident notre vision et animent chacune de nos réalisations.
           </p>
         </motion.div>
       </div>

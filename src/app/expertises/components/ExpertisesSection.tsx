@@ -22,22 +22,22 @@ export default function ExpertisesSection() {
     {
       id: "conseil-strategie",
       title: "Conseil & stratégie",
-      description: "Nous construisons avec vous une stratégie puissante et personnalisée, et nous vous accompagnons à chaque étape de votre projet, pour concrétiser vos idées avec succès.",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80",
+      description: "Nous concevons avec nos partenaires des stratégies sur mesure, fondées sur la compréhension des enjeux, la créativité et la performance. De la définition de la vision à la planification opérationnelle, nous accompagnons chaque projet avec exigence et précision.",
+      image: "/conseil-strategie.jpg",
       icon: Lightbulb
     },
     {
       id: "conception-planification",
       title: "Conception & planification",
-      description: "Que ce soit pour la communication, l'événementiel ou le marketing, nos équipes imaginent des concepts originaux et performants, toujours en phase avec vos objectifs.",
-      image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&q=80",
+      description: "Nos équipes d’experts imaginent et orchestrent des concepts créatifs alliant esthétisme et efficacité. Chaque idée devient un plan concret, pensé dans les moindres détails — pour garantir la cohérence, la fluidité et la réussite de l’exécution.",
+      image: "/conception-planification.jpg",
       icon: Compass
     },
     {
       id: "production-logistique",
       title: "Production & logistique",
-      description: "Nous vous garantissons un accompagnement de A à Z. De la production à la logistique en passant par l'exécution, chaque étape est coordonnée, optimisée et maîtrisée grâce à notre approche intégrée.",
-      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80",
+      description: "Nous assurons une production complète et maîtrisée, de la conception à la mise en œuvre sur le terrain. Grâce à nos équipes techniques et nos infrastructures intégrées, chaque projet est exécuté avec rigueur, qualité et réactivité.",
+      image: "/production-logistique.jpg",
       icon: Cog
     }
   ];

@@ -35,15 +35,15 @@ export default function NosFilialesGrid() {
         {
           id: "public-events",
           name: "Public Events",
-          description: "Spécialiste de l'événementiel sur mesure, Public Events transforme les ambitions de grandes institutions (ONMT, OCP, EACCE, UM6P Rabat, ADA, FAIRPLATZ, Akwa Groupe, Ministère de l'Agriculture, NARSA, Sidi Ali, Danone, Coca Cola) en espaces immersifs et modulables, conçus pour des salons internationaux ou des pavillons étatiques.",
-          expertise: "Scénographie, décoration, agencement de stands, logistique globale, gestion B2B.",
+          description: "Spécialiste de l’événementiel sur mesure, Public Events conçoit des expériences immersives et modulables pour les grandes institutions, du design à la logistique globale.",
+          expertise: "Scénographie, agencement, logistique, gestion B2B.",
           image: "/filiales/publicevents.jpg",
           icon: Calendar
         },
         {
           id: "public-production",
           name: "Public Production",
-          description: "Pionnière dans la conception d'émissions prime time, Public Production s'impose comme la référence pour la création de formats originaux et l'adaptation réussie de concepts internationaux. Elle a son actif des succès tels que Lalla Laâroussa, Jmaatna Zina ou encore Ahssan Pâtissier (adaptation de Bake Off). Synonyme de créativité sans faille et de capacité à captiver les audiences, elle reflète l'esprit innovant et culturel de Parthenon.",
+          description: "Référence de la production audiovisuelle marocaine, Public Production crée et adapte des formats originaux pour la télévision et le digital, alliant créativité et exigence artistique.",
           expertise: "Création de contenus TV, adaptation de formats internationaux, direction artistique.",
           image: "/filiales/PEP.jpg",
           icon: Tv
@@ -59,9 +59,17 @@ export default function NosFilialesGrid() {
         {
           id: "palooza-park",
           name: "Palooza Park Marrakech",
-          description: "Le pôle loisirs se distincte par une réalisation inédite et audacieuse : Palooza Park Marrakech : le premier parc à thème du Royaume consacré aux dinosaures. Sur une superficie de pas moins de 24 000 m², il rassemble manèges, animatronics, musée interactif et animations éducatives.",
-          expertise: "Design ludique, storytelling pédagogique, orchestration d'attractions et exploitation événementielle.",
+          description: "Premier parc à thème du Royaume dédié aux dinosaures, Palooza Park Marrakech allie divertissement, pédagogie et expérience familiale immersive.",
+          expertise: "Design ludique, storytelling pédagogique, exploitation événementielle.",
           image: "/filiales/Palooza.jpg",
+          icon: Sparkles
+        },
+        {
+          id: "sky-jump",
+          name: "Skyjump Trampoline Park",
+          description: "Espace de loisirs indoor dédié au trampoline et à l’amusement pour tous les âges, Skyjump combine sport, énergie et divertissement dans une ambiance urbaine et familiale.",
+          expertise: "Gestion de parcs indoor, animation ludique, expérience client dynamique.",
+          image: "/filiales/Skyjump.jpg",
           icon: Sparkles
         }
       ]
@@ -75,16 +83,16 @@ export default function NosFilialesGrid() {
         {
           id: "pbs",
           name: "PBS",
-          description: "Spécialisée dans les travaux publics, PBS s'affirme comme un acteur majeur de la construction et de l'aménagement. En synergie avec Public Events et Public Prod, elle assure des réalisations complètes, du gros œuvre aux finitions intérieures et à l'ameublement.",
-          expertise: "Gros-œuvre, intérieur, design, intégration.",
+          description: "Spécialisée dans le bâtiment et l’aménagement, PBS associe expertise technique et design intégré pour réaliser des projets complets, du gros œuvre aux finitions.",
+          expertise: "Construction, aménagement, intégration technique, design intérieur.",
           image: "/filiales/pbs.jpg",
           icon: Building2
         },
         {
           id: "integral-solutions",
           name: "Integral Solutions",
-          description: "Integral Solutions est la spécialiste de la location de mobilier et de matériel événementiel. Elle met à votre disposition un vaste catalogue de références couvrant tous les besoins, des équipements techniques aux solutions de décoration. Avec une offre diversifiée et évolutive, elle accompagne vos projets en alliant fiabilité, flexibilité et professionnalisme.",
-          expertise: "Location de mobilier, matériel événementiel, solutions techniques.",
+          description: "pécialiste de la location de mobilier et de matériel événementiel, Integral Solutions accompagne les projets d’aménagement avec flexibilité, réactivité et sens du détail.",
+          expertise: "Location de mobilier, solutions techniques et logistiques événementielles.",
           image: "/filiales/Integral.jpg",
           icon: Home
         }
@@ -99,16 +107,16 @@ export default function NosFilialesGrid() {
         {
           id: "garden-concept",
           name: "Garden Concept",
-          description: "Le concept Garden a la particularité de réunir trois expériences uniques et complémentaires au sein d'un même univers : Garden Brunch, Garden Bakes et Garden Room.",
-          expertise: "Restauration haut de gamme, pâtisserie artisanale, espaces événementiels.",
+          description: "Le concept Garden réunit trois expériences complémentaires — Garden Brunch, Garden Bake’s et Garden Room — autour d’une même vision : un art de vivre gourmand et élégant.",
+          expertise: " Restauration haut de gamme, pâtisserie artisanale, espaces événementiels.",
           image: "/filiales/Gardenbrunch.jpg",
           icon: Coffee
         },
         {
           id: "oxygen-village",
           name: "Oxygen Village",
-          description: "Avec l'innovant projet OXYGEN VILLAGE, notre pôle Hospitality a imaginé un hébergement modulaire alliant confort, design et ingéniosité. Cette réalisation traduit l'ambition de Parthenon Holding de créer des expériences d'accueil modernes et fonctionnelles, et de redéfinir les standards de l'hébergement.",
-          expertise: "Hébergement modulaire, design innovant, expériences d'accueil modernes.",
+          description: "Projet d’hébergement modulaire éco-conçu, Oxygen Village combine confort, design et durabilité pour redéfinir les standards modernes de l’accueil.",
+          expertise: "Hébergement modulaire, design innovant, expériences d’accueil modernes.",
           image: "/filiales/oxygen.jpg",
           icon: Home
         }

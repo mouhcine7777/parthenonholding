@@ -286,7 +286,7 @@ export default function ContactSection() {
                     <FileText size={20} color={DARK} />
                   </div>
                   <h3 className="text-2xl font-bold" style={{ color: LIGHT }}>
-                    Formulaire de contact
+                  Entrons en contact
                   </h3>
                 </div>
                 
@@ -326,7 +326,7 @@ export default function ContactSection() {
                           border: `1px solid ${GOLD}30`,
                           color: LIGHT
                         }}
-                        placeholder="Jean Dupont"
+                        placeholder="Nom & prénom"
                       />
                     </div>
                     
@@ -347,7 +347,7 @@ export default function ContactSection() {
                           border: `1px solid ${GOLD}30`,
                           color: LIGHT
                         }}
-                        placeholder="jean@exemple.com"
+                        placeholder="mail@exemple.com"
                       />
                     </div>
                   </div>
@@ -394,27 +394,6 @@ export default function ContactSection() {
                     </div>
                   </div>
                   
-                  {/* Subject Field */}
-                  <div>
-                    <label className="block text-sm font-medium mb-2" style={{ color: GOLD }}>
-                      Sujet
-                    </label>
-                    <input
-                      type="text"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-3 rounded-lg transition-all duration-300 focus:outline-none"
-                      style={{ 
-                        backgroundColor: `${LIGHT}10`,
-                        border: `1px solid ${GOLD}30`,
-                        color: LIGHT
-                      }}
-                      placeholder="Objet de votre demande"
-                    />
-                  </div>
-                  
                   {/* Message Field */}
                   <div>
                     <label className="block text-sm font-medium mb-2" style={{ color: GOLD }}>
@@ -432,7 +411,7 @@ export default function ContactSection() {
                         border: `1px solid ${GOLD}30`,
                         color: LIGHT
                       }}
-                      placeholder="Décrivez votre projet ou votre demande..."
+                      placeholder="Décrivez votre demande ou votre besoin..."
                     />
                   </div>
                   
@@ -457,7 +436,7 @@ export default function ContactSection() {
                     ) : (
                       <>
                         <Send size={20} />
-                        <span>Envoyer le message</span>
+                        <span>Envoyer la demande</span>
                       </>
                     )}
                   </button>
