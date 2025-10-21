@@ -161,13 +161,13 @@ const RESTAURATION_WORKS: Work[] = [
   {
     id: 2,
     name: "Garden Room",
-    image: "/gardenroom.jpg",
+    image: "/filiales/garden-room.jpg",
     description: "Concept gourmand autour de brioches salées et sucrées, servies tout au long de la journée dans une ambiance douce et contemporaine."
   },
   {
     id: 3,
     name: "Garden Brunch",
-    image: "/gardenbrunch.jpg",
+    image: "/filiales/garden-brunch.jpg",
     description: "Concept de brunch savoureux proposant diverses formules."
   },
   {
@@ -188,10 +188,22 @@ const RESTAURATION_WORKS: Work[] = [
 const BTP_WORKS: Work[] = [
   {
     id: 1,
-    name: "PBS",
-    image: "/filiales/pbs.jpg",
-    description: "PBS est une entreprise de construction innovante, spécialisée dans les projets durables et de qualité, alliant expertise technique et respect des délais."
+    name: "STATION AFRIQUIA LISSASFA",
+    image: "/afriquia.jpg",
+    description: "Réalisé en collaboration avec AFRIQUIA SMDC et conçu par l’architecte MEHDIBERRADA. Avec une surface de 1995m², cette station incarne notre engagement envers l’efficacité et l’esthétique."
   },
+  {
+    id: 2,
+    name: "Mc Village",
+    image: "/mcdo.jpg",
+    description: " En collaboration avec Afriquia SMDC et l’architecte TARIK LAKHMIRI. Avec une surface couverte de 1540 m² et une vaste étendue extérieure aménagée de 9533 m², ce projet incarne la fusion entre l’architecture innovante et l’aménagement paysager réfléchi."
+  },
+  {
+    id: 1,
+    name: "OXYGEN VILLAGE",
+    image: "/oxygen.jpg",
+    description: " Dans le cadre exceptionnel du projet OXYGEN VILLAGE, réalisé pour Parthenon Holding, nous avons relevé le défi de créer un hébergement modulaire de qualité."
+  }
 ];
 
 const TAB_DATA = [
