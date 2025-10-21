@@ -95,6 +95,22 @@ export default function NosFilialesGrid() {
           expertise: "Location de mobilier, solutions techniques et logistiques événementielles.",
           image: "/filiales/Integral.jpg",
           icon: Home
+        },
+        {
+          id: "ateliers-dko",
+          name: "Les Ateliers DKO",
+          description: "Espace de conception et de fabrication de mobilier sur mesure, Les Ateliers DKO allient savoir-faire artisanal et technologies modernes pour créer des aménagements uniques et durables, adaptés aux besoins des professionnels comme des particuliers.",
+          expertise: "Fabrication de mobilier sur mesure, agencement d’espaces, menuiserie haut de gamme.",
+          image: "/filiales/ateliersdko.jpg",
+          icon: Home
+        },
+        {
+          id: "pbs",
+          name: "Aquila Sécurité",
+          description: "Entreprise spécialisée dans la sécurité privée, Aquila propose des solutions complètes de protection pour les sites professionnels, les événements et les résidences. Son équipe de vigiles qualifiés veille à la sûreté des biens et des personnes, avec rigueur et professionnalisme.",
+          expertise: "Sécurité privée, gardiennage, protection d’événements et surveillance de sites sensibles.",
+          image: "/filiales/aquila.jpg",
+          icon: Building2
         }
       ]
     },

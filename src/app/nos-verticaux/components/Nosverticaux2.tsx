@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, Award, Building2, Utensils } from 'lucide-react';
+import { Sparkles, Award, Building2, Utensils, HardHat } from 'lucide-react';
 
 // Define brand colors
 const GOLD = "#A98142";
@@ -24,7 +24,7 @@ const LIVE_PROGRAMS: Work[] = [
     id: 1,
     name: "LALLA LAÂROSSA",
     image: "/emissions/lalalaaroussa.webp",
-    description: "Compétition emblématique où des couples s’affrontent pour remporter une cérémonie de mariage de rêve.",
+    description: "Compétition emblématique où des couples s'affrontent pour remporter une cérémonie de mariage de rêve.",
   },
   {
     id: 2,
@@ -66,7 +66,7 @@ const LIVE_PROGRAMS: Work[] = [
     id: 8,
     name: "AKHIR TAMAN",
     image: "/emissions/akhirtaman.webp",
-    description: "Émission d’enchères captivante où objets rares et passion des collectionneurs se rencontrent.",
+    description: "Émission d'enchères captivante où objets rares et passion des collectionneurs se rencontrent.",
   },
   {
     id: 9,
@@ -74,7 +74,6 @@ const LIVE_PROGRAMS: Work[] = [
     image: "/emissions/fashionmaghribi.webp",
     description: "Compétition mettant en lumière le talent et la créativité des stylistes et designers de mode",
   }
-
 ];
 
 // Services / Scénographie & Aménagement
@@ -107,19 +106,19 @@ const SERVICES_WORKS: Work[] = [
     id: 5,
     name: "ADA - Abu Dhabi International Food Exhibition",
     image: "/realizations/adif2023.png",
-    description: "Pavillon marocain présentant l’excellence agroalimentaire nationale dans une scénographie moderne et lumineuse."
+    description: "Pavillon marocain présentant l'excellence agroalimentaire nationale dans une scénographie moderne et lumineuse."
   },
   {
     id: 6,
     name: "INWI",
     image: "/realizations/inwi.png",
-    description: "Stand corporate au design épuré et technologique, valorisant l’innovation et la connectivité."
+    description: "Stand corporate au design épuré et technologique, valorisant l'innovation et la connectivité."
   },
   {
     id: 7,
     name: "CASA EVENTS",
     image: "/realizations/smartcity.png",
-    description: "Conception d’un espace interactif et expérientiel pour promouvoir les événements culturels et sportifs de la ville."
+    description: "Conception d'un espace interactif et expérientiel pour promouvoir les événements culturels et sportifs de la ville."
   },
   {
     id: 8,
@@ -141,7 +140,7 @@ const LOISIRS_WORKS: Work[] = [
     id: 1,
     name: "PALOOZA MARRAKECH",
     image: "/palooza.webp",
-    description: "Parc d’attractions thématique dédié aux dinosaures, combinant divertissement familial, pédagogie et expériences immersives uniques."
+    description: "Parc d'attractions thématique dédié aux dinosaures, combinant divertissement familial, pédagogie et expériences immersives uniques."
   },
   {
     id: 2,
@@ -157,7 +156,7 @@ const RESTAURATION_WORKS: Work[] = [
     id: 1,
     name: "Garden Bake's",
     image: "/gardenbakes.jpg",
-    description: "Boulangerie artisanale où la tradition du pain et de la viennoiserie rencontre l’élégance d’un espace chaleureux et contemporain."
+    description: "Boulangerie artisanale où la tradition du pain et de la viennoiserie rencontre l'élégance d'un espace chaleureux et contemporain."
   },
   {
     id: 2,
@@ -181,14 +180,18 @@ const RESTAURATION_WORKS: Work[] = [
     id: 5,
     name: "Oxygen Village",
     image: "/oxygene.jpg",
-    description: "Hébergement éco-responsable conçu à partir de conteneurs modulaires, associant design, confort et nature pour une expérience d’accueil nouvelle génération."
+    description: "Hébergement éco-responsable conçu à partir de conteneurs modulaires, associant design, confort et nature pour une expérience d'accueil nouvelle génération."
   },
+];
+
+// BTP / Construction
+const BTP_WORKS: Work[] = [
   {
-    id: 5,
-    name: "BTP",
+    id: 1,
+    name: "PBS",
     image: "/filiales/pbs.jpg",
-    description: "Notre entreprise de construction PBS est une entreprise de construction innovante, spécialisée dans les projets durables et de qualité, alliant expertise technique et respect des délais."
-  }
+    description: "PBS est une entreprise de construction innovante, spécialisée dans les projets durables et de qualité, alliant expertise technique et respect des délais."
+  },
 ];
 
 const TAB_DATA = [
@@ -204,22 +207,29 @@ const TAB_DATA = [
     label: 'Scénographie & Aménagement',
     icon: Building2,
     works: SERVICES_WORKS,
-    description: "De la conception à la réalisation, nous signons des espaces scénographiques où architecture, storytelling et technologie s’unissent harmonieusement."
+    description: "De la conception à la réalisation, nous signons des espaces scénographiques où architecture, storytelling et technologie s'unissent harmonieusement."
   },
   {
     id: 'loisirs',
     label: 'Parcs de Divertissement (FEC)',
     icon: Award,
     works: LOISIRS_WORKS,
-    description: "L’entertainment au cœur du savoir-faire de Parthenon Holding."
+    description: "L'entertainment au cœur du savoir-faire de Parthenon Holding."
   },
   {
     id: 'restauration',
     label: 'Hospitality',
     icon: Utensils,
     works: RESTAURATION_WORKS,
-    description: "L’excellence au coeur de la qualité de nos restaurants et de nos hébergements."
-  }
+    description: "L'excellence au coeur de la qualité de nos restaurants et de nos hébergements."
+  },
+  {
+    id: 'btp',
+    label: 'BTP',
+    icon: HardHat,
+    works: BTP_WORKS,
+    description: "Notre entreprise de construction PBS est spécialisée dans la réalisation de projets divers, allant des infrastructures commerciales aux complexes résidentiels, en mettant l'accent sur la qualité et l'innovation."
+  }, 
 ];
 
 export default function NosVerticaux() {
@@ -230,11 +240,10 @@ export default function NosVerticaux() {
   return (
     <section className="w-full min-h-screen" style={{ backgroundColor: DARK }}>
 
-
      {/* Tab Navigation - Responsive Grid */}
      <div className="backdrop-blur-xl bg-black/60 border-b" style={{ borderColor: `${GOLD}30` }}>
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 py-6">
+          <div className="grid grid-cols-2 lg:grid-cols-5 gap-3 py-6">
             {TAB_DATA.map((tab) => {
               const Icon = tab.icon;
               return (
@@ -268,6 +277,7 @@ export default function NosVerticaux() {
           </div>
         </div>
       </div>
+      
       {/* Description Section */}
       <AnimatePresence mode="wait">
         {currentTab && (

@@ -184,6 +184,30 @@ export default function NosFiliales() {
       color: "#A98142",
     },
     {
+      id: "aquila",
+      name: "Aquila Sécurité",
+      description: "Entreprise spécialisée dans la sécurité privée, Aquila propose des solutions complètes de protection pour les sites professionnels, les événements et les résidences. Son équipe de vigiles qualifiés veille à la sûreté des biens et des personnes, avec rigueur et professionnalisme.",
+      features: [
+        "Sécurité privée",
+        "gardiennage",
+        "protection d’événements et surveillance de sites sensibles"
+      ],
+      image: "/filiales/aquila.jpg",
+      color: "#A98142",
+    },
+    {
+      id: "dko",
+      name: "Les Ateliers DKO",
+      description: "Espace de conception et de fabrication de mobilier sur mesure, Les Ateliers DKO allient savoir-faire artisanal et technologies modernes pour créer des aménagements uniques et durables, adaptés aux besoins des professionnels comme des particuliers.",
+      features: [
+        "Fabrication de mobilier sur mesure",
+        "agencement d’espaces",
+        "menuiserie haut de gamme"
+      ],
+      image: "/filiales/ateliersdko.jpg",
+      color: "#A98142",
+    },
+    {
       id: "go-velodrome",
       name: "Go Velodrome",
       description: "Premier centre cycliste indoor innovant, Go Velodrome offre des installations de qualité pour les passionnés de vélo de tous niveaux.",

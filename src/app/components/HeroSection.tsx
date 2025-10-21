@@ -223,7 +223,7 @@ export default function ParthenonHero() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.6, duration: 0.7 }}
                 >
-                  Un guichet unique d'expertise avec 10 filiales spécialisées en événementiel, audiovisuel et loisirs, guidées par l'excellence et l'innovation durable.
+                  Un guichet unique d'expertise avec 12 filiales spécialisées en événementiel, audiovisuel et loisirs, guidées par l'excellence et l'innovation durable.
                 </motion.p>
               </motion.div>
               
