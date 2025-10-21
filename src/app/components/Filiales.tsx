@@ -81,7 +81,7 @@ export default function NosFiliales() {
     },
     {
       id: "palooza-park",
-      name: "Palooza Park",
+      name: "Palooza Park Marrakech",
       description: "Parc d'attractions thématique offrant une multitude d'expériences ludiques et immersives pour toute la famille.",
       features: [
         "Attractions thématiques variées",
@@ -94,7 +94,7 @@ export default function NosFiliales() {
     },
     {
       id: "skyjump",
-      name: "Skyjump",
+      name: "Skyjump Casablanca",
       description: "Spécialiste des activités de loisirs à sensations fortes, Skyjump propose des expériences aériennes uniques pour tous les publics.",
       features: [
         "Attractions aériennes sécurisées",
