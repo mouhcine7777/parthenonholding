@@ -42,7 +42,7 @@ export default function NosFilialesGrid() {
         },
         {
           id: "public-production",
-          name: "Public Production",
+          name: "Public Évènement Productions",
           description: "Référence de la production audiovisuelle marocaine, Public Production crée et adapte des formats originaux pour la télévision et le digital, alliant créativité et exigence artistique.",
           expertise: "Création de contenus TV, adaptation de formats internationaux, direction artistique.",
           image: "/filiales/PEP.jpg",
@@ -66,7 +66,7 @@ export default function NosFilialesGrid() {
         },
         {
           id: "sky-jump",
-          name: "Skyjump Trampoline Park",
+          name: "Skyjump Casablanca",
           description: "Espace de loisirs indoor dédié au trampoline et à l’amusement pour tous les âges, Skyjump combine sport, énergie et divertissement dans une ambiance urbaine et familiale.",
           expertise: "Gestion de parcs indoor, animation ludique, expérience client dynamique.",
           image: "/filiales/Skyjump.jpg",
@@ -105,18 +105,34 @@ export default function NosFilialesGrid() {
       color: "#A98142",
       filiales: [
         {
-          id: "garden-concept",
-          name: "Garden Concept",
-          description: "Le concept Garden réunit trois expériences complémentaires — Garden Brunch, Garden Bake’s et Garden Room — autour d’une même vision : un art de vivre gourmand et élégant.",
-          expertise: " Restauration haut de gamme, pâtisserie artisanale, espaces événementiels.",
+          id: "garden-brunch",
+          name: "Garden Brunch",
+          description: "Concept de brunch savoureux proposant diverses formules dans un cadre élégant et convivial, où la gastronomie rencontre l'art de vivre.",
+          expertise: "Restauration haut de gamme, brunch gastronomique, expérience culinaire.",
           image: "/filiales/Gardenbrunch.jpg",
+          icon: Coffee
+        },
+        {
+          id: "garden-bakes",
+          name: "Garden Bake's",
+          description: "Boulangerie artisanale où la tradition du pain et de la viennoiserie rencontre l'élégance d'un espace chaleureux et contemporain.",
+          expertise: "Boulangerie artisanale, viennoiserie premium, pâtisserie française.",
+          image: "/filiales/Gardenbakes.jpg",
+          icon: Coffee
+        },
+        {
+          id: "garden-room",
+          name: "Garden Room",
+          description: "Concept gourmand autour de brioches salées et sucrées, servies tout au long de la journée dans une ambiance douce et contemporaine.",
+          expertise: "Brioches artisanales, restauration rapide premium, ambiance cosy.",
+          image: "/filiales/gardenroom.jpg",
           icon: Coffee
         },
         {
           id: "oxygen-village",
           name: "Oxygen Village",
-          description: "Projet d’hébergement modulaire éco-conçu, Oxygen Village combine confort, design et durabilité pour redéfinir les standards modernes de l’accueil.",
-          expertise: "Hébergement modulaire, design innovant, expériences d’accueil modernes.",
+          description: "Projet d'hébergement modulaire éco-conçu, Oxygen Village combine confort, design et durabilité pour redéfinir les standards modernes de l'accueil.",
+          expertise: "Hébergement modulaire, design innovant, expériences d'accueil modernes.",
           image: "/filiales/oxygen.jpg",
           icon: Home
         }
