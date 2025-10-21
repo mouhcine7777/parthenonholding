@@ -132,6 +132,19 @@ export default function NosFiliales() {
       color: "#C59B5A",
     },
     {
+      id: "garden-room",
+      name: "Garden Room",
+      description: "Concept gourmand autour de brioches salées et sucrées, servies tout au long de la journée dans une ambiance douce et contemporaine.",
+      features: [
+        "Cuisine raffinée et produits locaux",
+        "Cadre verdoyant exceptionnel",
+        "Formules adaptées à tous les événements",
+        "Service personnalisé et attentionné"
+      ],
+      image: "/filiales/gardenroom.jpg",
+      color: "#C59B5A",
+    },
+    {
       id: "oxygen-village",
       name: "Oxygen Village",
       description: "Avec l'innovant projet OXYGEN VILLAGE, notre pôle Hospitality a imaginé un hébergement modulaire alliant confort, design et ingéniosité. Cette réalisation traduit l'ambition de Parthenon Holding de créer des expériences d'accueil modernes et fonctionnelles, et de redéfinir les standards de l'hébergement.",

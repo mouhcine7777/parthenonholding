@@ -106,17 +106,17 @@ export default function ModernQuelquesChiffres() {
     },
     { 
       icon: <Building strokeWidth={1.5} />,
-      value: 200,
-      label: "CLIENTS",
+      value: 10,
+      label: "FILIALES",
       suffix: '+',
-      description: "Nous font confiance, tant au Maroc et qu’à l’international"
+      description: "Expertise complémentaire et spécialisée"
     },
     { 
       icon: <Users strokeWidth={1.5} />,
       value: 200,
-      label: "COLLABORATEURS",
+      label: "CLIENTS",
       suffix: '+',
-      description: "Talents passionnés et engagés"
+      description: "Nous font confiance, tant au Maroc et qu’à l’international"
     }
   ];
   

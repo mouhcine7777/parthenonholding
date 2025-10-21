@@ -179,18 +179,6 @@ export default function RSEDurabiliteSection() {
                 );
               })}
             </div>
-
-            {/* Closing statement */}
-            <motion.p
-              className="text-base md:text-lg leading-relaxed pt-4"
-              style={{ color: DARK }}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-            >
-              <span className="font-bold">Parthenon Holding s'engage à créer des expériences qui inspirent, tout en respectant les ressources et les générations futures.</span>
-            </motion.p>
           </motion.div>
 
           {/* Right Side - Visual */}
@@ -286,6 +274,18 @@ export default function RSEDurabiliteSection() {
             </div>
           </motion.div>
         </div>
+
+        {/* Closing statement - Full width below grid */}
+        <motion.p
+          className="text-base md:text-lg lg:text-xl leading-relaxed pt-12 text-center max-w-4xl mx-auto"
+          style={{ color: DARK }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+        >
+          <span className="font-bold">Engagés pour un avenir durable : RSE et développement au coeur de nos valeurs.</span>
+        </motion.p>
       </div>
     </section>
   );
