@@ -52,7 +52,7 @@ export default function NosFilialesGrid() {
     },
     {
       id: "loisirs",
-      name: "Pôle Loisirs",
+      name: "Pôle Loisirs & Hospitality",
       title: "",
       color: "#A98142",
       filiales: [
@@ -71,6 +71,38 @@ export default function NosFilialesGrid() {
           expertise: "Gestion de parcs indoor, animation ludique, expérience client dynamique.",
           image: "/filiales/Skyjump.jpg",
           icon: Sparkles
+        },
+        {
+          id: "garden-brunch",
+          name: "Garden Brunch",
+          description: "Concept de brunch savoureux proposant diverses formules dans un cadre élégant et convivial, où la gastronomie rencontre l'art de vivre.",
+          expertise: "Restauration haut de gamme, brunch gastronomique, expérience culinaire.",
+          image: "/filiales/Gardenbrunch.jpg",
+          icon: Coffee
+        },
+        {
+          id: "garden-bakes",
+          name: "Garden Bake's",
+          description: "Boulangerie artisanale où la tradition du pain et de la viennoiserie rencontre l'élégance d'un espace chaleureux et contemporain.",
+          expertise: "Boulangerie artisanale, viennoiserie premium, pâtisserie française.",
+          image: "/filiales/Gardenbakes.jpg",
+          icon: Coffee
+        },
+        {
+          id: "garden-room",
+          name: "Garden Room",
+          description: "Concept gourmand autour de brioches salées et sucrées, servies tout au long de la journée dans une ambiance douce et contemporaine.",
+          expertise: "Brioches artisanales, restauration rapide premium, ambiance cosy.",
+          image: "/filiales/gardenroom.jpg",
+          icon: Coffee
+        },
+        {
+          id: "oxygen-village",
+          name: "Oxygen Village",
+          description: "Projet d'hébergement modulaire éco-conçu, Oxygen Village combine confort, design et durabilité pour redéfinir les standards modernes de l'accueil.",
+          expertise: "Hébergement modulaire, design innovant, expériences d'accueil modernes.",
+          image: "/filiales/oxygen.jpg",
+          icon: Home
         }
       ]
     },
@@ -111,46 +143,6 @@ export default function NosFilialesGrid() {
           expertise: "Sécurité privée, gardiennage, protection d’événements et surveillance de sites sensibles.",
           image: "/filiales/aquila.jpg",
           icon: Building2
-        }
-      ]
-    },
-    {
-      id: "hospitality",
-      name: "Pôle Loisirs & Hospitality",
-      title: "",
-      color: "#A98142",
-      filiales: [
-        {
-          id: "garden-brunch",
-          name: "Garden Brunch",
-          description: "Concept de brunch savoureux proposant diverses formules dans un cadre élégant et convivial, où la gastronomie rencontre l'art de vivre.",
-          expertise: "Restauration haut de gamme, brunch gastronomique, expérience culinaire.",
-          image: "/filiales/Gardenbrunch.jpg",
-          icon: Coffee
-        },
-        {
-          id: "garden-bakes",
-          name: "Garden Bake's",
-          description: "Boulangerie artisanale où la tradition du pain et de la viennoiserie rencontre l'élégance d'un espace chaleureux et contemporain.",
-          expertise: "Boulangerie artisanale, viennoiserie premium, pâtisserie française.",
-          image: "/filiales/Gardenbakes.jpg",
-          icon: Coffee
-        },
-        {
-          id: "garden-room",
-          name: "Garden Room",
-          description: "Concept gourmand autour de brioches salées et sucrées, servies tout au long de la journée dans une ambiance douce et contemporaine.",
-          expertise: "Brioches artisanales, restauration rapide premium, ambiance cosy.",
-          image: "/filiales/gardenroom.jpg",
-          icon: Coffee
-        },
-        {
-          id: "oxygen-village",
-          name: "Oxygen Village",
-          description: "Projet d'hébergement modulaire éco-conçu, Oxygen Village combine confort, design et durabilité pour redéfinir les standards modernes de l'accueil.",
-          expertise: "Hébergement modulaire, design innovant, expériences d'accueil modernes.",
-          image: "/filiales/oxygen.jpg",
-          icon: Home
         }
       ]
     }

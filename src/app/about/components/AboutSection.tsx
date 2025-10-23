@@ -50,7 +50,7 @@ export default function ValuesSection() {
       title: "Responsabilité",
       subtitle: "& Durabilité",
       description: "Bâtir des projets péreins et respectueux, en harmonie avec l’environnement et les générations futures.",
-      image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1200&q=80",
+      image: "/durab.jpeg",
       icon: Leaf
     }
   ];

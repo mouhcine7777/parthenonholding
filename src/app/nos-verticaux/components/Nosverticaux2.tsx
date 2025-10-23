@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, Award, Building2, Utensils, HardHat } from 'lucide-react';
+import { Sparkles, Award, Building2, HardHat } from 'lucide-react';
 
 // Define brand colors
 const GOLD = "#A98142";
@@ -104,7 +104,7 @@ const SERVICES_WORKS: Work[] = [
   },
   {
     id: 5,
-    name: "ADA - Abu Dhabi International Food Exhibition",
+    name: "ADA - ABU DHABI INTERNATIONAL FOOD EXHIBITION",
     image: "/realizations/adif2023.png",
     description: "Pavillon marocain présentant l'excellence agroalimentaire nationale dans une scénographie moderne et lumineuse."
   },
@@ -138,46 +138,42 @@ const SERVICES_WORKS: Work[] = [
 const LOISIRS_WORKS: Work[] = [
   {
     id: 1,
-    name: "PALOOZA MARRAKECH",
+    name: "Palooza Marrakech",
     image: "/palooza.webp",
     description: "Parc d'attractions thématique dédié aux dinosaures, combinant divertissement familial, pédagogie et expériences immersives uniques."
   },
   {
     id: 2,
-    name: "SKY JUMP CASABLANCA",
+    name: "Skyjump Casablanca",
     image: "/skyjump.jpg",
     description: "Espace de loisirs indoor entièrement dédié au trampoline, offrant une expérience fun et sportive pour tous les âges."
-  }
-];
-
-// Restauration / Hospitality
-const RESTAURATION_WORKS: Work[] = [
+  },
   {
-    id: 1,
+    id: 3,
     name: "Garden Bake's",
     image: "/gardenbakes.jpg",
     description: "Boulangerie artisanale où la tradition du pain et de la viennoiserie rencontre l'élégance d'un espace chaleureux et contemporain."
   },
   {
-    id: 2,
+    id: 4,
     name: "Garden Room",
     image: "/filiales/garden-room.jpg",
     description: "Concept gourmand autour de brioches salées et sucrées, servies tout au long de la journée dans une ambiance douce et contemporaine."
   },
   {
-    id: 3,
+    id: 5,
     name: "Garden Brunch",
     image: "/filiales/garden-brunch.jpg",
     description: "Concept de brunch savoureux proposant diverses formules."
   },
   {
-    id: 4,
+    id: 6,
     name: "Go Vélodrome",
     image: "/velodrome.jpg",
     description: "Espace lifestyle au cœur du Vélodrome de Casablanca, accueillant activités, événements et concepts culinaires innovants."
   },
   {
-    id: 5,
+    id: 7,
     name: "Oxygen Village",
     image: "/oxygene.jpg",
     description: "Hébergement éco-responsable conçu à partir de conteneurs modulaires, associant design, confort et nature pour une expérience d'accueil nouvelle génération."
@@ -190,16 +186,16 @@ const BTP_WORKS: Work[] = [
     id: 1,
     name: "STATION AFRIQUIA LISSASFA",
     image: "/afriquia.jpg",
-    description: "Réalisé en collaboration avec AFRIQUIA SMDC et conçu par l’architecte MEHDIBERRADA. Avec une surface de 1995m², cette station incarne notre engagement envers l’efficacité et l’esthétique."
+    description: "Réalisé en collaboration avec AFRIQUIA SMDC et conçu par l'architecte MEHDIBERRADA. Avec une surface de 1995m², cette station incarne notre engagement envers l'efficacité et l'esthétique."
   },
   {
     id: 2,
-    name: "Mc Village",
+    name: "MC VILLAGE",
     image: "/mcdo.jpg",
-    description: " En collaboration avec Afriquia SMDC et l’architecte TARIK LAKHMIRI. Avec une surface couverte de 1540 m² et une vaste étendue extérieure aménagée de 9533 m², ce projet incarne la fusion entre l’architecture innovante et l’aménagement paysager réfléchi."
+    description: " En collaboration avec Afriquia SMDC et l'architecte TARIK LAKHMIRI. Avec une surface couverte de 1540 m² et une vaste étendue extérieure aménagée de 9533 m², ce projet incarne la fusion entre l'architecture innovante et l'aménagement paysager réfléchi."
   },
   {
-    id: 1,
+    id: 3,
     name: "OXYGEN VILLAGE",
     image: "/oxygen.jpg",
     description: " Dans le cadre exceptionnel du projet OXYGEN VILLAGE, réalisé pour Parthenon Holding, nous avons relevé le défi de créer un hébergement modulaire de qualité."
@@ -223,17 +219,10 @@ const TAB_DATA = [
   },
   {
     id: 'loisirs',
-    label: 'Parcs de Divertissement (FEC)',
+    label: 'Loisirs & Hospitality',
     icon: Award,
     works: LOISIRS_WORKS,
     description: "L'entertainment au cœur du savoir-faire de Parthenon Holding."
-  },
-  {
-    id: 'restauration',
-    label: 'Hospitality',
-    icon: Utensils,
-    works: RESTAURATION_WORKS,
-    description: "L'excellence au coeur de la qualité de nos restaurants et de nos hébergements."
   },
   {
     id: 'btp',
@@ -255,7 +244,7 @@ export default function NosVerticaux() {
      {/* Tab Navigation - Responsive Grid */}
      <div className="backdrop-blur-xl bg-black/60 border-b" style={{ borderColor: `${GOLD}30` }}>
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-2 lg:grid-cols-5 gap-3 py-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 py-6">
             {TAB_DATA.map((tab) => {
               const Icon = tab.icon;
               return (
