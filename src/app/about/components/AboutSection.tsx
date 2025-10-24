@@ -34,7 +34,7 @@ export default function ValuesSection() {
       title: "Esprit d'équipe",
       subtitle: "& Performance",
       description: "La force du collectif au service de projets créatifs et maîtrisés, où chaque talent contribue à l’excellence du résultat.",
-      image: "/audace.jpg",
+      image: "/audace.png",
       icon: Users
     },
     {
