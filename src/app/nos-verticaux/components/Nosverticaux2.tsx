@@ -1,5 +1,6 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles, Award, Building2, HardHat } from 'lucide-react';
 
@@ -222,7 +223,7 @@ const TAB_DATA = [
     label: 'Loisirs & Hospitality',
     icon: Award,
     works: LOISIRS_WORKS,
-    description: "Du loisir à l’hôtellerie, Parthenon Holding imagine et opère des lieux de vie où plaisir, convivialité et excellence d’accueil se rencontrent."
+    description: "Du loisir à l'hôtellerie, Parthenon Holding imagine et opère des lieux de vie où plaisir, convivialité et excellence d'accueil se rencontrent."
   },
   {
     id: 'btp',
@@ -234,7 +235,24 @@ const TAB_DATA = [
 ];
 
 export default function NosVerticaux() {
-  const [activeTab, setActiveTab] = useState('live');
+  const searchParams = useSearchParams();
+  const tabFromUrl = searchParams.get('tab');
+  
+  // Initialize activeTab from URL or default to 'live'
+  const [activeTab, setActiveTab] = useState(() => {
+    // Check if the tab from URL is valid
+    if (tabFromUrl && TAB_DATA.some(tab => tab.id === tabFromUrl)) {
+      return tabFromUrl;
+    }
+    return 'live';
+  });
+  
+  // Update activeTab when URL changes
+  useEffect(() => {
+    if (tabFromUrl && TAB_DATA.some(tab => tab.id === tabFromUrl)) {
+      setActiveTab(tabFromUrl);
+    }
+  }, [tabFromUrl]);
   
   const currentTab = TAB_DATA.find(tab => tab.id === activeTab);
   
