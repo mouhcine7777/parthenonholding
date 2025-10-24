@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { 
   MapPin, 
   Mail, 
@@ -102,10 +103,10 @@ export default function ParthenonFooter() {
     {
       title: "Nos verticaux",
       links: [
-        { text: "Programmes audiovisuels", href: "/nos-verticaux" },
-        { text: "Scénographie & Aménagement", href: "/nos-verticaux" },
-        { text: "Loisirs & Hospitality", href: "/nos-verticaux" },
-        { text: "Bâtiment & Travaux Publics (BTP)", href: "/nos-verticaux" }
+        { text: "Programmes audiovisuels", href: "/nos-verticaux?tab=live" },
+        { text: "Scénographie & Aménagement", href: "/nos-verticaux?tab=services" },
+        { text: "Loisirs & Hospitality", href: "/nos-verticaux?tab=loisirs" },
+        { text: "Bâtiment & Travaux Publics (BTP)", href: "/nos-verticaux?tab=btp" }
       ]
     }
   ];
@@ -140,11 +141,13 @@ export default function ParthenonFooter() {
             animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
             transition={{ duration: 0.6 }}
           >
-            <img 
-              src="/logo.png" 
-              alt="Parthenon Holding" 
-              className="h-12 md:h-16"
-            />
+            <Link href="/">
+              <img 
+                src="/logo.png" 
+                alt="Parthenon Holding" 
+                className="h-12 md:h-16 cursor-pointer"
+              />
+            </Link>
           </motion.div>
         </div>
         
@@ -192,6 +195,8 @@ export default function ParthenonFooter() {
                   key={index}
                   href={social.href}
                   aria-label={social.label}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-9 h-9 flex items-center justify-center rounded-full"
                   whileHover={{ 
                     scale: 1.1,
@@ -226,18 +231,19 @@ export default function ParthenonFooter() {
               <ul className="space-y-2">
                 {column.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
-                    <motion.a
-                      href={link.href}
-                      className="text-sm inline-block relative"
-                      whileHover={{ x: 5 }}
-                      style={{ color: `${LIGHT}CC` }}
-                    >
-                      {link.text}
-                      <span 
-                        className="absolute left-0 bottom-0 w-0 h-px group-hover:w-full transition-all duration-300"
-                        style={{ backgroundColor: GOLD }}
-                      ></span>
-                    </motion.a>
+                    <Link href={link.href} passHref legacyBehavior>
+                      <motion.a
+                        className="text-sm inline-block relative group cursor-pointer"
+                        whileHover={{ x: 5 }}
+                        style={{ color: `${LIGHT}CC` }}
+                      >
+                        {link.text}
+                        <span 
+                          className="absolute left-0 bottom-0 w-0 h-px group-hover:w-full transition-all duration-300"
+                          style={{ backgroundColor: GOLD }}
+                        ></span>
+                      </motion.a>
+                    </Link>
                   </li>
                 ))}
               </ul>
