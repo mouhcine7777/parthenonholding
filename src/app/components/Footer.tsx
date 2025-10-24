@@ -92,21 +92,22 @@ const columnVariants = {
     {
       title: "Navigation",
       links: [
-        { text: "Accueil", href: "#home" },
-        { text: "A propos", href: "#about" },
+        { text: "Accueil", href: "/" },
+        { text: "A propos", href: "/about" },
         { text: "Nos verticaux", href: "#verticals" },
-        { text: "Notre Savoir Faire", href: "#expertise" },
-        { text: "Espace recrutement", href: "#careers" },
+        { text: "Expertises", href: "#expertise" },
+        { text: "Nos filiales", href: "#careers" },
+        { text: "RSE & Durabilité", href: "#careers" },
         { text: "Contact", href: "#contact" }
       ]
     },
     {
       title: "Nos verticaux",
       links: [
-        { text: "Événementiel", href: "#event" },
-        { text: "Audiovisuel", href: "#audiovisual" },
-        { text: "Loisirs", href: "#leisure" },
-        { text: "Conseils", href: "#consulting" }
+        { text: "Programmes audiovisuels", href: "#legal" },
+        { text: "Scénographie & Aménagement", href: "#privacy" },
+        { text: "Loisirs & Hospitality", href: "#cookies" },
+        { text: "Bâtiment & Travaux Publics (BTP)", href: "#accessibility" }
       ]
     },
     {

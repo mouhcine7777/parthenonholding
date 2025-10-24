@@ -222,7 +222,7 @@ const TAB_DATA = [
     label: 'Loisirs & Hospitality',
     icon: Award,
     works: LOISIRS_WORKS,
-    description: "L'entertainment au cœur du savoir-faire de Parthenon Holding."
+    description: "Du loisir à l’hôtellerie, Parthenon Holding imagine et opère des lieux de vie où plaisir, convivialité et excellence d’accueil se rencontrent."
   },
   {
     id: 'btp',
