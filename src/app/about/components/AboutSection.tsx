@@ -26,7 +26,7 @@ export default function ValuesSection() {
       title: "Audace",
       subtitle: "& Ambition",
       description: "Oser l’inattendu pour offrir des expériences mémorables qui marquent les esprits et transforment les événements en souvenirs durables.",
-      image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1200&q=80",
+      image: "/ambition.png",
       icon: Target
     },
     {
@@ -34,7 +34,7 @@ export default function ValuesSection() {
       title: "Esprit d'équipe",
       subtitle: "& Performance",
       description: "La force du collectif au service de projets créatifs et maîtrisés, où chaque talent contribue à l’excellence du résultat.",
-      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80",
+      image: "/audace.jpg",
       icon: Users
     },
     {
@@ -42,7 +42,7 @@ export default function ValuesSection() {
       title: "Innovation",
       subtitle: "& Créativité",
       description: "Anticiper les tendances pour proposer des solutions modernes et impactantes, à la pointe de la technologie et du design.",
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80",
+      image: "/innovation.png",
       icon: Zap
     },
     {
@@ -50,7 +50,7 @@ export default function ValuesSection() {
       title: "Responsabilité",
       subtitle: "& Durabilité",
       description: "Bâtir des projets péreins et respectueux, en harmonie avec l’environnement et les générations futures.",
-      image: "/durab.jpeg",
+      image: "/durab.png",
       icon: Leaf
     }
   ];

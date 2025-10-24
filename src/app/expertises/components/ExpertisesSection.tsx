@@ -23,7 +23,7 @@ export default function ExpertisesSection() {
       id: "conseil-strategie",
       title: "Conseil & stratégie",
       description: "Nous concevons avec nos partenaires des stratégies sur mesure, fondées sur la compréhension des enjeux, la créativité et la performance. De la définition de la vision à la planification opérationnelle, nous accompagnons chaque projet avec exigence et précision.",
-      image: "/conseil-strategie.jpg",
+      image: "/conseil-strategie.png",
       icon: Lightbulb
     },
     {
