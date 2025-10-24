@@ -5,11 +5,8 @@ import {
   MapPin, 
   Mail, 
   Phone, 
-  Instagram, 
-  Facebook, 
   Linkedin, 
-  ChevronUp, 
-  ArrowUpRight
+  ChevronUp
 } from 'lucide-react';
 
 // Define brand colors as constants (matching the hero and menu components)
@@ -50,19 +47,20 @@ export default function ParthenonFooter() {
     };
   }, []);
 
-// Footer column animation variants
-const columnVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({  // Explicitly type the 'i' parameter as number
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 0.1 * i,
-      duration: 0.6,
-      ease: [0.22, 1, 0.36, 1]
-    }
-  })
-};
+  // Footer column animation variants
+  const columnVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.1 * i,
+        duration: 0.6,
+        ease: [0.22, 1, 0.36, 1]
+      }
+    })
+  };
+  
   // Contact info links with their icons
   const contactInfo = [
     { 
@@ -87,36 +85,27 @@ const columnVariants = {
     { icon: <Linkedin size={20} />, href: "https://ma.linkedin.com/company/parthenonholding", label: "LinkedIn" }
   ];
   
-  // Updated footer menu columns to match header navigation
+  // Updated footer menu columns (removed Informations section)
   const footerColumns = [
     {
       title: "Navigation",
       links: [
         { text: "Accueil", href: "/" },
         { text: "A propos", href: "/about" },
-        { text: "Nos verticaux", href: "#verticals" },
-        { text: "Expertises", href: "#expertise" },
-        { text: "Nos filiales", href: "#careers" },
-        { text: "RSE & Durabilité", href: "#careers" },
-        { text: "Contact", href: "#contact" }
+        { text: "Nos verticaux", href: "/nos-verticaux" },
+        { text: "Expertises", href: "/expertises" },
+        { text: "Nos filiales", href: "/nos-filiales" },
+        { text: "RSE & Durabilité", href: "/rse" },
+        { text: "Contact", href: "/contact" }
       ]
     },
     {
       title: "Nos verticaux",
       links: [
-        { text: "Programmes audiovisuels", href: "#legal" },
-        { text: "Scénographie & Aménagement", href: "#privacy" },
-        { text: "Loisirs & Hospitality", href: "#cookies" },
-        { text: "Bâtiment & Travaux Publics (BTP)", href: "#accessibility" }
-      ]
-    },
-    {
-      title: "Informations",
-      links: [
-        { text: "Mentions légales", href: "#legal" },
-        { text: "Politique de confidentialité", href: "#privacy" },
-        { text: "Cookies", href: "#cookies" },
-        { text: "Accessibilité", href: "#accessibility" }
+        { text: "Programmes audiovisuels", href: "/nos-verticaux" },
+        { text: "Scénographie & Aménagement", href: "/nos-verticaux" },
+        { text: "Loisirs & Hospitality", href: "/nos-verticaux" },
+        { text: "Bâtiment & Travaux Publics (BTP)", href: "/nos-verticaux" }
       ]
     }
   ];
@@ -143,7 +132,7 @@ const columnVariants = {
       />
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        {/* Top section with logo and newsletter */}
+        {/* Top section with logo */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 md:mb-16">
           {/* Logo */}
           <motion.div
@@ -159,8 +148,8 @@ const columnVariants = {
           </motion.div>
         </div>
         
-        {/* Main footer content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-10 md:mb-16">
+        {/* Main footer content - adjusted grid for 3 columns */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 mb-10 md:mb-16">
           {/* Contact information column */}
           <motion.div
             custom={0}
