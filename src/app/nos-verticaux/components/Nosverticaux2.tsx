@@ -168,13 +168,13 @@ const LOISIRS_WORKS: Work[] = [
     description: "Univers de restauration alliant authenticité, créativité et convivialité, Garden Corner réunit plusieurs concepts gourmands où l’art du bon goût s’exprime à travers des espaces chaleureux et contemporains."
   },
   {
-    id: 6,
+    id: 4,
     name: "Go Vélodrome",
     image: "/velodrome.jpg",
     description: "Espace lifestyle au cœur du Vélodrome de Casablanca, accueillant activités, événements et concepts culinaires innovants."
   },
   {
-    id: 7,
+    id: 5,
     name: "Oxygen Village",
     image: "/oxygene.jpg",
     description: "Concept d’hôtellerie éco-responsable conçu à partir de conteneurs, associant design, confort et nature pour une expérience d’accueil nouvelle génération."

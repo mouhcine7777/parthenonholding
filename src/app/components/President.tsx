@@ -150,7 +150,7 @@ export default function AboutParthenon() {
                   e.currentTarget.style.boxShadow = `0 4px 6px ${GOLD}40`;
                 }}
               >
-                Découvrir Plus <ArrowRight size={20} />
+                En savoir plus <ArrowRight size={20} />
               </Link>
             </motion.div>
           </motion.div>
