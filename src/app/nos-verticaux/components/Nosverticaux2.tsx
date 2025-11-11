@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles, Award, Building2, HardHat } from 'lucide-react';
@@ -165,7 +165,7 @@ const LOISIRS_WORKS: Work[] = [
     id: 3,
     name: "Garden Corner",
     image: "/gardenbrunch.jpg",
-    description: "Univers de restauration alliant authenticité, créativité et convivialité, Garden Corner réunit plusieurs concepts gourmands où l’art du bon goût s’exprime à travers des espaces chaleureux et contemporains."
+    description: "Univers de restauration alliant authenticité, créativité et convivialité, Garden Corner réunit plusieurs concepts gourmands où l'art du bon goût s'exprime à travers des espaces chaleureux et contemporains."
   },
   {
     id: 4,
@@ -177,7 +177,7 @@ const LOISIRS_WORKS: Work[] = [
     id: 5,
     name: "Oxygen Village",
     image: "/oxygene.jpg",
-    description: "Concept d’hôtellerie éco-responsable conçu à partir de conteneurs, associant design, confort et nature pour une expérience d’accueil nouvelle génération."
+    description: "Concept d'hôtellerie éco-responsable conçu à partir de conteneurs, associant design, confort et nature pour une expérience d'accueil nouvelle génération."
   },
 ];
 
@@ -216,7 +216,7 @@ const TAB_DATA = [
     label: 'Loisirs & Hospitality',
     icon: Award,
     works: LOISIRS_WORKS,
-    description: "Du loisir à l’hôtellerie, Parthenon Holding imagine et opère des lieux de vie où plaisir, convivialité et excellence d’accueil se rencontrent, jusque dans l’art de la table et les expériences gourmandes."
+    description: "Du loisir à l'hôtellerie, Parthenon Holding imagine et opère des lieux de vie où plaisir, convivialité et excellence d'accueil se rencontrent, jusque dans l'art de la table et les expériences gourmandes."
   },
   {
     id: 'services',
@@ -227,14 +227,15 @@ const TAB_DATA = [
   },
   {
     id: 'btp',
-    label: 'Bâtiments Tout Corps',
+    label: "Bâtiments Tout Corps D'état",
     icon: HardHat,
     works: BTP_WORKS,
     description: "Notre entreprise de construction PBS est spécialisée dans la réalisation de projets divers, allant des infrastructures commerciales aux complexes résidentiels, en mettant l'accent sur la qualité et l'innovation."
   },
 ];
 
-export default function NosVerticaux() {
+// Separate component that uses useSearchParams
+function NosVerticauxContent() {
   const searchParams = useSearchParams();
   const tabFromUrl = searchParams.get('tab');
   
@@ -443,5 +444,14 @@ export default function NosVerticaux() {
         />
       </div>
     </section>
+  );
+}
+
+// Main component with Suspense wrapper
+export default function NosVerticaux() {
+  return (
+    <Suspense fallback={<div className="w-full min-h-screen" style={{ backgroundColor: DARK }}></div>}>
+      <NosVerticauxContent />
+    </Suspense>
   );
 }
