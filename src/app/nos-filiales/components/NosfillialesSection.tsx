@@ -35,16 +35,16 @@ export default function NosFilialesGrid() {
         {
           id: "public-events",
           name: "Public Events",
-          description: "Spécialiste de l’événementiel sur mesure, Public Events conçoit des expériences immersives et modulables pour les grandes institutions, du design à la logistique globale.",
-          expertise: "Scénographie, agencement, logistique, gestion B2B.",
+          description: "Spécialiste de l’événementiel sur mesure, Public Events conçoit des expériences immersives et modulables pour des projets d’envergure, du design à la logistique globale.",
+          expertise: "Création de concepts, scénographie, agencement et logistique.",
           image: "/filiales/publicevents.jpg",
           icon: Calendar
         },
         {
           id: "public-production",
-          name: "Public Évènement Productions",
-          description: "Référence de la production audiovisuelle marocaine, Public Production crée et adapte des formats originaux pour la télévision et le digital, alliant créativité et exigence artistique.",
-          expertise: "Création de contenus TV, adaptation de formats internationaux, direction artistique.",
+          name: "Public Prod",
+          description: "Référence de la production audiovisuelle marocaine, Public Prod crée et adapte des formats originaux pour la télévision et le digital, alliant créativité et exigence artistique.",
+          expertise: "Création de concepts, adaptation de formats internationaux, direction artistique.",
           image: "/filiales/PEP.jpg",
           icon: Tv
         }
@@ -58,51 +58,19 @@ export default function NosFilialesGrid() {
       filiales: [
         {
           id: "palooza-park",
-          name: "Palooza Park Marrakech",
-          description: "Premier parc à thème du Royaume dédié aux dinosaures, Palooza Park Marrakech allie divertissement, pédagogie et expérience familiale immersive.",
-          expertise: "Design ludique, storytelling pédagogique, exploitation événementielle.",
-          image: "/filiales/Palooza.jpg",
+          name: "Sunset Hospitality Company",
+          description: "Division de Parthenon Holding dédiée aux expériences de loisirs et d’hébergement, Sunset Hospitality regroupe des destinations emblématiques telles que Palooza Park, Skyjump Casablanca et Oxygen Village. L’entité incarne une vision globale du divertissement et de l’hospitalité, mêlant plaisir, innovation et durabilité.",
+          expertise: "Gestion de parcs de loisirs, hôtellerie éco-responsable, expérience client et exploitation opérationnelle.",
+          image: "/filiales/sunset.jpg",
           icon: Sparkles
         },
         {
-          id: "sky-jump",
-          name: "Skyjump Casablanca",
-          description: "Espace de loisirs indoor dédié au trampoline et à l’amusement pour tous les âges, Skyjump combine sport, énergie et divertissement dans une ambiance urbaine et familiale.",
-          expertise: "Gestion de parcs indoor, animation ludique, expérience client dynamique.",
-          image: "/filiales/Skyjump.jpg",
-          icon: Sparkles
-        },
-        {
-          id: "garden-brunch",
-          name: "Garden Brunch",
-          description: "Concept de brunch savoureux proposant diverses formules dans un cadre élégant et convivial, où la gastronomie rencontre l'art de vivre.",
+          id: "garden-corner",
+          name: "Garden Corner",
+          description: "Ensemble de concepts culinaires réunissant Garden Home, Garden Bake’s, Garden Eat’aly et Garden Brunch, Garden Corner célèbre l’art de vivre à la casablancaise à travers des lieux chaleureux où gastronomie, convivialité et élégance se rencontrent.",
           expertise: "Restauration haut de gamme, brunch gastronomique, expérience culinaire.",
-          image: "/filiales/Gardenbrunch.jpg",
+          image: "/filiales/gardencorner.jpg",
           icon: Coffee
-        },
-        {
-          id: "garden-bakes",
-          name: "Garden Bake's",
-          description: "Boulangerie artisanale où la tradition du pain et de la viennoiserie rencontre l'élégance d'un espace chaleureux et contemporain.",
-          expertise: "Boulangerie artisanale, viennoiserie premium, pâtisserie française.",
-          image: "/filiales/Gardenbakes.jpg",
-          icon: Coffee
-        },
-        {
-          id: "garden-room",
-          name: "Garden Room",
-          description: "Concept gourmand autour de brioches salées et sucrées, servies tout au long de la journée dans une ambiance douce et contemporaine.",
-          expertise: "Brioches artisanales, restauration rapide premium, ambiance cosy.",
-          image: "/filiales/gardenroom.jpg",
-          icon: Coffee
-        },
-        {
-          id: "oxygen-village",
-          name: "Oxygen Village",
-          description: "Projet d'hébergement modulaire éco-conçu, Oxygen Village combine confort, design et durabilité pour redéfinir les standards modernes de l'accueil.",
-          expertise: "Hébergement modulaire, design innovant, expériences d'accueil modernes.",
-          image: "/filiales/oxygen.jpg",
-          icon: Home
         }
       ]
     },
@@ -115,7 +83,7 @@ export default function NosFilialesGrid() {
         {
           id: "pbs",
           name: "PBS",
-          description: "Spécialisée dans la construction et l’aménagement, PBS associe expertise technique et design intégré pour réaliser des projets complets, du gros œuvre aux finitions.",
+          description: "Spécialisée dans la construction et l’aménagement, PBS associe expertise technique et design intégré pour réaliser des projets complets, des gros œuvre aux finitions.",
           expertise: "Construction, aménagement, intégration technique, design intérieur.",
           image: "/filiales/pbs.jpg",
           icon: Building2

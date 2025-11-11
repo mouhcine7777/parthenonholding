@@ -29,7 +29,7 @@ const LIVE_PROGRAMS: Work[] = [
   },
   {
     id: 2,
-    name: "AHSSAN PÂTISSIER",
+    name: "LE MEILLEUR PATISSIER",
     image: "/emissions/lmp.webp",
     description: "Compétition culinaire inspirée des grands formats internationaux, consacrant les meilleurs pâtissiers du pays.",
   },
@@ -65,7 +65,7 @@ const LIVE_PROGRAMS: Work[] = [
   },
   {
     id: 8,
-    name: "AKHIR TAMAN",
+    name: "AFFAIRE CONCLUE",
     image: "/emissions/akhirtaman.webp",
     description: "Émission d'enchères captivante où objets rares et passion des collectionneurs se rencontrent.",
   },
@@ -74,7 +74,19 @@ const LIVE_PROGRAMS: Work[] = [
     name: "FASHION MAGHRIBI",
     image: "/emissions/fashionmaghribi.webp",
     description: "Compétition mettant en lumière le talent et la créativité des stylistes et designers de mode",
-  }
+  },
+  {
+    id: 10,
+    name: "NOSTALGIA LOVERS FESTIVAL",
+    image: "/about2.webp",
+    description: "Ce festival a transformé le centre historique de Casablanca en une capsule temporelle vivante, combinant technologie de pointe et esthétique rétro.",
+  },
+  {
+    id: 11,
+    name: "COUPE DU MONDE DES CLUBS",
+    image: "/realizations/fifa.jpg",
+    description: "Alors que le Maroc était choisi comme pays organisateur de la Coupe du monde des clubs de la FIFA 2014, pour la deuxième fois de son histoire, notre équipe a capitalisé sur tout son savoir-faire audiovisuel et événementiel pour garantir la réussite totale de cet événement de prestige.",
+  },
 ];
 
 // Services / Scénographie & Aménagement
@@ -139,33 +151,21 @@ const SERVICES_WORKS: Work[] = [
 const LOISIRS_WORKS: Work[] = [
   {
     id: 1,
-    name: "Palooza Marrakech",
+    name: "Palooza Park",
     image: "/palooza.webp",
     description: "Parc d'attractions thématique dédié aux dinosaures, combinant divertissement familial, pédagogie et expériences immersives uniques."
   },
   {
     id: 2,
-    name: "Skyjump Casablanca",
+    name: "Skyjump Trampoline Park",
     image: "/skyjump.jpg",
     description: "Espace de loisirs indoor entièrement dédié au trampoline, offrant une expérience fun et sportive pour tous les âges."
   },
   {
     id: 3,
-    name: "Garden Bake's",
-    image: "/gardenbakes.jpg",
-    description: "Boulangerie artisanale où la tradition du pain et de la viennoiserie rencontre l'élégance d'un espace chaleureux et contemporain."
-  },
-  {
-    id: 4,
-    name: "Garden Room",
-    image: "/filiales/garden-room.jpg",
-    description: "Concept gourmand autour de brioches salées et sucrées, servies tout au long de la journée dans une ambiance douce et contemporaine."
-  },
-  {
-    id: 5,
-    name: "Garden Brunch",
-    image: "/filiales/garden-brunch.jpg",
-    description: "Concept de brunch savoureux proposant diverses formules."
+    name: "Garden Corner",
+    image: "/gardenbrunch.jpg",
+    description: "Univers de restauration alliant authenticité, créativité et convivialité, Garden Corner réunit plusieurs concepts gourmands où l’art du bon goût s’exprime à travers des espaces chaleureux et contemporains."
   },
   {
     id: 6,
@@ -177,7 +177,7 @@ const LOISIRS_WORKS: Work[] = [
     id: 7,
     name: "Oxygen Village",
     image: "/oxygene.jpg",
-    description: "Hébergement éco-responsable conçu à partir de conteneurs modulaires, associant design, confort et nature pour une expérience d'accueil nouvelle génération."
+    description: "Concept d’hôtellerie éco-responsable conçu à partir de conteneurs, associant design, confort et nature pour une expérience d’accueil nouvelle génération."
   },
 ];
 
@@ -206,10 +206,17 @@ const BTP_WORKS: Work[] = [
 const TAB_DATA = [
   {
     id: 'live',
-    label: 'Programmes audiovisuels',
+    label: 'Création audiovisuelles & événements',
     icon: Sparkles,
     works: LIVE_PROGRAMS,
     description: "Depuis plus de vingt ans, Parthenon Holding façonne les grands rendez-vous audiovisuels marocains. Nos équipes de production conçoivent, réalisent et accompagnent des formats emblématiques — de la fiction au divertissement, en passant par les shows live et les compétitions créatives."
+  },
+  {
+    id: 'loisirs',
+    label: 'Loisirs & Hospitality',
+    icon: Award,
+    works: LOISIRS_WORKS,
+    description: "Du loisir à l’hôtellerie, Parthenon Holding imagine et opère des lieux de vie où plaisir, convivialité et excellence d’accueil se rencontrent, jusque dans l’art de la table et les expériences gourmandes."
   },
   {
     id: 'services',
@@ -219,19 +226,12 @@ const TAB_DATA = [
     description: "De la conception à la réalisation, nous signons des espaces scénographiques où architecture, storytelling et technologie s'unissent harmonieusement."
   },
   {
-    id: 'loisirs',
-    label: 'Loisirs & Hospitality',
-    icon: Award,
-    works: LOISIRS_WORKS,
-    description: "Du loisir à l'hôtellerie, Parthenon Holding imagine et opère des lieux de vie où plaisir, convivialité et excellence d'accueil se rencontrent."
-  },
-  {
     id: 'btp',
-    label: 'Bâtiment & Travaux Publics (BTP)',
+    label: 'Bâtiments Tout Corps D’état',
     icon: HardHat,
     works: BTP_WORKS,
     description: "Notre entreprise de construction PBS est spécialisée dans la réalisation de projets divers, allant des infrastructures commerciales aux complexes résidentiels, en mettant l'accent sur la qualité et l'innovation."
-  }, 
+  },
 ];
 
 export default function NosVerticaux() {

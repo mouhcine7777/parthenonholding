@@ -68,7 +68,7 @@ export default function NosFiliales() {
     },
     {
       id: "public-production",
-      name: "Public Production",
+      name: "Public Prod",
       description: "Spécialiste des productions événementielles de grande envergure, Public Production conçoit et réalise des expériences inoubliables pour les marques et les institutions.",
       features: [
         "Événements corporate et grand public",
@@ -80,81 +80,28 @@ export default function NosFiliales() {
       color: "#B68C45",
     },
     {
-      id: "palooza-park",
-      name: "Palooza Park Marrakech",
-      description: "Parc d'attractions thématique offrant une multitude d'expériences ludiques et immersives pour toute la famille.",
+      id: "sunset-hospitality",
+      name: "Sunset Hospitality",
+      description: "Division de Parthenon Holding dédiée aux expériences de loisirs et d’hébergement, Sunset Hospitality regroupe des destinations emblématiques telles que Palooza Park, Skyjump Casablanca et Oxygen Village. L’entité incarne une vision globale du divertissement et de l’hospitalité, mêlant plaisir, innovation et durabilité",
       features: [
-        "Attractions thématiques variées",
-        "Spectacles et animations exclusifs",
-        "Espaces de restauration thématiques",
-        "Événements saisonniers spéciaux"
+        "Gestion de parcs de loisirs",
+        "Hôtellerie éco-responsable",
+        "Expérience client et exploitation opérationnelle"
       ],
-      image: "/filiales/Palooza.jpg",
+      image: "/filiales/sunset.jpg",
       color: "#B68C45",
     },
     {
-      id: "skyjump",
-      name: "Skyjump Casablanca",
-      description: "Spécialiste des activités de loisirs à sensations fortes, Skyjump propose des expériences aériennes uniques pour tous les publics.",
-      features: [
-        "Attractions aériennes sécurisées",
-        "Expériences adrénaline pour tous",
-        "Équipements de pointe certifiés",
-        "Encadrement professionnel"
-      ],
-      image: "/filiales/Skyjump.jpg",
-      color: "#9E774E",
-    },
-    {
-      id: "garden-bakes",
-      name: "Garden Bakes",
-      description: "Pâtisserie artisanale proposant des créations gourmandes pour les particuliers et les professionnels dans un esprit éco-responsable.",
-      features: [
-        "Pâtisseries artisanales de qualité",
-        "Ingrédients biologiques et locaux",
-        "Service traiteur pour événements",
-        "Ateliers de pâtisserie créative"
-      ],
-      image: "/filiales/Gardenbakes.jpg",
-      color: "#C59B5A",
-    },
-    {
-      id: "garden-brunch",
-      name: "Garden Brunch",
-      description: "Concept de restauration haut de gamme spécialisé dans les brunchs gourmets dans un cadre naturel et élégant.",
+      id: "garden-corner",
+      name: "Garden Corner",
+      description: "Univers de restauration alliant authenticité, créativité et convivialité, Garden Corner réunit plusieurs concepts gourmands où l’art du bon goût s’exprime à travers des espaces chaleureux et contemporains.",
       features: [
         "Cuisine raffinée et produits locaux",
         "Cadre verdoyant exceptionnel",
         "Formules adaptées à tous les événements",
         "Service personnalisé et attentionné"
       ],
-      image: "/filiales/Gardenbrunch.jpg",
-      color: "#C59B5A",
-    },
-    {
-      id: "garden-room",
-      name: "Garden Room",
-      description: "Concept gourmand autour de brioches salées et sucrées, servies tout au long de la journée dans une ambiance douce et contemporaine.",
-      features: [
-        "Cuisine raffinée et produits locaux",
-        "Cadre verdoyant exceptionnel",
-        "Formules adaptées à tous les événements",
-        "Service personnalisé et attentionné"
-      ],
-      image: "/filiales/gardenroom.jpg",
-      color: "#C59B5A",
-    },
-    {
-      id: "oxygen-village",
-      name: "Oxygen Village",
-      description: "Avec l'innovant projet OXYGEN VILLAGE, notre pôle Hospitality a imaginé un hébergement modulaire alliant confort, design et ingéniosité. Cette réalisation traduit l'ambition de Parthenon Holding de créer des expériences d'accueil modernes et fonctionnelles, et de redéfinir les standards de l'hébergement.",
-      features: [
-        "Hébergement modulaire",
-        "Expériences d'accueil modernes",
-        "Design innovant",
-
-      ],
-      image: "/filiales/oxygen.jpg",
+      image: "/filiales/gardencorner.jpg",
       color: "#C59B5A",
     },
     {
@@ -286,7 +233,7 @@ export default function NosFiliales() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-Parthenon Holding se distingue par la production de programmes TV innovants, la conception d’événements et de scénographies d’envergure, ainsi que par une expertise en leisure & hospitality.</motion.p>
+Parthenon Holding se distingue par la production de projets innovants, la conception et la scénographie de projets d’envergure, ainsi qu’une expertise reconnue dans les domaines du loisir et du leisure.</motion.p>
         </motion.div>
         
         {/* Swiper slider - Fixed spacing that remains consistent at all zoom levels */}
