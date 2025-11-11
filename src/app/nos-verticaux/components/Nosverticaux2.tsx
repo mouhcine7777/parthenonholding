@@ -227,7 +227,7 @@ const TAB_DATA = [
   },
   {
     id: 'btp',
-    label: 'Bâtiments Tout Corps D’état',
+    label: 'Bâtiments Tout Corps',
     icon: HardHat,
     works: BTP_WORKS,
     description: "Notre entreprise de construction PBS est spécialisée dans la réalisation de projets divers, allant des infrastructures commerciales aux complexes résidentiels, en mettant l'accent sur la qualité et l'innovation."
