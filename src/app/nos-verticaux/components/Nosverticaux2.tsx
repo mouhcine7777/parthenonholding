@@ -209,7 +209,7 @@ const TAB_DATA = [
     label: 'Création audiovisuelles & événements',
     icon: Sparkles,
     works: LIVE_PROGRAMS,
-    description: "Depuis plus de vingt ans, Parthenon Holding façonne les grands rendez-vous audiovisuels marocains. Nos équipes de production conçoivent, réalisent et accompagnent des formats emblématiques — de la fiction au divertissement, en passant par les shows live et les compétitions créatives."
+    description: "Depuis plus de vingt ans, Parthenon Holding imagine et réalise les grands rendez-vous audiovisuels et événementiels du Royaume. Ses équipes conçoivent, produisent et orchestrent des formats emblématiques — de la fiction et du divertissement aux shows live, festivals et expériences immersives."
   },
   {
     id: 'loisirs',
