@@ -77,7 +77,7 @@ export default function NosFilialesGrid() {
           name: "GoVélodrome",
           description: "Plateforme de communication et promotion des événements se déroulant au Vélodrome de Casablanca, Go Velodrome connecte organisateurs, partenaires et publics pour maximiser la visibilité et l'impact de chaque manifestation.",
           expertise: "Promotion et communication des événements au Vélodrome, Gestion des relations avec partenaires et sponsors, Valorisation des événements pour les entreprises et institutions (B2B), Coordination digitale et médiatique",
-          image: "/filiales/govelodrome.jpg",
+          image: "/filiales/Govelodrome.jpg",
           icon: Coffee
         }
       ]
