@@ -1,7 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { X, ChevronRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
@@ -24,18 +23,14 @@ interface Filiale {
   features: string[];
   image: string;
   color: string;
+  poleId: string;
 }
 
 export default function NosFiliales() {
-  const [selectedFiliale, setSelectedFiliale] = useState<string | null>(null);
   const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
-  const [windowWidth, setWindowWidth] = useState<number>(0);
   
   // Add window resize listener
   useEffect(() => {
-    // Set initial width
-    setWindowWidth(window.innerWidth);
-    
     // Handle resize event
     const handleResize = () => {
       if (swiperInstance) {
@@ -51,7 +46,7 @@ export default function NosFiliales() {
     };
   }, [swiperInstance]);
   
-  // Filiales data
+  // Filiales data with poleId added
   const filiales: Filiale[] = [
     {
       id: "public-events",
@@ -65,6 +60,7 @@ export default function NosFiliales() {
       ],
       image: "/filiales/publicevents.jpg",
       color: "#9E774E",
+      poleId: "live"
     },
     {
       id: "public-production",
@@ -78,11 +74,12 @@ export default function NosFiliales() {
       ],
       image: "/filiales/PEP.jpg",
       color: "#B68C45",
+      poleId: "live"
     },
     {
       id: "sunset-hospitality",
       name: "Sunset Hospitality",
-      description: "Division de Parthenon Holding dédiée aux expériences de loisirs et d’hébergement, Sunset Hospitality regroupe des destinations emblématiques telles que Palooza Park, Skyjump Casablanca et Oxygen Village. L’entité incarne une vision globale du divertissement et de l’hospitalité, mêlant plaisir, innovation et durabilité",
+      description: "Division de Parthenon Holding dédiée aux expériences de loisirs et d'hébergement, Sunset Hospitality regroupe des destinations emblématiques telles que Palooza Park, Skyjump Casablanca et Oxygen Village. L'entité incarne une vision globale du divertissement et de l'hospitalité, mêlant plaisir, innovation et durabilité",
       features: [
         "Gestion de parcs de loisirs",
         "Hôtellerie éco-responsable",
@@ -90,11 +87,12 @@ export default function NosFiliales() {
       ],
       image: "/filiales/sunset.jpg",
       color: "#B68C45",
+      poleId: "loisirs"
     },
     {
       id: "garden-corner",
       name: "Garden Corner",
-      description: "Univers de restauration alliant authenticité, créativité et convivialité, Garden Corner réunit plusieurs concepts gourmands où l’art du bon goût s’exprime à travers des espaces chaleureux et contemporains.",
+      description: "Univers de restauration alliant authenticité, créativité et convivialité, Garden Corner réunit plusieurs concepts gourmands où l'art du bon goût s'exprime à travers des espaces chaleureux et contemporains.",
       features: [
         "Cuisine raffinée et produits locaux",
         "Cadre verdoyant exceptionnel",
@@ -103,9 +101,24 @@ export default function NosFiliales() {
       ],
       image: "/filiales/gardencorner.jpg",
       color: "#C59B5A",
+      poleId: "loisirs"
     },
     {
-      id: "integral-solution",
+      id: "go-velodrome",
+      name: "GoVélodrome",
+      description: "Plateforme de communication et promotion des événements se déroulant au Vélodrome de Casablanca, Go Velodrome connecte organisateurs, partenaires et publics pour maximiser la visibilité et l'impact de chaque manifestation.",
+      features: [
+        "Promotion et communication des événements au Vélodrome",
+        "Gestion des relations avec partenaires et sponsors",
+        "Valorisation des événements pour les entreprises et institutions (B2B)",
+        "Coordination digitale et médiatique"
+      ],
+      image: "/filiales/govelodrome.jpg",
+      color: "#A98142",
+      poleId: "loisirs"
+    },
+    {
+      id: "integral-solutions",
       name: "Integral Solution",
       description: "Integral Solution propose des solutions globales pour optimiser chaque aspect de vos événements et espaces, de la conception à la réalisation.",
       features: [
@@ -116,6 +129,7 @@ export default function NosFiliales() {
       ],
       image: "/filiales/Integral.jpg",
       color: "#C59B5A",
+      poleId: "services"
     },
     {
       id: "pbs",
@@ -129,6 +143,7 @@ export default function NosFiliales() {
       ],
       image: "/filiales/pbs.jpg",
       color: "#A98142",
+      poleId: "services"
     },
     {
       id: "aquila",
@@ -137,57 +152,40 @@ export default function NosFiliales() {
       features: [
         "Sécurité privée",
         "gardiennage",
-        "protection d’événements et surveillance de sites sensibles"
+        "protection d'événements et surveillance de sites sensibles"
       ],
       image: "/filiales/aquila.jpg",
       color: "#A98142",
+      poleId: "services"
     },
     {
-      id: "dko",
+      id: "ateliers-dko",
       name: "Les Ateliers DKO",
       description: "Espace de conception et de fabrication de mobilier sur mesure, Les Ateliers DKO allient savoir-faire artisanal et technologies modernes pour créer des aménagements uniques et durables, adaptés aux besoins des professionnels comme des particuliers.",
       features: [
         "Fabrication de mobilier sur mesure",
-        "agencement d’espaces",
+        "agencement d'espaces",
         "menuiserie haut de gamme"
       ],
       image: "/filiales/ateliersdko.jpg",
       color: "#A98142",
-    },
-    {
-      id: "go-velodrome",
-      name: "Go Velodrome",
-      description: "Premier centre cycliste indoor innovant, Go Velodrome offre des installations de qualité pour les passionnés de vélo de tous niveaux.",
-      features: [
-        "Pistes cyclables indoor",
-        "Cours collectifs et individuels",
-        "Événements compétitifs",
-        "Location d'équipements premium"
-      ],
-      image: "/filiales/Govelodrome.jpg",
-      color: "#A98142",
+      poleId: "services"
     }
   ];
 
-  // Open popup modal
-  const openModal = (id: string) => {
-    setSelectedFiliale(id);
-    document.body.style.overflow = 'hidden';
-  };
-
-  // Close popup modal
-  const closeModal = () => {
-    setSelectedFiliale(null);
-    document.body.style.overflow = 'auto';
-  };
-
-  // Get the selected filiale data
-  const getSelectedFiliale = () => {
-    return filiales.find(f => f.id === selectedFiliale);
+  // Handle card click - navigate to /nos-filiales with query params
+  const handleCardClick = (filiale: Filiale) => {
+    // In a real Next.js app, you would use:
+    // import { useRouter } from 'next/navigation';
+    // const router = useRouter();
+    // router.push(`/nos-filiales?pole=${filiale.poleId}&filiale=${filiale.id}`);
+    
+    // For demonstration, we'll construct the URL
+    window.location.href = `/nos-filiales?pole=${filiale.poleId}&filiale=${filiale.id}`;
   };
 
   return (
-    <section className="py-20 md:py-32 relative overflow-hidden bg-gray-50 ">
+    <section className="py-20 md:py-32 relative overflow-hidden bg-gray-50">
       {/* Background elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-0 w-full h-full" 
@@ -212,8 +210,8 @@ export default function NosFiliales() {
             <span className="text-sm uppercase tracking-widest font-medium" style={{ color: GOLD }}>
               Notre Réseau
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold mt-2 text-white"style={{ color: DARK }}>
-            Verticaux
+            <h2 className="text-4xl md:text-5xl font-bold mt-2" style={{ color: DARK }}>
+              Verticaux
             </h2>
             <motion.div 
               className="h-1 mt-4 mx-auto"
@@ -233,10 +231,11 @@ export default function NosFiliales() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-Parthenon Holding se distingue par la production de projets innovants, la conception et la scénographie de projets d’envergure, ainsi qu’une expertise reconnue dans les domaines du loisir et du leisure.</motion.p>
+            Parthenon holding se distingue par la production de projets innovants, la conception et la scénographie de projets d'envergure, ainsi qu'une expertise reconnue dans les domaines du loisirs et de l'hospitalité.
+          </motion.p>
         </motion.div>
         
-        {/* Swiper slider - Fixed spacing that remains consistent at all zoom levels */}
+        {/* Swiper slider */}
         <div className="w-full">
           <Swiper
             modules={[Navigation, Pagination]}
@@ -275,7 +274,7 @@ Parthenon Holding se distingue par la production de projets innovants, la concep
                   className="aspect-[3/4] h-80 md:h-96 cursor-pointer rounded-lg overflow-hidden relative"
                   whileHover={{ scale: 1.03, y: -5 }}
                   transition={{ duration: 0.3 }}
-                  onClick={() => openModal(filiale.id)}
+                  onClick={() => handleCardClick(filiale)}
                 >
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 z-10" />
                   <img 
@@ -294,7 +293,7 @@ Parthenon Holding se distingue par la production de projets innovants, la concep
           {/* External pagination element */}
           <div className="filiales-pagination flex justify-center mt-8 mb-4"></div>
           
-          {/* Custom styles for Swiper - Fixed zoom behavior */}
+          {/* Custom styles for Swiper */}
           <style jsx global>{`
             .filiales-swiper {
               width: 100%;
@@ -324,7 +323,6 @@ Parthenon Holding se distingue par la production de projets innovants, la concep
               background: ${GOLD} !important;
             }
             
-            /* This fixes the zoom issue by forcing consistent card proportions */
             .filiales-swiper .swiper-wrapper {
               display: flex;
               align-items: stretch;
@@ -338,104 +336,6 @@ Parthenon Holding se distingue par la production de projets innovants, la concep
           `}</style>
         </div>
       </div>
-      
-      {/* Modal popup */}
-      <AnimatePresence>
-        {selectedFiliale && (
-          <motion.div 
-            className="fixed inset-0 z-50 flex items-center justify-center p-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            <motion.div 
-              className="absolute inset-0 bg-black/70 backdrop-blur-sm"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={closeModal}
-            />
-            
-            <motion.div 
-              className="bg-white rounded-xl overflow-hidden w-full max-w-4xl z-10 relative shadow-2xl flex flex-col md:flex-row"
-              initial={{ scale: 0.9, opacity: 0, y: 20 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.9, opacity: 0, y: 20 }}
-              transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            >
-              {/* Left side - Image (optional) */}
-              <div className="hidden md:block w-1/3 bg-black relative">
-                <div className="absolute inset-0 overflow-hidden">
-                  <motion.img 
-                    src={getSelectedFiliale()?.image || "/api/placeholder/340/470"}
-                    alt={getSelectedFiliale()?.name}
-                    className="w-full h-full object-cover opacity-90"
-                    initial={{ scale: 1.1 }}
-                    animate={{ scale: 1 }}
-                    transition={{ duration: 0.8 }}
-                  />
-                </div>
-              </div>
-              
-              {/* Right side - Content */}
-              <div className="flex-1 relative overflow-hidden">
-                {/* Decorative background elements */}
-                <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-gradient-to-b from-gold/5 to-transparent -mr-32 -mt-32 z-0" />
-                <div className="absolute bottom-0 left-0 w-32 h-32 rounded-full bg-gradient-to-t from-gold/5 to-transparent -ml-16 -mb-16 z-0" />
-                
-                {/* Content */}
-                <div className="p-6 md:p-8 relative z-10">
-                  {/* Close button */}
-                  <button 
-                    className="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/5 text-gray-600 flex items-center justify-center hover:bg-black/10 transition-colors"
-                    onClick={closeModal}
-                  >
-                    <X size={20} />
-                  </button>
-                  
-                  {/* Title with gold accent */}
-                  <div className="mb-6">
-                    <div 
-                      className="w-12 h-1 mb-3"
-                      style={{ backgroundColor: getSelectedFiliale()?.color }}
-                    />
-                    <h3 className="text-3xl font-bold text-gray-900">{getSelectedFiliale()?.name}</h3>
-                  </div>
-                  
-                  {/* Description */}
-                  <p className="text-lg text-gray-700 mb-8 leading-relaxed">{getSelectedFiliale()?.description}</p>
-                  
-                  {/* Features section */}
-                  <div className="mb-8">
-                    <h4 className="text-lg font-semibold mb-4" style={{ color: getSelectedFiliale()?.color }}>
-                      Nos services
-                    </h4>
-                    
-                    <ul className="grid grid-cols-1 gap-3">
-                      {getSelectedFiliale()?.features.map((feature, index) => (
-                        <motion.li 
-                          key={index} 
-                          className="flex items-start gap-3"
-                          initial={{ opacity: 0, x: -10 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: 0.2 + (index * 0.1), duration: 0.5 }}
-                        >
-                          <div 
-                            className="w-2 h-2 mt-2 rounded-full shrink-0"
-                            style={{ backgroundColor: getSelectedFiliale()?.color }}
-                          />
-                          <span className="text-gray-700">{feature}</span>
-                        </motion.li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </section>
   );
 }

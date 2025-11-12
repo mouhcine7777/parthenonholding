@@ -50,8 +50,7 @@ export default function ParthenonAboutHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.7 }}
           >
-            De la production audiovisuelle aux parcs de loisirs, de l'événementiel à la restauration, découvrez l'écosystème complet de Parthenon Holding.
-          </motion.p>
+Découvrez l’écosystème complet de Parthenon Holding, où audiovisuel, loisirs, restauration et autres secteurs se rencontrent.          </motion.p>
         </div>
       </div>
       

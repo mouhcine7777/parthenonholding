@@ -125,7 +125,7 @@ export default function AboutParthenon() {
               style={{ color: `${DARK}E6` }}
             >
               <p>
-              Depuis plus de 20 ans, Parthenon Holding façonne les émotions à travers des expériences live, des productions télé et des lieux iconiques.              </p>
+              Depuis plus de 20 ans, Parthenon Holding crée des émotions à vivre — sur scène, à l’écran et dans des lieux d’exception.</p>
             </motion.div>
             
             {/* CTA Section */}

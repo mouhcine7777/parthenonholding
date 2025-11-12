@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Tv, Calendar, Palette, Building2, Home, Coffee, Sparkles } from 'lucide-react';
 
@@ -35,7 +35,7 @@ export default function NosFilialesGrid() {
         {
           id: "public-events",
           name: "Public Events",
-          description: "Spécialiste de l’événementiel sur mesure, Public Events conçoit des expériences immersives et modulables pour des projets d’envergure, du design à la logistique globale.",
+          description: "Spécialiste de l'événementiel sur mesure, Public Events conçoit des expériences immersives et modulables pour des projets d'envergure, du design à la logistique globale.",
           expertise: "Création de concepts, scénographie, agencement et logistique.",
           image: "/filiales/publicevents.jpg",
           icon: Calendar
@@ -57,9 +57,9 @@ export default function NosFilialesGrid() {
       color: "#A98142",
       filiales: [
         {
-          id: "palooza-park",
+          id: "sunset-hospitality",
           name: "Sunset Hospitality Company",
-          description: "Division de Parthenon Holding dédiée aux expériences de loisirs et d’hébergement, Sunset Hospitality regroupe des destinations emblématiques telles que Palooza Park, Skyjump Casablanca et Oxygen Village. L’entité incarne une vision globale du divertissement et de l’hospitalité, mêlant plaisir, innovation et durabilité.",
+          description: "Division de Parthenon Holding dédiée aux expériences de loisirs et d'hébergement, Sunset Hospitality regroupe des destinations emblématiques telles que Palooza Park, Skyjump et Oxygen Village. L'entité incarne une vision globale du divertissement et de l'hospitalité, mêlant plaisir, innovation et durabilité.",
           expertise: "Gestion de parcs de loisirs, hôtellerie éco-responsable, expérience client et exploitation opérationnelle.",
           image: "/filiales/sunset.jpg",
           icon: Sparkles
@@ -67,9 +67,17 @@ export default function NosFilialesGrid() {
         {
           id: "garden-corner",
           name: "Garden Corner",
-          description: "Ensemble de concepts culinaires réunissant Garden Home, Garden Bake’s, Garden Eat’aly et Garden Brunch, Garden Corner célèbre l’art de vivre à la casablancaise à travers des lieux chaleureux où gastronomie, convivialité et élégance se rencontrent.",
-          expertise: "Restauration haut de gamme, brunch gastronomique, expérience culinaire.",
+          description: "Ensemble de concepts culinaires réunissant Garden Home, Garden Bake's, Garden Eat'aly et Garden Brunch, Garden Corner célèbre l'art de vivre à la casablancaise à travers des lieux chaleureux où gastronomie, convivialité et élégance se rencontrent.",
+          expertise: " Boulangerie Artisanale, Restaurant Brunch, Restaurant italien, Décoration d'intérieur",
           image: "/filiales/gardencorner.jpg",
+          icon: Coffee
+        },
+        {
+          id: "go-velodrome",
+          name: "GoVélodrome",
+          description: "Plateforme de communication et promotion des événements se déroulant au Vélodrome de Casablanca, Go Velodrome connecte organisateurs, partenaires et publics pour maximiser la visibilité et l'impact de chaque manifestation.",
+          expertise: "Promotion et communication des événements au Vélodrome, Gestion des relations avec partenaires et sponsors, Valorisation des événements pour les entreprises et institutions (B2B), Coordination digitale et médiatique",
+          image: "/filiales/govelodrome.jpg",
           icon: Coffee
         }
       ]
@@ -83,15 +91,15 @@ export default function NosFilialesGrid() {
         {
           id: "pbs",
           name: "PBS",
-          description: "Spécialisée dans la construction et l’aménagement, PBS associe expertise technique et design intégré pour réaliser des projets complets, des gros œuvre aux finitions.",
-          expertise: "Construction, aménagement, intégration technique, design intérieur.",
+          description: "PBS est une entreprise de construction spécialisée dans la réalisation d'infrastructures et de projets de grande envergure. Nous accompagnons nos clients, publics et privés, de la conception à la livraison, en alliant expertise technique, rigueur et qualité.",
+          expertise: "Construction d'infrastructures et bâtiments, Gestion de projets de grande envergure, Coordination et suivi technique sur site, Solutions sur-mesure adaptées aux besoins des clients",
           image: "/filiales/pbs.jpg",
           icon: Building2
         },
         {
           id: "integral-solutions",
           name: "Integral Solutions",
-          description: "pécialiste de la location de mobilier et de matériel événementiel, Integral Solutions accompagne les projets d’aménagement avec flexibilité, réactivité et sens du détail.",
+          description: "Spécialiste de la location de mobilier et de matériel événementiel, Integral Solutions accompagne les projets d'aménagement avec flexibilité, réactivité et sens du détail.",
           expertise: "Location de mobilier, solutions techniques et logistiques événementielles.",
           image: "/filiales/Integral.jpg",
           icon: Home
@@ -99,16 +107,16 @@ export default function NosFilialesGrid() {
         {
           id: "ateliers-dko",
           name: "Les Ateliers DKO",
-          description: "Espace de conception et de fabrication de mobilier sur mesure, Les Ateliers DKO allient savoir-faire artisanal et technologies modernes pour créer des aménagements uniques et durables, adaptés aux besoins des professionnels comme des particuliers.",
-          expertise: "Fabrication de mobilier sur mesure, agencement d’espaces, menuiserie haut de gamme.",
+          description: "Espace de conception et de fabrication de mobilier sur-mesure, Les Ateliers DKO allient savoir-faire artisanal et technologies modernes pour créer des aménagements uniques et durables, adaptés aux besoins des professionnels comme des particuliers.",
+          expertise: "Fabrication de mobilier sur mesure, agencement d'espaces, menuiserie haut de gamme.",
           image: "/filiales/ateliersdko.jpg",
           icon: Home
         },
         {
-          id: "pbs",
+          id: "aquila",
           name: "Aquila Sécurité",
           description: "Entreprise spécialisée dans la sécurité privée, Aquila propose des solutions complètes de protection pour les sites professionnels, les événements et les résidences. Son équipe de vigiles qualifiés veille à la sûreté des biens et des personnes, avec rigueur et professionnalisme.",
-          expertise: "Sécurité privée, gardiennage, protection d’événements et surveillance de sites sensibles.",
+          expertise: "Sécurité privée, gardiennage, protection d'événements et surveillance de sites sensibles.",
           image: "/filiales/aquila.jpg",
           icon: Building2
         }
@@ -117,7 +125,91 @@ export default function NosFilialesGrid() {
   ];
 
   const [activeTab, setActiveTab] = useState("live");
+  const [initialLoad, setInitialLoad] = useState(true);
+  const [isReady, setIsReady] = useState(false);
   const activePole = poles.find(p => p.id === activeTab) || poles[0];
+  const filialeRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
+  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Handle URL parameters on initial load only
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const poleParam = params.get('pole');
+    const filialeParam = params.get('filiale');
+
+    if (poleParam && poles.some(p => p.id === poleParam)) {
+      // Set the active tab first
+      setActiveTab(poleParam);
+      
+      // Mark as ready after state update
+      setTimeout(() => {
+        setIsReady(true);
+      }, 50);
+      
+      // Wait for the content to render, then scroll to the filiale
+      if (filialeParam) {
+        // Clear any existing timeout
+        if (scrollTimeoutRef.current) {
+          clearTimeout(scrollTimeoutRef.current);
+        }
+        
+        // Use a longer delay to ensure content is fully rendered
+        scrollTimeoutRef.current = setTimeout(() => {
+          const filialeElement = filialeRefs.current[filialeParam];
+          if (filialeElement) {
+            const yOffset = -120; // Offset for fixed headers
+            const y = filialeElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+          }
+          setInitialLoad(false);
+        }, 600); // Increased delay to wait for animation
+      } else {
+        setInitialLoad(false);
+      }
+    } else {
+      setActiveTab("live");
+      setIsReady(true);
+      setInitialLoad(false);
+    }
+
+    // Cleanup
+    return () => {
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+    };
+  }, []); // Only run once on mount
+
+  // Scroll when activeTab changes (only after initial load)
+  useEffect(() => {
+    if (initialLoad || !isReady) return; // Don't run on initial load or before ready
+
+    const params = new URLSearchParams(window.location.search);
+    const filialeParam = params.get('filiale');
+    
+    if (filialeParam) {
+      // Clear any existing timeout
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+      
+      scrollTimeoutRef.current = setTimeout(() => {
+        const filialeElement = filialeRefs.current[filialeParam];
+        if (filialeElement) {
+          const yOffset = -120;
+          const y = filialeElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      }, 400);
+    }
+
+    // Cleanup
+    return () => {
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+    };
+  }, [activeTab, initialLoad, isReady]);
 
   return (
     <section className="py-20 md:py-32 relative overflow-hidden bg-white">
@@ -137,29 +229,34 @@ export default function NosFilialesGrid() {
         {/* Tabs Navigation */}
         <div className="mb-12">
           <div className="flex flex-wrap gap-3 justify-center px-4">
-            {poles.map((pole) => (
-              <motion.button
-                key={pole.id}
-                onClick={() => setActiveTab(pole.id)}
-                className="relative px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-xs sm:text-sm md:text-base transition-all duration-300"
-                style={{
-                  backgroundColor: activeTab === pole.id ? GOLD : `${GOLD}15`,
-                  color: activeTab === pole.id ? 'white' : GOLD,
-                }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <span className="relative z-10">{pole.name}</span>
-                {activeTab === pole.id && (
-                  <motion.div
-                    className="absolute inset-0 rounded-full"
-                    style={{ backgroundColor: GOLD }}
-                    layoutId="activeTab"
-                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                  />
-                )}
-              </motion.button>
-            ))}
+            {poles.map((pole) => {
+              const isActive = activeTab === pole.id;
+              
+              return (
+                <motion.button
+                  key={pole.id}
+                  onClick={() => setActiveTab(pole.id)}
+                  className="relative px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-xs sm:text-sm md:text-base transition-all duration-300 overflow-hidden"
+                  style={{
+                    backgroundColor: isActive ? GOLD : `${GOLD}15`,
+                    color: isActive ? 'white' : GOLD,
+                  }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {/* Animated background only shows when isReady */}
+                  {isActive && isReady && (
+                    <motion.div
+                      className="absolute inset-0 rounded-full -z-10"
+                      style={{ backgroundColor: GOLD }}
+                      layoutId="activeTabBackground"
+                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    />
+                  )}
+                  <span className="relative z-10">{pole.name}</span>
+                </motion.button>
+              );
+            })}
           </div>
         </div>
 
@@ -181,6 +278,7 @@ export default function NosFilialesGrid() {
                 return (
                   <motion.div
                     key={filiale.id}
+                    ref={(el) => { filialeRefs.current[filiale.id] = el; }}
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 * index, duration: 0.5 }}

@@ -102,7 +102,7 @@ export default function ModernQuelquesChiffres() {
       value: 3,
       label: "PÔLES",
       suffix: '',
-      description: "Live, Services et Loisirs"
+      description: "Live, Loisirs & Hospitalité, Services"
     },
     { 
       icon: <Building strokeWidth={1.5} />,
@@ -115,7 +115,7 @@ export default function ModernQuelquesChiffres() {
       value: 200,
       label: "CLIENTS",
       prefix: '+',
-      description: "Nous font confiance, tant au Maroc et qu'à l'international"
+      description: "Nous font confiance, tant au Maroc qu'à l'international"
     }
   ];
   

@@ -29,15 +29,15 @@ const LIVE_PROGRAMS: Work[] = [
   },
   {
     id: 2,
-    name: "COUPE DU MONDE DES CLUBS",
-    image: "/realizations/fifa.jpg",
-    description: "Alors que le Maroc était choisi comme pays organisateur de la Coupe du monde des clubs de la FIFA 2014, pour la deuxième fois de son histoire, notre équipe a capitalisé sur tout son savoir-faire audiovisuel et événementiel pour garantir la réussite totale de cet événement de prestige.",
-  },
-  {
-    id: 3,
     name: "LE MEILLEUR PATISSIER",
     image: "/emissions/lmp.webp",
     description: "Compétition culinaire inspirée des grands formats internationaux, consacrant les meilleurs pâtissiers du pays.",
+  },
+  {
+    id: 3,
+    name: "COUPE DU MONDE DES CLUBS",
+    image: "/realizations/fifa.jpg",
+    description: "Lors de l’organisation par le Maroc de la Coupe du monde des clubs de la FIFA 2014, notre équipe a mobilisé tout son savoir-faire audiovisuel et événementiel pour assurer le succès de cet événement de prestige.",
   },
   {
     id: 4,
@@ -47,42 +47,48 @@ const LIVE_PROGRAMS: Work[] = [
   },
   {
     id: 5,
+    name: "WORLD BOXING SERIES",
+    image: "/realizations/wbs.png",
+    description: "Scénographie immersive combinant sport, lumière et mise en scène spectaculaire pour un tournoi international."
+  },
+  {
+    id: 6,
     name: "JMAATNA ZINA",
     image: "/emissions/jmaatnazina.webp",
     description: "Divertissement musical célébrant les traditions, la culture et la convivialité à travers tout le Royaume.",
   },
   {
-    id: 6,
+    id: 7,
     name: "JAMSHOW",
     image: "/emissions/jamshow.webp",
     description: "Divertissement allant à la recherche des nouveaux talents de Rap.",
   },
   {
-    id: 7,
+    id: 8,
     name: "TRI9 ATTAHADI",
     image: "/emissions/tri9attahadi.jpeg",
     description: "Aventure télévisée mêlant défis physiques et épreuves de dépassement dans des paysages spectaculaires.",
   },
   {
-    id: 8,
+    id: 9,
     name: "DREAM ARTIST",
     image: "/emissions/dreamartist.webp",
     description: "Émission de découverte et de valorisation des nouveaux talents artistiques et créatifs.",
   },
   {
-    id: 9,
+    id: 10,
     name: "AL QADAM ADDAHABBI",
     image: "/emissions/alqadamaddahabbi.webp",
     description: "Concours de jeunes talents footballistiques, révélant les futures stars du ballon rond national.",
   },
   {
-    id: 10,
+    id: 11,
     name: "AFFAIRE CONCLUE",
     image: "/emissions/akhirtaman.webp",
     description: "Émission d'enchères captivante où objets rares et passion des collectionneurs se rencontrent.",
   },
   {
-    id: 11,
+    id: 12,
     name: "FASHION MAGHRIBI",
     image: "/emissions/fashionmaghribi.webp",
     description: "Compétition mettant en lumière le talent et la créativité des stylistes et designers de mode",
@@ -95,7 +101,7 @@ const SERVICES_WORKS: Work[] = [
     id: 1,
     name: "ONMT",
     image: "/realizations/onmt.webp",
-    description: "Pavillons officiel de l'onmt, vitrine du Maroc à travers une scénographie immersive et contemporaine."
+    description: "Pavillons officiel de l'ONMT, vitrine du Maroc à travers une scénographie immersive et contemporaine."
   },
   {
     id: 2,
@@ -138,12 +144,6 @@ const SERVICES_WORKS: Work[] = [
     name: "UM6P",
     image: "/realizations/UM6P.png",
     description: "Scénographie institutionnelle intégrant innovation, éducation et recherche dans un espace inspirant et durable."
-  },
-  {
-    id: 9,
-    name: "WORLD BOXING SERIES",
-    image: "/realizations/wbs.png",
-    description: "Scénographie immersive combinant sport, lumière et mise en scène spectaculaire pour un tournoi international."
   }
 ];
 
@@ -165,13 +165,13 @@ const LOISIRS_WORKS: Work[] = [
     id: 3,
     name: "Garden Corner",
     image: "/gardenbrunch.jpg",
-    description: "Univers de restauration alliant authenticité, créativité et convivialité, Garden Corner réunit plusieurs concepts gourmands où l'art du bon goût s'exprime à travers des espaces chaleureux et contemporains."
+    description: "Univers de restauration alliant gastronomie et art de vivre, Garden Corner rassemble plusieurs concepts où l’excellence culinaire et le bon goût se rencontrent. Chaque espace, chaleureux et contemporain, invite à la convivialité et à la découverte de nouvelles expériences gourmandes, alliant plaisir des sens et raffinement."
   },
   {
     id: 4,
     name: "Go Vélodrome",
     image: "/velodrome.jpg",
-    description: "Espace lifestyle au cœur du Vélodrome de Casablanca, accueillant activités, événements et concepts culinaires innovants."
+    description: "Plateforme de communication et promotion des événements se déroulant au Vélodrome de Casablanca, Go Velodrome connecte organisateurs, partenaires et publics pour maximiser la visibilité et l’impact de chaque manifestation."
   },
   {
     id: 5,
@@ -187,19 +187,19 @@ const BTP_WORKS: Work[] = [
     id: 1,
     name: "STATION AFRIQUIA LISSASFA",
     image: "/afriquia.jpg",
-    description: "Réalisé en collaboration avec AFRIQUIA SMDC et conçu par l'architecte MEHDIBERRADA. Avec une surface de 1995m², cette station incarne notre engagement envers l'efficacité et l'esthétique."
+    description: "Réalisé en collaboration avec AFRIQUIA SMDC et avec une surface de 1995 m², ce projet incarne notre engagement envers l’efficacité et l’esthétique."
   },
   {
     id: 2,
     name: "MC VILLAGE",
     image: "/mcdo.jpg",
-    description: " En collaboration avec Afriquia SMDC et l'architecte TARIK LAKHMIRI. Avec une surface couverte de 1540 m² et une vaste étendue extérieure aménagée de 9533 m², ce projet incarne la fusion entre l'architecture innovante et l'aménagement paysager réfléchi."
+    description: " En collaboration avec Afriquia SMDC, et avec une surface couverte de 1540 m² ainsi qu’une vaste étendue extérieure aménagée de 9533 m², ce projet incarne la fusion entre architecture innovante et aménagement paysager réfléchi."
   },
   {
     id: 3,
     name: "OXYGEN VILLAGE",
     image: "/oxygen.jpg",
-    description: " Dans le cadre exceptionnel du projet OXYGEN VILLAGE, réalisé pour Parthenon Holding, nous avons relevé le défi de créer un hébergement modulaire de qualité."
+    description: "Pour le projet OXYGEN VILLAGE de Parthenon Holding, nous avons relevé le défi de concevoir un hébergement éco-responsable alliant confort, design et respect de l’environnement."
   }
 ];
 
@@ -213,10 +213,10 @@ const TAB_DATA = [
   },
   {
     id: 'loisirs',
-    label: 'Loisirs & Hospitality',
+    label: 'Loisirs & Hospitalité',
     icon: Award,
     works: LOISIRS_WORKS,
-    description: "Du loisir à l'hôtellerie, Parthenon Holding imagine et opère des lieux de vie où plaisir, convivialité et excellence d'accueil se rencontrent, jusque dans l'art de la table et les expériences gourmandes."
+    description: "Du loisir à l'hôtellerie, en passant par la création de parcs de loisirs, Parthenon Holding imagine et opère des lieux de vie où plaisir, convivialité et excellence d'accueil se rencontrent, incluant gastronomie, expériences gourmandes et moments de partage inoubliables."
   },
   {
     id: 'services',

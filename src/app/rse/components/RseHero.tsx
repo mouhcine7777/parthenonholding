@@ -50,7 +50,7 @@ export default function ParthenonAboutHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.7 }}
           >
-            Une approche complète et intégrée pour transformer vos ambitions en réalité
+            Chez Parthenon Holding, nous intégrons la responsabilité sociale et environnementale à chacune de nos activités.
           </motion.p>
         </div>
       </div>

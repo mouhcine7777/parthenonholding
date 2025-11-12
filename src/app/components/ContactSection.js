@@ -195,7 +195,8 @@ export default function ContactSection() {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-Nos équipes vous accompagnent dans la conception et la réussite de vos projets, avec écoute, expertise et exigence.          </motion.p>
+Nos équipes vous accompagnent de la conception à la réussite de vos projets, avec écoute, expertise et exigence.
+</motion.p>
         </motion.div>
         
         {/* Animated contact info bar */}
@@ -417,6 +418,27 @@ Nos équipes vous accompagnent dans la conception et la réussite de vos projets
                       />
                     </div>
                   </div>
+
+                  {/* Subject Field */}
+                  <div>
+                    <label className="block text-sm font-medium mb-2" style={{ color: GOLD }}>
+                      Objet
+                    </label>
+                    <input
+                      type="text"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-4 py-3 rounded-lg transition-all duration-300 focus:outline-none"
+                      style={{ 
+                        backgroundColor: `${LIGHT}10`,
+                        border: `1px solid ${GOLD}30`,
+                        color: LIGHT
+                      }}
+                      placeholder="Objet de votre message"
+                    />
+                  </div>
                   
                   {/* Message Field */}
                   <div>
@@ -465,31 +487,6 @@ Nos équipes vous accompagnent dans la conception et la réussite de vos projets
                     )}
                   </button>
                 </form>
-                
-                {/* Quick contact info at bottom */}
-                <div className="mt-6 pt-6" style={{ borderTop: `1px solid ${GOLD}20` }}>
-                  <p className="text-sm mb-3" style={{ color: `${LIGHT}80` }}>
-                    Besoin d'une réponse rapide?
-                  </p>
-                  <div className="flex flex-col gap-2">
-                    <a 
-                      href="tel:+212522459150" 
-                      className="flex items-center gap-2 text-sm hover:opacity-80 transition-opacity"
-                      style={{ color: GOLD }}
-                    >
-                      <Phone size={16} />
-                      <span>+2125224-59150</span>
-                    </a>
-                    <a 
-                      href="mailto:contact@parthenon.ma" 
-                      className="flex items-center gap-2 text-sm hover:opacity-80 transition-opacity"
-                      style={{ color: GOLD }}
-                    >
-                      <Mail size={16} />
-                      <span>contact@parthenon.ma</span>
-                    </a>
-                  </div>
-                </div>
               </div>
               
               {/* Decorative corner element */}
