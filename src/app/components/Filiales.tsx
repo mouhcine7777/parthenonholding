@@ -113,7 +113,7 @@ export default function NosFiliales() {
         "Valorisation des événements pour les entreprises et institutions (B2B)",
         "Coordination digitale et médiatique"
       ],
-      image: "/filiales/govelodrome.jpg",
+      image: "/filiales/Govelodrome.jpg",
       color: "#A98142",
       poleId: "loisirs"
     },
