@@ -19,7 +19,7 @@ export default function CompactFooter() {
     { 
       icon: <MapPin size={16} />, 
       text: "Porte 4, 106 Rue Abderrahman Sahraoui, Casablanca 20100",
-      href: "https://maps.google.com/?q=22+Rue+de+Paradis+75010+Paris+France"
+      href: "/"
     },
     { 
       icon: <Mail size={16} />, 
@@ -45,7 +45,7 @@ export default function CompactFooter() {
             <img 
               src="/logo.png" 
               alt="Parthenon Holding" 
-              className="h-10 md:h-12 cursor-pointer"
+              className="h-19 md:h-30 cursor-pointer"
             />
           </Link>
         </div>

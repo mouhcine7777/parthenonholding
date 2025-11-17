@@ -25,19 +25,19 @@ const LIVE_PROGRAMS: Work[] = [
     id: 1,
     name: "NOSTALGIA LOVERS FESTIVAL",
     image: "/about2.webp",
-    description: "Ce festival a transformé le centre historique de Casablanca en une capsule temporelle vivante, combinant technologie de pointe et esthétique rétro.",
+    description: "Musique, rétro vibes et technologiques de pointe : le Nostalgia Lovers Festival a métamorphosé le Vélodrome de Casablanca en scène immersive hors du temps.",
   },
   {
     id: 2,
     name: "LE MEILLEUR PATISSIER",
     image: "/emissions/lmp.webp",
-    description: "Compétition culinaire inspirée des grands formats internationaux, consacrant les meilleurs pâtissiers du pays.",
+    description: "Une compétition culinaire d'envergure, inspirée des plus grands formats internationaux, où s'affrontent les talents pâtissiers les plus prometteurs du pays.",
   },
   {
     id: 3,
     name: "COUPE DU MONDE DES CLUBS",
     image: "/realizations/fifa.jpg",
-    description: "Lors de l’organisation par le Maroc de la Coupe du monde des clubs de la FIFA 2014, notre équipe a mobilisé tout son savoir-faire audiovisuel et événementiel pour assurer le succès de cet événement de prestige.",
+    description: "Pour la Coupe du Monde des Clubs de la FIFA 2014 au Maroc, notre expertise audiovisuelle et événementielle a transformé cet événement prestigieux en une expérience inoubliable.",
   },
   {
     id: 4,
@@ -49,7 +49,7 @@ const LIVE_PROGRAMS: Work[] = [
     id: 5,
     name: "WORLD BOXING SERIES",
     image: "/realizations/wbs.png",
-    description: "Scénographie immersive combinant sport, lumière et mise en scène spectaculaire pour un tournoi international."
+    description: "Notre savoir-faire en scénographie immersive à transformé ce tournoi international en un spectacle unique, où sport, lumière et mise en scène se combinent."
   },
   {
     id: 6,
@@ -164,8 +164,8 @@ const LOISIRS_WORKS: Work[] = [
   {
     id: 3,
     name: "Garden Corner",
-    image: "/gardenbrunch.jpg",
-    description: "Univers de restauration alliant gastronomie et art de vivre, Garden Corner rassemble plusieurs concepts où l’excellence culinaire et le bon goût se rencontrent. Chaque espace, chaleureux et contemporain, invite à la convivialité et à la découverte de nouvelles expériences gourmandes, alliant plaisir des sens et raffinement."
+    image: "/gardencorner.jpg",
+    description: "Un univers où gastronomie, art de vivre et décoration se rencontrent, offrant des expériences gourmandes et sensorielles uniques dans des espaces chaleureux et raffinés."
   },
   {
     id: 4,
@@ -176,7 +176,7 @@ const LOISIRS_WORKS: Work[] = [
   {
     id: 5,
     name: "Oxygen Village",
-    image: "/oxygene.jpg",
+    image: "/oxygen.jpg",
     description: "Concept d'hôtellerie éco-responsable conçu à partir de conteneurs, associant design, confort et nature pour une expérience d'accueil nouvelle génération."
   },
 ];
@@ -185,21 +185,21 @@ const LOISIRS_WORKS: Work[] = [
 const BTP_WORKS: Work[] = [
   {
     id: 1,
-    name: "STATION AFRIQUIA LISSASFA",
-    image: "/afriquia.jpg",
-    description: "Réalisé en collaboration avec AFRIQUIA SMDC et avec une surface de 1995 m², ce projet incarne notre engagement envers l’efficacité et l’esthétique."
+    name: "OXYGEN VILLAGE",
+    image: "/oxygen.jpg",
+    description: "Hébergement éco-responsable où confort, design et respect de l'environnement se rencontrent pour une expérience unique."
   },
   {
     id: 2,
-    name: "MC VILLAGE",
-    image: "/mcdo.jpg",
-    description: " En collaboration avec Afriquia SMDC, et avec une surface couverte de 1540 m² ainsi qu’une vaste étendue extérieure aménagée de 9533 m², ce projet incarne la fusion entre architecture innovante et aménagement paysager réfléchi."
+    name: "STATION AFRIQUIA LISSASFA",
+    image: "/afriquia.jpg",
+    description: "Un projet de 1995m2 qui illustre notre savoir-faire en alliant performance, design et expérience client."
   },
   {
     id: 3,
-    name: "OXYGEN VILLAGE",
-    image: "/oxygen.jpg",
-    description: "Pour le projet OXYGEN VILLAGE de Parthenon Holding, nous avons relevé le défi de concevoir un hébergement éco-responsable alliant confort, design et respect de l’environnement."
+    name: "MC VILLAGE",
+    image: "/mcdo.jpg",
+    description: "Un projet de 1540 m2 couverts et 9533 m2 d'espaces extérieurs, où architecture innovante et aménagement paysager créent une expérience harmonieuse et accueillante."
   }
 ];
 
@@ -209,14 +209,14 @@ const TAB_DATA = [
     label: 'Création audiovisuelles & événements',
     icon: Sparkles,
     works: LIVE_PROGRAMS,
-    description: "Depuis plus de vingt ans, Parthenon Holding imagine et réalise les grands rendez-vous audiovisuels et événementiels du Royaume. Ses équipes conçoivent, produisent et orchestrent des formats emblématiques — de la fiction et du divertissement aux shows live, festivals et expériences immersives."
+    description: "Depuis plus de vingt ans, Parthenon Holding imagine et réalise les grands rendez-vous audiovisuels et événementiels du Royaume. Ses équipes conçoivent, produisent et orchestrent des formats emblématiques de la fiction et du divertissement aux shows live, festivals et expériences immersives."
   },
   {
     id: 'loisirs',
     label: 'Loisirs & Hospitalité',
     icon: Award,
     works: LOISIRS_WORKS,
-    description: "Du loisir à l'hôtellerie, en passant par la création de parcs de loisirs, Parthenon Holding imagine et opère des lieux de vie où plaisir, convivialité et excellence d'accueil se rencontrent, incluant gastronomie, expériences gourmandes et moments de partage inoubliables."
+    description: "Parthenon Holding conçoit et exploite des lieux de vie uniques où loisirs, hôtellerie et gastronomie se rencontrent pour offrir des expériences inoubliables alliant plaisir, convivialité et excellence d'accueil."
   },
   {
     id: 'services',

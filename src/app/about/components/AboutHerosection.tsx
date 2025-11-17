@@ -197,8 +197,7 @@ export default function ParthenonAboutHero() {
             transition={{ delay: 0.8, duration: 0.7 }}
           >
             <p className="text-lg md:text-xl max-w-2xl mx-auto" style={{ color: `${LIGHT}CC` }}>
-              Depuis 2002, Parthenon Holding façonne l'excellence dans les secteurs de l'événementiel, 
-              de l'audiovisuel et des loisirs avec passion et innovation.
+            Depuis 2002, Parthenon Holding façonne l'excellence dans les secteurs des événements, de l'audiovisuel des loisirs, de l'hospitalité et de la construction avec passion et innovation.
             </p>
           </motion.div>
         </motion.div>

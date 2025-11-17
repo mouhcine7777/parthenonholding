@@ -59,7 +59,7 @@ export default function NosFilialesGrid() {
         {
           id: "sunset-hospitality",
           name: "Sunset Hospitality Company",
-          description: "Division de Parthenon Holding dédiée aux expériences de loisirs et d'hébergement, Sunset Hospitality regroupe des destinations emblématiques telles que Palooza Park, Skyjump et Oxygen Village. L'entité incarne une vision globale du divertissement et de l'hospitalité, mêlant plaisir, innovation et durabilité.",
+          description: "Filiale de Parthenon Holding dédiée aux loisirs et à l'hébergement, Sunset Hospitality réunit des destinations emblématiques comme Palooza Park, Skyjump Park, Oxygen Village, offrant des expériences alliant plaisir, innovation et durabilité.",
           expertise: "Gestion de parcs de loisirs, hôtellerie éco-responsable, expérience client et exploitation opérationnelle.",
           image: "/filiales/sunset.jpg",
           icon: Sparkles
@@ -67,8 +67,8 @@ export default function NosFilialesGrid() {
         {
           id: "garden-corner",
           name: "Garden Corner",
-          description: "Ensemble de concepts culinaires réunissant Garden Home, Garden Bake's, Garden Eat'aly et Garden Brunch, Garden Corner célèbre l'art de vivre à la casablancaise à travers des lieux chaleureux où gastronomie, convivialité et élégance se rencontrent.",
-          expertise: " Boulangerie Artisanale, Restaurant Brunch, Restaurant italien, Décoration d'intérieur",
+          description: "Un univers où gastronomie et décoration se rencontrent au Vélodrome de Casablanca; Garden Bake's, Garden Brunch, Garden Eataly, offrent des expériences culinaires raffinés et Garden Home propose des articles de décoration.",
+          expertise: " Boulangerie Artisanale, Restaurant Brunch, Restaurant Italien, Décoration d'Intérieur",
           image: "/filiales/gardencorner.jpg",
           icon: Coffee
         },
@@ -76,7 +76,7 @@ export default function NosFilialesGrid() {
           id: "go-velodrome",
           name: "GoVélodrome",
           description: "Plateforme de communication et promotion des événements se déroulant au Vélodrome de Casablanca, Go Velodrome connecte organisateurs, partenaires et publics pour maximiser la visibilité et l'impact de chaque manifestation.",
-          expertise: "Promotion et communication des événements au Vélodrome, Gestion des relations avec partenaires et sponsors, Valorisation des événements pour les entreprises et institutions (B2B), Coordination digitale et médiatique",
+          expertise: "Promotion et communication d'événements, Gestion des partenariats et sponsors, valorisation",
           image: "/filiales/Govelodrome.jpg",
           icon: Coffee
         }
@@ -92,15 +92,15 @@ export default function NosFilialesGrid() {
           id: "pbs",
           name: "PBS",
           description: "PBS est une entreprise de construction spécialisée dans la réalisation d'infrastructures et de projets de grande envergure. Nous accompagnons nos clients, publics et privés, de la conception à la livraison, en alliant expertise technique, rigueur et qualité.",
-          expertise: "Construction d'infrastructures et bâtiments, Gestion de projets de grande envergure, Coordination et suivi technique sur site, Solutions sur-mesure adaptées aux besoins des clients",
+          expertise: "Construction d'infrastructures et bâtiments, Gestion de projets de grande envergure, Coordination et suivi technique sur site, Solutions sur-mesure",
           image: "/filiales/pbs.jpg",
           icon: Building2
         },
         {
           id: "integral-solutions",
           name: "Integral Solutions",
-          description: "Spécialiste de la location de mobilier et de matériel événementiel, Integral Solutions accompagne les projets d'aménagement avec flexibilité, réactivité et sens du détail.",
-          expertise: "Location de mobilier, solutions techniques et logistiques événementielles.",
+          description: "Integral Solution propose des solutions globales pour optimiser chaque aspect de vos événements et espaces, de la conception à la réalisation. Notre expertise allie innovation, fonctionnalité et design, incluant la location de mobilier pour répondre à tous vos besoins d’aménagement.",
+          expertise: "Conseil en optimisation d’espace, Location de mobilier et aménagement sur mesure, Solutions technologiques innovantes, Services intégrés clé en main, Gestion de projet complète",
           image: "/filiales/Integral.jpg",
           icon: Home
         },

@@ -123,7 +123,7 @@ export default function ParthenonMenu() {
                   src="/logo.png" 
                   alt="Parthenon Holding" 
                   className={`transition-all duration-300 ${
-                    isScrolled ? 'h-10 md:h-12' : 'h-12 md:h-16'
+                    isScrolled ? 'h-10 md:h-18' : 'h-12 md:h-19'
                   }`}
                 />
               </Link>

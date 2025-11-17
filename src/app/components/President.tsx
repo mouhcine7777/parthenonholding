@@ -1,7 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import Link from 'next/link';
 
 // Define brand colors as constants
 const GOLD = "#A98142";
@@ -31,73 +30,131 @@ export default function AboutParthenon() {
   };
 
   return (
-    <section className="py-16 md:py-24" style={{ backgroundColor: LIGHT }}>
-      <div className="container mx-auto px-6">
+    <section className="py-0" style={{ backgroundColor: LIGHT }}>
+      <div className="container mx-auto px-0">
         <motion.div 
-          className="flex flex-col lg:flex-row items-center gap-12"
+          className="flex flex-col lg:flex-row items-stretch gap-0"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          {/* Left side - Modern Image Collage */}
+          {/* Left side - Modern Image Collage - FULL COVERAGE */}
           <motion.div 
-            className="lg:w-5/12 grid grid-cols-2 gap-4"
+            className="lg:w-5/12 w-full"
             variants={itemVariants}
+            style={{ padding: 0, margin: 0 }}
           >
-            {/* First Image */}
-            <motion.div 
-              className="col-span-2 relative rounded-xl overflow-hidden shadow-lg"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.4 }}
+            <div 
+              className="overflow-hidden h-full"
+              style={{ 
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 0,
+                padding: 0,
+                margin: 0
+              }}
             >
-              <div className="aspect-w-16 aspect-h-9">
+              {/* First Image - Full width top */}
+              <motion.div 
+                className="relative overflow-hidden"
+                style={{ 
+                  margin: 0,
+                  padding: 0,
+                  lineHeight: 0,
+                  flex: 1
+                }}
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.4 }}
+              >
                 <img 
                   src="/about2.webp" 
                   alt="Parthenon Holding Corporate" 
-                  className="object-cover w-full h-full"
+                  style={{ 
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    display: 'block',
+                    margin: 0,
+                    padding: 0
+                  }}
                 />
                 <div 
-                  className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50"
+                  className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-40"
                 ></div>
-              </div>
-            </motion.div>
+              </motion.div>
 
-            {/* Second Image */}
-            <motion.div 
-              className="relative rounded-xl overflow-hidden shadow-md"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.4 }}
-            >
-              <div className="aspect-w-1 aspect-h-1">
-                <img 
-                  src="/emissions/jamshow.webp" 
-                  alt="Parthenon Team" 
-                  className="object-cover w-full h-full"
-                />
-              </div>
-            </motion.div>
+              {/* Bottom Row - Two Images Side by Side */}
+              <div 
+                style={{ 
+                  display: 'flex',
+                  gap: 0,
+                  margin: 0,
+                  padding: 0,
+                  lineHeight: 0,
+                  flex: 1
+                }}
+              >
+                {/* Second Image - Bottom left */}
+                <motion.div 
+                  className="relative overflow-hidden"
+                  style={{ 
+                    flex: 1,
+                    margin: 0,
+                    padding: 0,
+                    lineHeight: 0
+                  }}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.4 }}
+                >
+                  <img 
+                    src="/dreamartist.jpg" 
+                    alt="Parthenon Team" 
+                    style={{ 
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      display: 'block',
+                      margin: 0,
+                      padding: 0
+                    }}
+                  />
+                </motion.div>
 
-            {/* Third Image */}
-            <motion.div 
-              className="relative rounded-xl overflow-hidden shadow-md"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.4 }}
-            >
-              <div className="aspect-w-1 aspect-h-1">
-                <img 
-                  src="/savoirefaire4.png" 
-                  alt="Parthenon Innovation" 
-                  className="object-cover w-full h-full"
-                />
+                {/* Third Image - Bottom right */}
+                <motion.div 
+                  className="relative overflow-hidden"
+                  style={{ 
+                    flex: 1,
+                    margin: 0,
+                    padding: 0,
+                    lineHeight: 0
+                  }}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.4 }}
+                >
+                  <img 
+                    src="/onmt.jpg" 
+                    alt="Parthenon Innovation" 
+                    style={{ 
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      display: 'block',
+                      margin: 0,
+                      padding: 0
+                    }}
+                  />
+                </motion.div>
               </div>
-            </motion.div>
+            </div>
           </motion.div>
           
           {/* Right side - About Us Content */}
           <motion.div 
-            className="lg:w-7/12 space-y-6"
+            className="lg:w-7/12 space-y-6 flex flex-col justify-center"
             variants={itemVariants}
+            style={{ padding: '4rem 3rem' }}
           >
             <div className="space-y-2">
               <motion.div
@@ -125,7 +182,8 @@ export default function AboutParthenon() {
               style={{ color: `${DARK}E6` }}
             >
               <p>
-              Depuis plus de 20 ans, Parthenon Holding crée des émotions à vivre — sur scène, à l’écran et dans des lieux d’exception.</p>
+                Depuis plus de 20 ans, Parthenon Holding crée des émotions à vivre — sur scène, à l'écran et dans des lieux d'exception.
+              </p>
             </motion.div>
             
             {/* CTA Section */}
@@ -133,7 +191,7 @@ export default function AboutParthenon() {
               variants={itemVariants}
               className="pt-6"
             >
-              <Link 
+              <a 
                 href="/about" 
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full transition-all duration-300"
                 style={{ 
@@ -151,7 +209,7 @@ export default function AboutParthenon() {
                 }}
               >
                 En savoir plus <ArrowRight size={20} />
-              </Link>
+              </a>
             </motion.div>
           </motion.div>
         </motion.div>

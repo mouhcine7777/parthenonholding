@@ -254,10 +254,10 @@ Nos équipes vous accompagnent de la conception à la réussite de vos projets, 
                 overflow: 'hidden'
               }}
             >
-              {/* Google Maps iframe */}
-              <div className="w-full h-full relative">
+{/* Google Maps iframe with custom marker */}
+<div className="w-full h-full relative">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.4993903992327!2d-7.620810799999998!3d33.5923449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7d29a5fb4219d%3A0x2e1e28ad2bb99ba0!2sPublic%20Evenements!5e0!3m2!1sfr!2sma!4v1746787105805!5m2!1sfr!2sma" 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.4993903992327!2d-7.620810799999998!3d33.5923449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDM1JzMyLjQiTiA3wrAzNycxNC45Ilc!5e0!3m2!1sfr!2sma!4v1746787105805!5m2!1sfr!2sma" 
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 
@@ -266,6 +266,37 @@ Nos équipes vous accompagnent de la conception à la réussite de vos projets, 
                   referrerPolicy="no-referrer-when-downgrade"
                   className="absolute inset-0"
                 />
+                
+                {/* Custom marker overlay for Parthenon Holding */}
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-full pointer-events-none z-20">
+                  <div className="relative">
+                    {/* Pin */}
+                    <div 
+                      className="w-12 h-12 rounded-full flex items-center justify-center shadow-lg"
+                      style={{ 
+                        backgroundColor: GOLD,
+                        boxShadow: `0 4px 12px ${GOLD}60`
+                      }}
+                    >
+                      <MapPin size={24} style={{ color: DARK }} />
+                    </div>
+                    {/* Label */}
+                    <div 
+                      className="absolute top-full mt-2 left-1/2 transform -translate-x-1/2 whitespace-nowrap px-4 py-2 rounded-lg shadow-lg"
+                      style={{ 
+                        backgroundColor: DARK,
+                        border: `2px solid ${GOLD}`
+                      }}
+                    >
+                      <p className="font-bold text-sm" style={{ color: GOLD }}>
+                        Parthenon Holding
+                      </p>
+                      <p className="text-xs mt-1" style={{ color: LIGHT }}>
+                        106 Rue Abderrahman Sahraoui
+                      </p>
+                    </div>
+                  </div>
+                </div>
                 
                 {/* Overlay gradient for better integration */}
                 <div 
