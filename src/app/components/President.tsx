@@ -31,9 +31,10 @@ export default function AboutParthenon() {
 
   return (
     <section className="py-0" style={{ backgroundColor: LIGHT }}>
-      <div className="container mx-auto px-0">
+      <div className="w-full px-0 mx-0" style={{ maxWidth: '100%' }}>
         <motion.div 
-          className="flex flex-col lg:flex-row items-stretch gap-0"
+          className="flex flex-col lg:flex-row items-stretch"
+          style={{ gap: 0, minHeight: '600px' }}
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -43,16 +44,18 @@ export default function AboutParthenon() {
           <motion.div 
             className="lg:w-5/12 w-full"
             variants={itemVariants}
-            style={{ padding: 0, margin: 0 }}
+            style={{ padding: 0, margin: 0, minHeight: '600px' }}
           >
             <div 
-              className="overflow-hidden h-full"
+              className="overflow-hidden"
               style={{ 
                 display: 'flex',
                 flexDirection: 'column',
                 gap: 0,
                 padding: 0,
-                margin: 0
+                margin: 0,
+                height: '100%',
+                minHeight: '600px'
               }}
             >
               {/* First Image - Full width top */}
