@@ -40,11 +40,11 @@ export default function AboutParthenon() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          {/* Left side - Modern Image Collage - FULL COVERAGE */}
-          <motion.div 
+{/* Left side - Modern Image Collage - FULL COVERAGE */}
+<motion.div 
             className="lg:w-5/12 w-full"
             variants={itemVariants}
-            style={{ padding: 0, margin: 0, minHeight: '600px' }}
+            style={{ padding: 0, margin: 0 }}
           >
             <div 
               className="overflow-hidden"
@@ -54,8 +54,7 @@ export default function AboutParthenon() {
                 gap: 0,
                 padding: 0,
                 margin: 0,
-                height: '100%',
-                minHeight: '600px'
+                height: '100%'
               }}
             >
               {/* First Image - Full width top */}

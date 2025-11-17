@@ -31,7 +31,7 @@ export default function ParthenonHero() {
   // Constants
   const companyName = "PARTHENON";
   const holdingText = "HOLDING";
-  const targetYears = 21;
+  const targetYears = 23;
 
   // Effects
   useEffect(() => {
