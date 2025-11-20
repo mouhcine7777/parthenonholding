@@ -52,7 +52,7 @@ export default function NosFilialesGrid() {
     },
     {
       id: "loisirs",
-      name: "Pôle Loisirs & Hospitality",
+      name: "Pôle Loisirs & Hospitalité",
       title: "",
       color: "#A98142",
       filiales: [
