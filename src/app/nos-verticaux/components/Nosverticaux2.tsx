@@ -178,12 +178,12 @@ const SERVICES_WORKS: Work[] = [
   {
     id: 14,
     name: "ONMT FRMF",
-    image: "/realizations/onmtfrmf.jpg",
+    image: "/realizations/onmtfrmff.jpg",
     description: "Partenariat scénographique entre tourisme et football, célébrant la passion sportive et l'attractivité du Maroc."
   },
   {
     id: 15,
-    name: "AFA ",
+    name: "AFA",
     image: "/realizations/afa.jpg",
     description: "Stand institutionnel pour l'Agence For Accounts, valorisant la transparence et la gouvernance financière."
   },
