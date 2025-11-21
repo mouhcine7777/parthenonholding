@@ -53,15 +53,15 @@ const LIVE_PROGRAMS: Work[] = [
   },
   {
     id: 6,
-    name: "JMAATNA ZINA",
-    image: "/emissions/jmaatnazina.webp",
-    description: "Divertissement musical célébrant les traditions, la culture et la convivialité à travers tout le Royaume.",
-  },
-  {
-    id: 7,
     name: "JAMSHOW",
     image: "/emissions/jamshow.webp",
     description: "Divertissement allant à la recherche des nouveaux talents de Rap.",
+  },
+  {
+    id: 7,
+    name: "JMAATNA ZINA",
+    image: "/emissions/jmaatnazina.webp",
+    description: "Divertissement musical célébrant les traditions, la culture et la convivialité à travers tout le Royaume.",
   },
   {
     id: 8,
@@ -111,117 +111,117 @@ const SERVICES_WORKS: Work[] = [
   },
   {
     id: 3,
-    name: "MAROC EXPORT",
-    image: "/realizations/marocexport.jpg",
-    description: "Espace modulable dédié à la promotion des entreprises exportatrices et à la mise en valeur du savoir-faire national."
-  },
-  {
-    id: 4,
-    name: "PAVILLONS ÉTATIQUES",
-    image: "/realizations/pavillons-etatiques.png",
-    description: "Conception et aménagement de pavillons institutionnels pour les grandes expositions et salons mondiaux."
-  },
-  {
-    id: 5,
-    name: "ADA - ABU DHABI INTERNATIONAL FOOD EXHIBITION",
-    image: "/realizations/adif2023.png",
-    description: "Pavillon marocain présentant l'excellence agroalimentaire nationale dans une scénographie moderne et lumineuse."
-  },
-  {
-    id: 6,
-    name: "INWI",
-    image: "/realizations/inwi.png",
-    description: "Stand corporate au design épuré et technologique, valorisant l'innovation et la connectivité."
-  },
-  {
-    id: 7,
-    name: "CASA EVENTS",
-    image: "/realizations/smartcity.png",
-    description: "Conception d'un espace interactif et expérientiel pour promouvoir les événements culturels et sportifs de la ville."
-  },
-  {
-    id: 8,
-    name: "UM6P",
-    image: "/realizations/UM6P.png",
-    description: "Scénographie institutionnelle intégrant innovation, éducation et recherche dans un espace inspirant et durable."
-  },
-  {
-    id: 9,
-    name: "LANCEMENT EIS G700 SAFRAN",
-    image: "/realizations/safran.jpg",
-    description: "Événement de lancement premium mettant en scène l'innovation aéronautique avec une scénographie technique et raffinée."
-  },
-  {
-    id: 10,
-    name: "ROCK & TALK",
-    image: "/realizations/rocktalk.jpg",
-    description: "Format événementiel dynamique alliant conférences inspirantes et ambiance rock dans un décor scénique immersif."
-  },
-  {
-    id: 11,
-    name: "DEMO DAYS",
-    image: "/realizations/demodays.jpg",
-    description: "Espace de pitch et de démonstration pour startups, favorisant l'innovation et les échanges avec les investisseurs."
-  },
-  {
-    id: 12,
-    name: "IMMO GALLERY",
-    image: "/realizations/immo.jpg",
-    description: "Showroom immobilier élégant offrant une expérience de découverte visuelle et interactive des projets."
-  },
-  {
-    id: 13,
-    name: "EUCERIN DAYS",
-    image: "/realizations/eucerin.jpg",
-    description: "Événement brand experience dédié à la dermatologie, combinant expertise scientifique et design épuré."
-  },
-  {
-    id: 14,
-    name: "ONMT FRMF",
-    image: "/realizations/onmtfrmff.jpg",
-    description: "Partenariat scénographique entre tourisme et football, célébrant la passion sportive et l'attractivité du Maroc."
-  },
-  {
-    id: 15,
-    name: "AFA",
-    image: "/realizations/afa.jpg",
-    description: "Stand institutionnel pour l'Agence For Accounts, valorisant la transparence et la gouvernance financière."
-  },
-  {
-    id: 16,
-    name: "CULTURAL DAYS UM6P",
-    image: "/realizations/culturaldaysum6p.jpg",
-    description: "Célébration de la diversité culturelle à travers une scénographie festive et des espaces de rencontre animés."
-  },
-  {
-    id: 17,
-    name: "JOURNÉES PORTES OUVERTES UM6P",
-    image: "/realizations/um6pjpo.jpg",
-    description: "Aménagement accueillant et informatif pour découvrir l'université, ses programmes et son campus innovant."
-  },
-  {
-    id: 18,
     name: "UM6P SPECTACLE FOLKLORIQUE",
     image: "/realizations/um6pspectaclefolklorique.jpg",
     description: "Mise en scène colorée et authentique célébrant le patrimoine culturel marocain dans un spectacle vivant."
   },
   {
+    id: 4,
+    name: "MAROC EXPORT",
+    image: "/realizations/marocexport.jpg",
+    description: "Espace modulable dédié à la promotion des entreprises exportatrices et à la mise en valeur du savoir-faire national."
+  },
+  {
+    id: 5,
+    name: "PAVILLONS ÉTATIQUES",
+    image: "/realizations/pavillons-etatiques.png",
+    description: "Conception et aménagement de pavillons institutionnels pour les grandes expositions et salons mondiaux."
+  },
+  {
+    id: 6,
+    name: "ADA - ABU DHABI INTERNATIONAL FOOD EXHIBITION",
+    image: "/realizations/adif2023.png",
+    description: "Pavillon marocain présentant l'excellence agroalimentaire nationale dans une scénographie moderne et lumineuse."
+  },
+  {
+    id: 7,
+    name: "JOURNÉES PORTES OUVERTES UM6P",
+    image: "/realizations/um6pjpo.jpg",
+    description: "Aménagement accueillant et informatif pour découvrir l'université, ses programmes et son campus innovant."
+  },
+  {
+    id: 8,
+    name: "INWI",
+    image: "/realizations/inwi.png",
+    description: "Stand corporate au design épuré et technologique, valorisant l'innovation et la connectivité."
+  },
+  {
+    id: 9,
+    name: "CASA EVENTS",
+    image: "/realizations/smartcity.png",
+    description: "Conception d'un espace interactif et expérientiel pour promouvoir les événements culturels et sportifs de la ville."
+  },
+  {
+    id: 10,
+    name: "UM6P",
+    image: "/realizations/UM6P.png",
+    description: "Scénographie institutionnelle intégrant innovation, éducation et recherche dans un espace inspirant et durable."
+  },
+  {
+    id: 11,
+    name: "LANCEMENT EIS G700 SAFRAN",
+    image: "/realizations/safran.jpg",
+    description: "Événement de lancement premium mettant en scène l'innovation aéronautique avec une scénographie technique et raffinée."
+  },
+  {
+    id: 12,
+    name: "ROCK & TALK",
+    image: "/realizations/rocktalk.jpg",
+    description: "Format événementiel dynamique alliant conférences inspirantes et ambiance rock dans un décor scénique immersif."
+  },
+  {
+    id: 13,
+    name: "DEMO DAYS",
+    image: "/realizations/demodays.jpg",
+    description: "Espace de pitch et de démonstration pour startups, favorisant l'innovation et les échanges avec les investisseurs."
+  },
+  {
+    id: 14,
+    name: "UM6P CÉRÉMONIE DE DIPLÔMES",
+    image: "/realizations/um6pceremonie.jpg",
+    description: "Scène solennelle et élégante pour célébrer la réussite académique dans un cadre mémorable et inspirant."
+  },
+  {
+    id: 15,
+    name: "IMMO GALLERY",
+    image: "/realizations/immo.jpg",
+    description: "Showroom immobilier élégant offrant une expérience de découverte visuelle et interactive des projets."
+  },
+  {
+    id: 16,
+    name: "EUCERIN DAYS",
+    image: "/realizations/eucerin.jpg",
+    description: "Événement brand experience dédié à la dermatologie, combinant expertise scientifique et design épuré."
+  },
+  {
+    id: 17,
+    name: "ONMT FRMF",
+    image: "/realizations/onmtfrmff.jpg",
+    description: "Partenariat scénographique entre tourisme et football, célébrant la passion sportive et l'attractivité du Maroc."
+  },
+  {
+    id: 18,
+    name: "CULTURAL DAYS UM6P",
+    image: "/realizations/culturaldaysum6p.jpg",
+    description: "Célébration de la diversité culturelle à travers une scénographie festive et des espaces de rencontre animés."
+  },
+  {
     id: 19,
+    name: "AFA",
+    image: "/realizations/afa.jpg",
+    description: "Stand institutionnel pour l'Agence For Accounts, valorisant la transparence et la gouvernance financière."
+  },
+  {
+    id: 20,
     name: "SMART CITY",
     image: "/realizations/smartcity.jpg",
     description: "Pavillon futuriste illustrant les solutions urbaines intelligentes et durables pour les villes de demain."
   },
   {
-    id: 20,
+    id: 21,
     name: "OCP MOUVEMENT TO READY", 
     image: "/realizations/ocpmouvementtoready.jpg",
     description: "Campagne interne mobilisatrice avec une scénographie énergique favorisant l'engagement et la transformation."
-  },
-  {
-    id: 21,
-    name: "UM6P CÉRÉMONIE DE DIPLÔMES",
-    image: "/realizations/um6pceremonie.jpg",
-    description: "Scène solennelle et élégante pour célébrer la réussite académique dans un cadre mémorable et inspirant."
   },
   {
     id: 22,
@@ -275,12 +275,6 @@ const BTP_WORKS: Work[] = [
   },
   {
     id: 2,
-    name: "STATION AFRIQUIA LISSASFA",
-    image: "/afriquia.jpg",
-    description: "Un projet de 1995m2 qui illustre notre savoir-faire en alliant performance, design et expérience client."
-  },
-  {
-    id: 3,
     name: "MC VILLAGE",
     image: "/mcdo.jpg",
     description: "Un projet de 1540 m2 couverts et 9533 m2 d'espaces extérieurs, où architecture innovante et aménagement paysager créent une expérience harmonieuse et accueillante."
