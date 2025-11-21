@@ -183,7 +183,7 @@ const SERVICES_WORKS: Work[] = [
   },
   {
     id: 15,
-    name: "AFA",
+    name: "AFA ",
     image: "/realizations/afa.jpg",
     description: "Stand institutionnel pour l'Agence For Accounts, valorisant la transparence et la gouvernance financière."
   },
