@@ -40,31 +40,31 @@ export default function CompactFooter() {
     >
       <div className="container mx-auto px-4 md:px-6">
         {/* Logo */}
-        <div className="flex justify-center mb-4">
+        <div className="flex justify-center mb-6 md:mb-8">
           <Link href="/">
             <img 
               src="/logo.png" 
               alt="Parthenon Holding" 
-              className="h-19 md:h-30 cursor-pointer"
+              className="h-12 md:h-16 lg:h-20 cursor-pointer"
             />
           </Link>
         </div>
         
         {/* Contact info - centered */}
-        <div className="flex flex-col md:flex-row md:flex-wrap justify-center items-center gap-3 md:gap-6 mb-4">
+        <div className="flex flex-col sm:flex-row sm:flex-wrap lg:flex-nowrap justify-center items-center gap-4 sm:gap-6 lg:gap-8 mb-6 md:mb-8 max-w-6xl mx-auto">
           {contactInfo.map((item, index) => (
             <a
               key={index}
               href={item.href}
-              className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+              className="flex items-center gap-2 hover:opacity-80 transition-opacity text-center sm:text-left"
               rel={item.href.startsWith('mailto') || item.href.startsWith('tel') ? 'noopener' : 'noopener noreferrer'}
               target={item.href.startsWith('http') ? '_blank' : undefined}
             >
-              <span style={{ color: GOLD }}>
+              <span style={{ color: GOLD }} className="flex-shrink-0">
                 {item.icon}
               </span>
               <span 
-                className="text-xs md:text-sm"
+                className="text-xs sm:text-sm lg:text-base break-words"
                 style={{ color: `${LIGHT}CC` }}
               >
                 {item.text}
@@ -74,7 +74,7 @@ export default function CompactFooter() {
         </div>
         
         {/* Social & Copyright */}
-        <div className="flex flex-col md:flex-row justify-center items-center gap-3 pt-4 border-t" style={{ borderColor: `${LIGHT}15` }}>
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 pt-4 md:pt-6 border-t" style={{ borderColor: `${LIGHT}15` }}>
           <a
             href="https://ma.linkedin.com/company/parthenonholding"
             target="_blank"

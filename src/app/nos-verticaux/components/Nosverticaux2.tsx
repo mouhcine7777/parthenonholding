@@ -213,7 +213,7 @@ const SERVICES_WORKS: Work[] = [
   },
   {
     id: 20,
-    name: "OCP MOUVEMENT TO READY",
+    name: "OCP MOUVEMENT TO READY", 
     image: "/realizations/ocpmouvementtoready.jpg",
     description: "Campagne interne mobilisatrice avec une scénographie énergique favorisant l'engagement et la transformation."
   },
