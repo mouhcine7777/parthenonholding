@@ -144,6 +144,90 @@ const SERVICES_WORKS: Work[] = [
     name: "UM6P",
     image: "/realizations/UM6P.png",
     description: "Scénographie institutionnelle intégrant innovation, éducation et recherche dans un espace inspirant et durable."
+  },
+  {
+    id: 9,
+    name: "LANCEMENT EIS G700 SAFRAN",
+    image: "/realizations/safran.jpg",
+    description: "Événement de lancement premium mettant en scène l'innovation aéronautique avec une scénographie technique et raffinée."
+  },
+  {
+    id: 10,
+    name: "ROCK & TALK",
+    image: "/realizations/rocktalk.jpg",
+    description: "Format événementiel dynamique alliant conférences inspirantes et ambiance rock dans un décor scénique immersif."
+  },
+  {
+    id: 11,
+    name: "DEMO DAYS",
+    image: "/realizations/demodays.jpg",
+    description: "Espace de pitch et de démonstration pour startups, favorisant l'innovation et les échanges avec les investisseurs."
+  },
+  {
+    id: 12,
+    name: "IMMO GALLERY",
+    image: "/realizations/immo.jpg",
+    description: "Showroom immobilier élégant offrant une expérience de découverte visuelle et interactive des projets."
+  },
+  {
+    id: 13,
+    name: "EUCERIN DAYS",
+    image: "/realizations/eucerin.jpg",
+    description: "Événement brand experience dédié à la dermatologie, combinant expertise scientifique et design épuré."
+  },
+  {
+    id: 14,
+    name: "ONMT FRMF",
+    image: "/realizations/onmtfrmf.jpg",
+    description: "Partenariat scénographique entre tourisme et football, célébrant la passion sportive et l'attractivité du Maroc."
+  },
+  {
+    id: 15,
+    name: "AFA",
+    image: "/realizations/afa.jpg",
+    description: "Stand institutionnel pour l'Agence For Accounts, valorisant la transparence et la gouvernance financière."
+  },
+  {
+    id: 16,
+    name: "CULTURAL DAYS UM6P",
+    image: "/realizations/culturaldaysum6p.jpg",
+    description: "Célébration de la diversité culturelle à travers une scénographie festive et des espaces de rencontre animés."
+  },
+  {
+    id: 17,
+    name: "JOURNÉES PORTES OUVERTES UM6P",
+    image: "/realizations/um6pjpo.jpg",
+    description: "Aménagement accueillant et informatif pour découvrir l'université, ses programmes et son campus innovant."
+  },
+  {
+    id: 18,
+    name: "UM6P SPECTACLE FOLKLORIQUE",
+    image: "/realizations/um6pspectaclefolklorique.jpg",
+    description: "Mise en scène colorée et authentique célébrant le patrimoine culturel marocain dans un spectacle vivant."
+  },
+  {
+    id: 19,
+    name: "SMART CITY",
+    image: "/realizations/smartcity.jpg",
+    description: "Pavillon futuriste illustrant les solutions urbaines intelligentes et durables pour les villes de demain."
+  },
+  {
+    id: 20,
+    name: "OCP MOUVEMENT TO READY",
+    image: "/realizations/ocpmouvementtoready.jpg",
+    description: "Campagne interne mobilisatrice avec une scénographie énergique favorisant l'engagement et la transformation."
+  },
+  {
+    id: 21,
+    name: "UM6P CÉRÉMONIE DE DIPLÔMES",
+    image: "/realizations/um6pceremonie.jpg",
+    description: "Scène solennelle et élégante pour célébrer la réussite académique dans un cadre mémorable et inspirant."
+  },
+  {
+    id: 22,
+    name: "INNOVATION DAYS UM6P",
+    image: "/realizations/innovationdaysum6p.jpg",
+    description: "Forum d'innovation présentant recherches et projets technologiques dans un environnement moderne et interactif."
   }
 ];
 
@@ -347,18 +431,19 @@ function NosVerticauxContent() {
             <div className="container mx-auto px-4 md:px-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 {currentTab.works.map((work, index) => (
-                  <motion.div
-                    key={work.id}
-                    initial={{ opacity: 0, y: 60 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.2 }}
-                    transition={{ 
-                      duration: 0.8, 
-                      delay: index * 0.1,
-                      ease: [0.25, 0.1, 0.25, 1]
-                    }}
-                    className="group relative"
-                  >
+
+<motion.div
+key={work.id}
+initial={{ opacity: 0, y: 30 }}
+whileInView={{ opacity: 1, y: 0 }}
+viewport={{ once: true, amount: 0.1 }}
+transition={{ 
+  duration: 0.4, 
+  delay: index * 0.05,
+  ease: [0.25, 0.1, 0.25, 1]
+}}
+className="group relative"
+>
                     <div className="relative overflow-hidden rounded-2xl aspect-[3/4] bg-gray-900">
                       {/* Image */}
                       <motion.img
