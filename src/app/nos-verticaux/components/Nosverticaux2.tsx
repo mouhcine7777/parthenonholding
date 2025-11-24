@@ -137,7 +137,7 @@ const SERVICES_WORKS: Work[] = [
     id: 7,
     name: "UM6P",
     image: "/realizations/um6pjpo.jpg",
-    description: "Aménagement accueillant et informatif pour découvrir l'université, ses programmes et son campus innovant."
+    description: "Journées Portes Ouvertes ; un aménagement accueillant et informatif offrant une découverte immersive de l'université et ses programmes."
   },
   {
     id: 8,
@@ -155,31 +155,31 @@ const SERVICES_WORKS: Work[] = [
     id: 10,
     name: "UM6P",
     image: "/realizations/UM6P.png",
-    description: "Scénographie institutionnelle intégrant innovation, éducation et recherche dans un espace inspirant et durable."
+    description: "Une scénographie alliant innovation  et recherche  dans un espace captivant."
   },
   {
     id: 11,
-    name: "LANCEMENT EIS G700 SAFRAN",
+    name: "SAFRAN",
     image: "/realizations/safran.jpg",
-    description: "Événement de lancement premium mettant en scène l'innovation aéronautique avec une scénographie technique et raffinée."
+    description: "Lancement EIS G700 : une scénographie technique  et élégante pour un événement premium célébrant l'innovation aéronautique."
   },
   {
     id: 12,
     name: "ROCK & TALK",
     image: "/realizations/rocktalk.jpg",
-    description: "Format événementiel dynamique alliant conférences inspirantes et ambiance rock dans un décor scénique immersif."
+    description: "Un événement dynamique combinant  conférences inspirantes et ambiance rock dans un décor scénique immersif."
   },
   {
     id: 13,
     name: "DEMO DAYS",
     image: "/realizations/demodays.jpg",
-    description: "Espace de pitch et de démonstration pour startups, favorisant l'innovation et les échanges avec les investisseurs."
+    description: "Un espace de pitch et de démonstration pour statuts, favorisant l'innovation et les rencontres avec les investisseurs."
   },
   {
     id: 14,
     name: "UM6P",
     image: "/realizations/um6pceremonie.jpg",
-    description: "Scène solennelle et élégante pour célébrer la réussite académique dans un cadre mémorable et inspirant."
+    description: "Cérémonie de remise des diplômes : une scène élégante et solennelle dans un cadre mémorable."
   },
   {
     id: 15,
@@ -195,21 +195,21 @@ const SERVICES_WORKS: Work[] = [
   },
   {
     id: 17,
-    name: "ONMT FRMF",
+    name: "ONMT/FRMF",
     image: "/realizations/onmtfrmff.jpg",
-    description: "Partenariat scénographique entre tourisme et football, célébrant la passion sportive et l'attractivité du Maroc."
+    description: "Une scénographie de lancement pour Maroc, Terre de Football, célébrant la passion sportif et l'attrait touristique du Maroc."
   },
   {
     id: 18,
     name: "UM6P",
     image: "/realizations/culturaldaysum6p.jpg",
-    description: "Célébration de la diversité culturelle à travers une scénographie festive et des espaces de rencontre animés."
+    description: "Cultural days: une scénographie festive mettant en valeur la diversité culturelle à travers des espaces de rencontre animés."
   },
   {
     id: 19,
     name: "AFA",
     image: "/realizations/afa.jpg",
-    description: "Stand institutionnel pour l'Agence For Accounts, valorisant la transparence et la gouvernance financière."
+    description: "Organisation et scénographie de l'évènement pour l'Agence For Accounts."
   },
   {
     id: 20,
@@ -221,7 +221,7 @@ const SERVICES_WORKS: Work[] = [
     id: 21,
     name: "OCP", 
     image: "/realizations/ocpmouvementtoready.jpg",
-    description: "Campagne interne mobilisatrice avec une scénographie énergique favorisant l'engagement et la transformation."
+    description: "Mouvement to Ready: scénographie dynamique pour stimuler l'engagement et la transformation."
   },
   {
     id: 22,
