@@ -107,7 +107,7 @@ const SERVICES_WORKS: Work[] = [
     id: 2,
     name: "OCP",
     image: "/realizations/ocp.png",
-    description: "Pavillon institutionnel alliant innovation, durabilité et design, conçu pour les expositions internationales du groupe OCP."
+    description: "Mouvement Connect ; scénographie  et organisation de l'événement, visant à connecter son écosystème interne et externe"
   },
   {
     id: 3,
