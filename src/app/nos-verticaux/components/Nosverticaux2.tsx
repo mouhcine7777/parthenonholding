@@ -290,7 +290,7 @@ const BTP_WORKS: Work[] = [
 const TAB_DATA = [
   {
     id: 'live',
-    label: 'Création audiovisuelles & événements',
+    label: 'Création audiovisuelle & événements',
     icon: Sparkles,
     works: LIVE_PROGRAMS,
     description: "Depuis plus de vingt ans, Parthenon Holding imagine et réalise les grands rendez-vous audiovisuels et événementiels du Royaume. Ses équipes conçoivent, produisent et orchestrent des formats emblématiques de la fiction et du divertissement aux shows live, festivals et expériences immersives."
