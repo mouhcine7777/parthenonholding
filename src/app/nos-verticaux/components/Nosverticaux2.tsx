@@ -255,7 +255,7 @@ const LOISIRS_WORKS: Work[] = [
     id: 4,
     name: "Go Vélodrome",
     image: "/velodrome.jpg",
-    description: "Plateforme de communication et promotion des événements se déroulant au Vélodrome de Casablanca, Go Velodrome connecte organisateurs, partenaires et publics pour maximiser la visibilité et l’impact de chaque manifestation."
+    description: "Plateforme de communication pour promouvoir les événements du Vélodrome Casablanca."
   },
   {
     id: 5,
