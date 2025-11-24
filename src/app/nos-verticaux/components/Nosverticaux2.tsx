@@ -35,60 +35,66 @@ const LIVE_PROGRAMS: Work[] = [
   },
   {
     id: 3,
+    name: "FUSION SHOW AYTA D’BLADI",
+    image: "/emissions/ayta.jpg",
+    description: "Spectacle fusion  mêlant Ayta et musique pop contemporaine, avec un espace muséal  dédié à l'Ayta et un food court de gastronomie marocaine.",
+  },
+  {
+    id: 4,
     name: "COUPE DU MONDE DES CLUBS",
     image: "/realizations/fifa.jpg",
     description: "Pour la Coupe du Monde des Clubs de la FIFA 2014 au Maroc, notre expertise audiovisuelle et événementielle a transformé cet événement prestigieux en une expérience inoubliable.",
   },
   {
-    id: 4,
+    id: 5,
     name: "LALLA LAÂROSSA",
     image: "/emissions/lalalaaroussa.webp",
     description: "Compétition emblématique où des couples s'affrontent pour remporter une cérémonie de mariage de rêve.",
   },
   {
-    id: 5,
+    id: 6,
     name: "WORLD BOXING SERIES",
     image: "/realizations/wbs.png",
     description: "Notre savoir-faire en scénographie immersive à transformé ce tournoi international en un spectacle unique, où sport, lumière et mise en scène se combinent."
   },
   {
-    id: 6,
+    id: 7,
     name: "JAMSHOW",
     image: "/emissions/jamshow.webp",
     description: "Divertissement allant à la recherche des nouveaux talents de Rap.",
   },
   {
-    id: 7,
+    id: 8,
     name: "JMAATNA ZINA",
     image: "/emissions/jmaatnazina.webp",
     description: "Divertissement musical célébrant les traditions, la culture et la convivialité à travers tout le Royaume.",
   },
   {
-    id: 8,
+    id: 9,
     name: "TRI9 ATTAHADI",
     image: "/emissions/tri9attahadi.jpeg",
     description: "Aventure télévisée mêlant défis physiques et épreuves de dépassement dans des paysages spectaculaires.",
   },
   {
-    id: 9,
+    id: 10,
     name: "DREAM ARTIST",
     image: "/emissions/dreamartist.webp",
     description: "Émission de découverte et de valorisation des nouveaux talents artistiques et créatifs.",
   },
   {
-    id: 10,
+    id: 11,
     name: "AL QADAM ADDAHABBI",
     image: "/emissions/alqadamaddahabbi.webp",
     description: "Concours de jeunes talents footballistiques, révélant les futures stars du ballon rond national.",
   },
   {
-    id: 11,
+    id: 12,
     name: "AFFAIRE CONCLUE",
     image: "/emissions/akhirtaman.webp",
     description: "Émission d'enchères captivante où objets rares et passion des collectionneurs se rencontrent.",
   },
   {
-    id: 12,
+    id: 13,
     name: "FASHION MAGHRIBI",
     image: "/emissions/fashionmaghribi.webp",
     description: "Compétition mettant en lumière le talent et la créativité des stylistes et designers de mode",
@@ -106,7 +112,7 @@ const SERVICES_WORKS: Work[] = [
   {
     id: 2,
     name: "OCP",
-    image: "/realizations/ocp.png",
+    image: "/realizations/ocp.jpg",
     description: "Mouvement Connect ; scénographie  et organisation de l'événement, visant à connecter son écosystème interne et externe"
   },
   {
