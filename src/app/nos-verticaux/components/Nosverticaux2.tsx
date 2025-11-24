@@ -227,7 +227,7 @@ const SERVICES_WORKS: Work[] = [
     id: 22,
     name: "UM6P",
     image: "/realizations/innovationdaysum6p.jpg",
-    description: "Forum d'innovation présentant recherches et projets technologiques dans un environnement moderne et interactif."
+    description: "Forum d'innovation avec scénographie mettant en  avant recherches et projets technologiques dans un cadre moderne et interactif."
   }
 ];
 
