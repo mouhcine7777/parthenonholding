@@ -111,9 +111,9 @@ const SERVICES_WORKS: Work[] = [
   },
   {
     id: 3,
-    name: "UM6P SPECTACLE FOLKLORIQUE",
+    name: "UM6P",
     image: "/realizations/um6pspectaclefolklorique.jpg",
-    description: "Mise en scène colorée et authentique célébrant le patrimoine culturel marocain dans un spectacle vivant."
+    description: "Spectacle folklorique, une mise en scène vibrante et authentique qui met en valeur la richesse du patrimoine culturel marocain."
   },
   {
     id: 4,
@@ -135,7 +135,7 @@ const SERVICES_WORKS: Work[] = [
   },
   {
     id: 7,
-    name: "JOURNÉES PORTES OUVERTES UM6P",
+    name: "UM6P",
     image: "/realizations/um6pjpo.jpg",
     description: "Aménagement accueillant et informatif pour découvrir l'université, ses programmes et son campus innovant."
   },
@@ -177,7 +177,7 @@ const SERVICES_WORKS: Work[] = [
   },
   {
     id: 14,
-    name: "UM6P CÉRÉMONIE DE DIPLÔMES",
+    name: "UM6P",
     image: "/realizations/um6pceremonie.jpg",
     description: "Scène solennelle et élégante pour célébrer la réussite académique dans un cadre mémorable et inspirant."
   },
@@ -201,7 +201,7 @@ const SERVICES_WORKS: Work[] = [
   },
   {
     id: 18,
-    name: "CULTURAL DAYS UM6P",
+    name: "UM6P",
     image: "/realizations/culturaldaysum6p.jpg",
     description: "Célébration de la diversité culturelle à travers une scénographie festive et des espaces de rencontre animés."
   },
@@ -219,13 +219,13 @@ const SERVICES_WORKS: Work[] = [
   },
   {
     id: 21,
-    name: "OCP MOUVEMENT TO READY", 
+    name: "OCP", 
     image: "/realizations/ocpmouvementtoready.jpg",
     description: "Campagne interne mobilisatrice avec une scénographie énergique favorisant l'engagement et la transformation."
   },
   {
     id: 22,
-    name: "INNOVATION DAYS UM6P",
+    name: "UM6P",
     image: "/realizations/innovationdaysum6p.jpg",
     description: "Forum d'innovation présentant recherches et projets technologiques dans un environnement moderne et interactif."
   }
