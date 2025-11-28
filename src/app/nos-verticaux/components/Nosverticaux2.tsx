@@ -41,9 +41,9 @@ const LIVE_PROGRAMS: Work[] = [
   },
   {
     id: 4,
-    name: "COUPE DU MONDE DES CLUBS",
-    image: "/realizations/fifa.jpg",
-    description: "Pour la Coupe du Monde des Clubs de la FIFA 2014 au Maroc, notre expertise audiovisuelle et événementielle a transformé cet événement prestigieux en une expérience inoubliable.",
+    name: "OCP",
+    image: "/realizations/ocp.jpg",
+    description: "Mouvement Connect ; scénographie  et organisation de l'événement, visant à connecter son écosystème interne et externe"
   },
   {
     id: 5,
@@ -99,6 +99,49 @@ const LIVE_PROGRAMS: Work[] = [
     image: "/emissions/fashionmaghribi.webp",
     description: "Compétition mettant en lumière le talent et la créativité des stylistes et designers de mode",
   },
+
+  {
+    id: 14,
+    name: "UM6P",
+    image: "/realizations/um6pspectaclefolklorique.jpg",
+    description: "Spectacle folklorique, une mise en scène vibrante et authentique qui met en valeur la richesse du patrimoine culturel marocain."
+  },
+  {
+    id: 15,
+    name: "CASA EVENTS",
+    image: "/realizations/smartcity.png",
+    description: "Conception d'un espace interactif et expérientiel pour promouvoir les événements culturels et sportifs de la ville."
+  },
+  {
+    id: 16,
+    name: "ROCK & TALK",
+    image: "/realizations/rocktalk.jpg",
+    description: "Un événement dynamique combinant  conférences inspirantes et ambiance rock dans un décor scénique immersif."
+  },
+  {
+    id: 17,
+    name: "DEMO DAYS",
+    image: "/realizations/demodays.jpg",
+    description: "Un espace de pitch et de démonstration pour statuts, favorisant l'innovation et les rencontres avec les investisseurs."
+  },
+  {
+    id: 18,
+    name: "EUCERIN DAYS",
+    image: "/realizations/eucerin.jpg",
+    description: "Événement brand experience dédié à la dermatologie, combinant expertise scientifique et design épuré."
+  },
+  {
+    id: 19,
+    name: "AFA",
+    image: "/realizations/afa.jpg",
+    description: "Organisation et scénographie de l'évènement pour l'Agence For Accounts."
+  },
+  {
+    id: 20,
+    name: "UM6P",
+    image: "/realizations/um6pjpo.jpg",
+    description: "Journées Portes Ouvertes ; un aménagement accueillant et informatif offrant une découverte immersive de l'université et ses programmes."
+  }
 ];
 
 // Services / Scénographie & Aménagement
@@ -109,132 +152,96 @@ const SERVICES_WORKS: Work[] = [
     image: "/realizations/onmt.webp",
     description: "Pavillons officiel de l'ONMT, vitrine du Maroc à travers une scénographie immersive et contemporaine."
   },
+
   {
     id: 2,
-    name: "OCP",
-    image: "/realizations/ocp.jpg",
-    description: "Mouvement Connect ; scénographie  et organisation de l'événement, visant à connecter son écosystème interne et externe"
-  },
-  {
-    id: 3,
-    name: "UM6P",
-    image: "/realizations/um6pspectaclefolklorique.jpg",
-    description: "Spectacle folklorique, une mise en scène vibrante et authentique qui met en valeur la richesse du patrimoine culturel marocain."
-  },
-  {
-    id: 4,
     name: "MAROC EXPORT",
     image: "/realizations/marocexport.jpg",
     description: "Espace modulable dédié à la promotion des entreprises exportatrices et à la mise en valeur du savoir-faire national."
   },
   {
-    id: 5,
+    id: 3,
     name: "PAVILLONS ÉTATIQUES",
     image: "/realizations/pavillons-etatiques.png",
     description: "Conception et aménagement de pavillons institutionnels pour les grandes expositions et salons mondiaux."
   },
   {
-    id: 6,
+    id: 4,
     name: "ADA - ABU DHABI INTERNATIONAL FOOD EXHIBITION",
     image: "/realizations/adif2023.png",
     description: "Pavillon marocain présentant l'excellence agroalimentaire nationale dans une scénographie moderne et lumineuse."
   },
+
   {
-    id: 7,
-    name: "UM6P",
-    image: "/realizations/um6pjpo.jpg",
-    description: "Journées Portes Ouvertes ; un aménagement accueillant et informatif offrant une découverte immersive de l'université et ses programmes."
-  },
-  {
-    id: 8,
+    id: 5,
     name: "INWI",
     image: "/realizations/inwi.png",
     description: "Stand corporate au design épuré et technologique, valorisant l'innovation et la connectivité."
   },
+
   {
-    id: 9,
-    name: "CASA EVENTS",
-    image: "/realizations/smartcity.png",
-    description: "Conception d'un espace interactif et expérientiel pour promouvoir les événements culturels et sportifs de la ville."
-  },
-  {
-    id: 10,
+    id: 6,
     name: "UM6P",
     image: "/realizations/UM6P.png",
     description: "Une scénographie alliant innovation  et recherche  dans un espace captivant."
   },
   {
-    id: 11,
+    id: 7,
     name: "SAFRAN",
     image: "/realizations/safran.jpg",
     description: "Lancement EIS G700 : une scénographie technique  et élégante pour un événement premium célébrant l'innovation aéronautique."
   },
+
   {
-    id: 12,
-    name: "ROCK & TALK",
-    image: "/realizations/rocktalk.jpg",
-    description: "Un événement dynamique combinant  conférences inspirantes et ambiance rock dans un décor scénique immersif."
-  },
-  {
-    id: 13,
-    name: "DEMO DAYS",
-    image: "/realizations/demodays.jpg",
-    description: "Un espace de pitch et de démonstration pour statuts, favorisant l'innovation et les rencontres avec les investisseurs."
-  },
-  {
-    id: 14,
+    id: 8,
     name: "UM6P",
     image: "/realizations/um6pceremonie.jpg",
     description: "Cérémonie de remise des diplômes : une scène élégante et solennelle dans un cadre mémorable."
   },
   {
-    id: 15,
+    id: 9,
     name: "IMMO GALLERY",
     image: "/realizations/immo.jpg",
     description: "Showroom immobilier élégant offrant une expérience de découverte visuelle et interactive des projets."
   },
+
   {
-    id: 16,
-    name: "EUCERIN DAYS",
-    image: "/realizations/eucerin.jpg",
-    description: "Événement brand experience dédié à la dermatologie, combinant expertise scientifique et design épuré."
-  },
-  {
-    id: 17,
+    id: 10,
     name: "ONMT/FRMF",
     image: "/realizations/onmtfrmff.jpg",
     description: "Une scénographie de lancement pour Maroc, Terre de Football, célébrant la passion sportif et l'attrait touristique du Maroc."
   },
   {
-    id: 18,
+    id: 11,
     name: "UM6P",
     image: "/realizations/culturaldaysum6p.jpg",
     description: "Cultural days: une scénographie festive mettant en valeur la diversité culturelle à travers des espaces de rencontre animés."
   },
+
   {
-    id: 19,
-    name: "AFA",
-    image: "/realizations/afa.jpg",
-    description: "Organisation et scénographie de l'évènement pour l'Agence For Accounts."
-  },
-  {
-    id: 20,
+    id: 12,
     name: "SMART CITY",
     image: "/realizations/smartcity.jpg",
     description: "Pavillon futuriste illustrant les solutions urbaines intelligentes et durables pour les villes de demain."
   },
   {
-    id: 21,
+    id: 13,
     name: "OCP", 
     image: "/realizations/ocpmouvementtoready.jpg",
     description: "Mouvement to Ready: scénographie dynamique pour stimuler l'engagement et la transformation."
   },
   {
-    id: 22,
+    id: 14,
     name: "UM6P",
     image: "/realizations/innovationdaysum6p.jpg",
     description: "Forum d'innovation avec scénographie mettant en  avant recherches et projets technologiques dans un cadre moderne et interactif."
-  }
+  },
+  {
+    id: 15,
+    name: "COUPE DU MONDE DES CLUBS",
+    image: "/realizations/fifa.jpg",
+    description: "Pour la Coupe du Monde des Clubs de la FIFA 2014 au Maroc, notre expertise audiovisuelle et événementielle a transformé cet événement prestigieux en une expérience inoubliable.",
+  },
 ];
 
 // Loisirs / Parcs & centres ludiques
@@ -311,7 +318,7 @@ const TAB_DATA = [
   },
   {
     id: 'btp',
-    label: "Bâtiments Tout Corps D'état",
+    label: "Construction Integrale",
     icon: HardHat,
     works: BTP_WORKS,
     description: "Notre entreprise de construction PBS est spécialisée dans la réalisation de projets divers, allant des infrastructures commerciales aux complexes résidentiels, en mettant l'accent sur la qualité et l'innovation."

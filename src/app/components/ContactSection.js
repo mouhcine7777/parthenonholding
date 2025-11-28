@@ -518,15 +518,7 @@ Nos équipes vous accompagnent de la conception à la réussite de vos projets, 
                     )}
                   </button>
                 </form>
-              </div>
-              
-              {/* Decorative corner element */}
-              <div 
-                className="absolute -bottom-10 -right-10 w-40 h-40 rounded-full opacity-20"
-                style={{ 
-                  background: `radial-gradient(circle, ${GOLD} 0%, transparent 70%)` 
-                }}
-              />
+              </div>  
             </div>
           </motion.div>
         </div>
