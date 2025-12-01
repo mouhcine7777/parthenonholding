@@ -71,14 +71,6 @@ export default function NosFilialesGrid() {
           expertise: " Boulangerie Artisanale, Restaurant Brunch, Restaurant Italien, Décoration d'Intérieur",
           image: "/filiales/gardencorner.jpg",
           icon: Coffee
-        },
-        {
-          id: "go-velodrome",
-          name: "GoVélodrome",
-          description: "Plateforme de communication et promotion des événements se déroulant au Vélodrome de Casablanca, Go Velodrome connecte organisateurs, partenaires et publics pour maximiser la visibilité et l'impact de chaque manifestation.",
-          expertise: "Promotion et communication d'événements, Gestion des partenariats et sponsors, valorisation",
-          image: "/filiales/Govelodrome.jpg",
-          icon: Coffee
         }
       ]
     },

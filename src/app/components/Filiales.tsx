@@ -104,20 +104,6 @@ export default function NosFiliales() {
       poleId: "loisirs"
     },
     {
-      id: "go-velodrome",
-      name: "GoVélodrome",
-      description: "Plateforme de communication et promotion des événements se déroulant au Vélodrome de Casablanca, Go Velodrome connecte organisateurs, partenaires et publics pour maximiser la visibilité et l'impact de chaque manifestation.",
-      features: [
-        "Promotion et communication des événements au Vélodrome",
-        "Gestion des relations avec partenaires et sponsors",
-        "Valorisation des événements pour les entreprises et institutions (B2B)",
-        "Coordination digitale et médiatique"
-      ],
-      image: "/filiales/Govelodrome.jpg",
-      color: "#A98142",
-      poleId: "loisirs"
-    },
-    {
       id: "integral-solutions",
       name: "Integral Solution",
       description: "Integral Solution propose des solutions globales pour optimiser chaque aspect de vos événements et espaces, de la conception à la réalisation.",

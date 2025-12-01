@@ -223,7 +223,7 @@ export default function ParthenonHero() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.6, duration: 0.7 }}
                 >
-                  Un guichet unique d’expertise regroupant 12 filiales spécialisées en projets audiovisuels, événementiels, de loisirs, d’hébergement et de construction, guidées par l’excellence et l’innovation durable.
+                  Un guichet unique d’expertise regroupant 12 filiales spécialisées dans les projets audiovisuels, événementiels, de loisirs, d’hébergement, de construction, ainsi que dans la scénographie et la création d’expériences immersives, le tout guidé par l’excellence et l’innovation durable.
                 </motion.p>
               </motion.div>
               
