@@ -45,7 +45,7 @@ export default function NosFilialesGrid() {
           name: "Public Prod",
           description: "Référence de la production audiovisuelle marocaine, Public Prod crée et adapte des formats originaux pour la télévision et le digital, alliant créativité et exigence artistique.",
           expertise: "Création de concepts, adaptation de formats internationaux, direction artistique.",
-          image: "/filiales/PEP.jpg",
+          image: "/filiales/pep.jpg",
           icon: Tv
         }
       ]

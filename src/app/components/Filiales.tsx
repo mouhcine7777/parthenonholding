@@ -72,7 +72,7 @@ export default function NosFiliales() {
         "Scénographie innovante",
         "Gestion logistique intégrée"
       ],
-      image: "/filiales/PEP.jpg",
+      image: "/filiales/pep.jpg",
       color: "#B68C45",
       poleId: "live"
     },

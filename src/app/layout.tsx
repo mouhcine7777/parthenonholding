@@ -19,8 +19,40 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Parthenon holding",
-  description: "Experience",
+  metadataBase: new URL("https://parthenon.ma"),
+  title: "Parthenon Holding | Groupe d’Expertise Multidisciplinaire au Maroc",
+  description:
+    "Un guichet unique d’expertise regroupant 12 filiales spécialisées dans l’audiovisuel, l’événementiel, les loisirs, l’hébergement, la construction, la scénographie et la création d’expériences immersives. Excellence, innovation durable et solutions clé-en-main.",
+  keywords: [
+    "Parthenon Holding",
+    "Parthenon Maroc",
+    "Holding Maroc",
+    "Groupe Parthenon",
+    "Audiovisuel Maroc",
+    "Événementiel Maroc",
+    "Loisirs Maroc",
+    "Construction Maroc",
+    "Hébergement Maroc",
+    "Scénographie",
+    "Expériences immersives",
+    "Groupe d’entreprises Maroc",
+  ],
+
+  // Open Graph (Facebook / LinkedIn)
+  openGraph: {
+    title: "Parthenon Holding | Groupe d’Expertise Multidisciplinaire",
+    description:
+      "Parthenon Holding regroupe 12 filiales spécialisées dans l’audiovisuel, l’événementiel, les loisirs, l’hébergement, la construction et la scénographie. Un écosystème innovant guidé par l’excellence.",
+    url: "https://parthenon.ma",
+    siteName: "Parthenon Holding",
+    type: "website",
+    locale: "fr_FR"
+  },
+
+  // Canonical
+  alternates: {
+    canonical: "https://parthenon.ma",
+  },
 };
 
 export default function RootLayout({
@@ -29,10 +61,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable} ${montserrat.variable} font-optima`}>
-      <body className="font-sans antialiased">
-        {children}
-      </body>
+    <html
+      lang="fr"
+      className={`${poppins.variable} ${montserrat.variable} font-optima`}
+    >
+      <body className="font-sans antialiased">{children}</body>
     </html>
   );
 }

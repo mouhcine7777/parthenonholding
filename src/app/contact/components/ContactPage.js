@@ -1,17 +1,14 @@
 'use client';
 import { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 import { 
   Phone, 
   Mail, 
   MapPin, 
   Clock, 
   Send, 
-  ArrowRight, 
   MessageSquare, 
-  User,
-  Building,
-  FileText,
   CheckCircle
 } from 'lucide-react';
 
@@ -46,29 +43,51 @@ export default function ContactSection() {
     }));
   };
 
-  // Handle form submission
+  // Handle form submission with EmailJS
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        phone: '',
-        subject: '',
-        message: ''
-      });
-      setIsSubmitted(false);
-    }, 3000);
+    try {
+      // Initialize EmailJS with your public key
+      emailjs.init('tLmc6Z1JdpB5JBayT');
+      
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        'service_vm1ccc9',      // Your Service ID
+        'template_luce2lc',     // Replace this with your Template ID from EmailJS
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          company: formData.company || 'Non spécifié',
+          phone: formData.phone || 'Non spécifié',
+          subject: formData.subject,
+          message: formData.message,
+          to_email: 'contact@parthenon.ma'
+        }
+      );
+
+      console.log('Email sent successfully:', result.text);
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+      
+      // Reset form after 3 seconds
+      setTimeout(() => {
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          phone: '',
+          subject: '',
+          message: ''
+        });
+        setIsSubmitted(false);
+      }, 3000);
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setIsSubmitting(false);
+      alert('Une erreur est survenue. Veuillez réessayer.');
+    }
   };
 
   // Contact information items
@@ -218,8 +237,8 @@ export default function ContactSection() {
                 overflow: 'hidden'
               }}
             >
-{/* Google Maps iframe with custom marker */}
-<div className="w-full h-full relative">
+              {/* Google Maps iframe with custom marker */}
+              <div className="w-full h-full relative">
                 <iframe 
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.4993903992327!2d-7.620810799999998!3d33.5923449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDM1JzMyLjQiTiA3wrAzNycxNC45Ilc!5e0!3m2!1sfr!2sma!4v1746787105805!5m2!1sfr!2sma" 
                   width="100%" 
@@ -327,7 +346,7 @@ export default function ContactSection() {
                 )}
                 
                 {/* Contact Form */}
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="space-y-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {/* Name Field */}
                     <div>
@@ -458,7 +477,7 @@ export default function ContactSection() {
                   
                   {/* Submit Button */}
                   <button
-                    type="submit"
+                    onClick={handleSubmit}
                     disabled={isSubmitting}
                     className="w-full py-4 px-6 rounded-lg font-medium transition-all duration-300 hover:transform hover:translate-y-[-2px] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
                     style={{ 
@@ -481,16 +500,8 @@ export default function ContactSection() {
                       </>
                     )}
                   </button>
-                </form>
-              </div>
-              
-              {/* Decorative corner element */}
-              <div 
-                className="absolute -bottom-10 -right-10 w-40 h-40 rounded-full opacity-20"
-                style={{ 
-                  background: `radial-gradient(circle, ${GOLD} 0%, transparent 70%)` 
-                }}
-              />
+                </div>
+              </div>  
             </div>
           </motion.div>
         </div>
